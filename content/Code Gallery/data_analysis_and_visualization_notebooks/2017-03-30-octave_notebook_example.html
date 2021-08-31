@@ -416,11 +416,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/ioos/notebooks_demos"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/ioos/ioos_code_lab"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/ioos/notebooks_demos/issues/new?title=Issue%20on%20page%20%2Fcontent/Code Gallery/data_analysis_and_visualization_notebooks/2017-03-30-octave_notebook_example.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/ioos/ioos_code_lab/issues/new?title=Issue%20on%20page%20%2Fcontent/Code Gallery/data_analysis_and_visualization_notebooks/2017-03-30-octave_notebook_example.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -441,7 +441,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/ioos/notebooks_demos/master?urlpath=lab/tree/jupyterbook/content/Code Gallery/data_analysis_and_visualization_notebooks/2017-03-30-octave_notebook_example.ipynb"><button type="button"
+        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/ioos/ioos_code_lab/master?urlpath=lab/tree/jupyterbook/content/Code Gallery/data_analysis_and_visualization_notebooks/2017-03-30-octave_notebook_example.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../_static/images/logo_binder.svg"
@@ -449,7 +449,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/ioos/notebooks_demos/blob/master/jupyterbook/content/Code Gallery/data_analysis_and_visualization_notebooks/2017-03-30-octave_notebook_example.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/ioos/ioos_code_lab/blob/master/jupyterbook/content/Code Gallery/data_analysis_and_visualization_notebooks/2017-03-30-octave_notebook_example.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -473,7 +473,9 @@
                 
   <div class="section" id="a-matlab-notebook-primer">
 <h1>A Matlab notebook primer<a class="headerlink" href="#a-matlab-notebook-primer" title="Permalink to this headline">¶</a></h1>
-<p>A common misconception is that <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> notebooks are for Python only.
+<div class="alert alert-danger">
+  <strong>This notebook is not tested in our CIs and require some extra configuration from the users. You'll need to install octave and the t_tide toolbox.</strong>
+</div><p>A common misconception is that <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> notebooks are for Python only.
 We already showed how to use the
 <a class="reference external" href="http://ioos.github.io/notebooks_demos/notebooks/2017-01-23-R-notebook/"><code class="docutils literal notranslate"><span class="pre">R</span></code> language</a>,
 and now we are going to create a Matlab/Octave toolboxes notebook.</p>
@@ -520,7 +522,7 @@ z =  14
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/2017-03-30-octave_notebook_example_5_0.png" src="../../../_images/2017-03-30-octave_notebook_example_5_0.png" />
+<img alt="../../../_images/2017-03-30-octave_notebook_example_6_0.png" src="../../../_images/2017-03-30-octave_notebook_example_6_0.png" />
 </div>
 </div>
 <p>To demonstrate the Matlab/Octave notebook we will use a well known toolbox for tidal analysis <a class="reference external" href="https://www.eoas.ubc.ca/~rich/"><code class="docutils literal notranslate"><span class="pre">t_tide</span></code></a>.
@@ -657,7 +659,7 @@ error:   /usr/share/octave/3.8.2/m/plot/appearance/text.m at line 152, column 17
 error:   /home/filipe/IOOS/notebooks_demos/notebooks/t_tide_v1.3beta/t_demo.m at line 57, column 1
 </pre></div>
 </div>
-<img alt="../../../_images/2017-03-30-octave_notebook_example_11_1.png" src="../../../_images/2017-03-30-octave_notebook_example_11_1.png" />
+<img alt="../../../_images/2017-03-30-octave_notebook_example_12_1.png" src="../../../_images/2017-03-30-octave_notebook_example_12_1.png" />
 </div>
 </div>
 </div>
@@ -715,5 +717,12 @@ error:   /home/filipe/IOOS/notebooks_demos/notebooks/t_tide_v1.3beta/t_demo.m at
   <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
   
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-W7S16LPGS7"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-W7S16LPGS7');
+                </script>
+
   </body>
 </html>

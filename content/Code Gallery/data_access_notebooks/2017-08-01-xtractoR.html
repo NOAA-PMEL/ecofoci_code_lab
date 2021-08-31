@@ -416,11 +416,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/ioos/notebooks_demos"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/ioos/ioos_code_lab"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/ioos/notebooks_demos/issues/new?title=Issue%20on%20page%20%2Fcontent/Code Gallery/data_access_notebooks/2017-08-01-xtractoR.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/ioos/ioos_code_lab/issues/new?title=Issue%20on%20page%20%2Fcontent/Code Gallery/data_access_notebooks/2017-08-01-xtractoR.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -441,7 +441,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/ioos/notebooks_demos/master?urlpath=lab/tree/jupyterbook/content/Code Gallery/data_access_notebooks/2017-08-01-xtractoR.ipynb"><button type="button"
+        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/ioos/ioos_code_lab/master?urlpath=lab/tree/jupyterbook/content/Code Gallery/data_access_notebooks/2017-08-01-xtractoR.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../_static/images/logo_binder.svg"
@@ -449,7 +449,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/ioos/notebooks_demos/blob/master/jupyterbook/content/Code Gallery/data_access_notebooks/2017-08-01-xtractoR.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/ioos/ioos_code_lab/blob/master/jupyterbook/content/Code Gallery/data_access_notebooks/2017-08-01-xtractoR.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -514,7 +514,7 @@
 <p>Note the that <code class="docutils literal notranslate"><span class="pre">xlen=0.2</span></code> and <code class="docutils literal notranslate"><span class="pre">ylen=0.2</span></code> is the bounding latitude/longitude box (in decimal degrees) for finding the data around the desired positions</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">swchl</span> <span class="o">&lt;-</span> <span class="nf">xtracto</span><span class="p">(</span><span class="n">xpos</span><span class="p">,</span> <span class="n">ypos</span><span class="p">,</span> <span class="n">tpos</span><span class="p">,</span> <span class="s">&#39;swchla8day&#39;</span><span class="p">,</span> <span class="n">xlen</span><span class="o">=</span><span class="m">0.2</span><span class="p">,</span> <span class="n">ylen</span><span class="o">=</span><span class="m">0.2</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">swchl</span> <span class="o">&lt;-</span> <span class="nf">xtracto</span><span class="p">(</span><span class="s">&quot;swchla8day&quot;</span><span class="p">,</span> <span class="n">xpos</span><span class="p">,</span> <span class="n">ypos</span><span class="p">,</span> <span class="n">tpos</span> <span class="o">=</span> <span class="n">tpos</span><span class="p">,</span> <span class="p">,</span> <span class="n">xlen</span> <span class="o">=</span> <span class="n">.</span><span class="m">2</span><span class="p">,</span> <span class="n">ylen</span> <span class="o">=</span> <span class="n">.</span><span class="m">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -527,17 +527,17 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;data.frame&#39;:	152 obs. of  11 variables:
- $ mean             : num  0.073 NaN 0.074 0.0653 0.0403 ...
- $ stdev            : num  NA NA 0.00709 0.00768 0.02278 ...
- $ n                : int  1 0 16 4 7 9 4 3 0 6 ...
- $ satellite date   : chr  &quot;2003-04-19T00:00:00Z&quot; &quot;2003-04-27T00:00:00Z&quot; &quot;2003-04-27T00:00:00Z&quot; &quot;2003-04-27T00:00:00Z&quot; ...
- $ requested lon min: num  204 204 204 204 204 ...
- $ requested lon max: num  204 204 204 204 204 ...
- $ requested lat min: num  19.6 19.7 20.3 20.2 20.2 ...
- $ requested lat max: num  19.8 19.9 20.5 20.4 20.4 ...
- $ requested date   : num  12165 12166 12172 12173 12174 ...
- $ median           : num  0.073 NA 0.073 0.0645 0.031 ...
- $ mad              : num  0 NA 0.00297 0.00741 0.0089 ...
+ $ mean chlorophyll  : num  0.073 NaN 0.074 0.0653 0.0403 ...
+ $ stdev chlorophyll : num  NA NA 0.00709 0.00768 0.02278 ...
+ $ n                 : int  1 0 16 4 7 9 4 3 0 6 ...
+ $ satellite date    : chr  &quot;2003-04-19&quot; &quot;2003-04-27&quot; &quot;2003-04-27&quot; &quot;2003-04-27&quot; ...
+ $ requested lon min : num  204 204 204 204 204 ...
+ $ requested lon max : num  204 204 204 204 204 ...
+ $ requested lat min : num  19.6 19.7 20.3 20.2 20.2 ...
+ $ requested lat max : num  19.8 19.9 20.5 20.4 20.4 ...
+ $ requested date    : num  12165 12166 12172 12173 12174 ...
+ $ median chlorophyll: num  0.073 NA 0.073 0.0645 0.031 ...
+ $ mad chlorophyll   : num  0 NA 0.00297 0.00741 0.0089 ...
 </pre></div>
 </div>
 </div>
@@ -549,38 +549,32 @@
 <span class="nf">library</span><span class="p">(</span><span class="s">&#39;maps&#39;</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="s">&#39;mapdata&#39;</span><span class="p">)</span>
 
-<span class="c1"># Combine the two data-frames.</span>
-<span class="n">alldata</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">tagData</span><span class="p">,</span> <span class="n">swchl</span><span class="p">)</span>
-
-<span class="c1"># Adjust the longitudes to be (-180, 180).</span>
+<span class="n">alldata</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">swchl</span><span class="p">,</span> <span class="n">tagData</span><span class="p">)</span>
 <span class="n">alldata</span><span class="o">$</span><span class="n">lon</span> <span class="o">&lt;-</span> <span class="n">alldata</span><span class="o">$</span><span class="n">lon</span> <span class="o">-</span> <span class="m">360</span>
-
-<span class="c1"># R does not have plotting support for NA so we need to a variable for it.</span>
 <span class="n">alldata</span><span class="o">$</span><span class="n">missing</span> <span class="o">&lt;-</span> <span class="nf">is.na</span><span class="p">(</span><span class="n">alldata</span><span class="o">$</span><span class="n">mean</span><span class="p">)</span> <span class="o">*</span> <span class="m">1</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">alldata</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;mean&#39;</span>
 
-<span class="c1"># Map limits.</span>
+<span class="c1"># set limits of the map</span>
 <span class="n">ylim</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">15</span><span class="p">,</span> <span class="m">30</span><span class="p">)</span>
 <span class="n">xlim</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">-160</span><span class="p">,</span> <span class="m">-105</span><span class="p">)</span>
 
-<span class="c1"># Get outline data for map.</span>
-<span class="n">w</span> <span class="o">&lt;-</span> <span class="nf">map_data</span><span class="p">(</span><span class="s">&#39;worldHires&#39;</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="n">ylim</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">)</span>
+<span class="c1"># get outline data for map</span>
+<span class="n">w</span> <span class="o">&lt;-</span> <span class="nf">map_data</span><span class="p">(</span><span class="s">&quot;worldHires&quot;</span><span class="p">,</span> <span class="n">ylim</span> <span class="o">=</span> <span class="n">ylim</span><span class="p">,</span> <span class="n">xlim</span> <span class="o">=</span> <span class="n">xlim</span><span class="p">)</span>
 
-<span class="n">z</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">alldata</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">lon</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">lat</span><span class="p">))</span> <span class="o">+</span>
-     <span class="nf">geom_point</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">colour</span><span class="o">=</span><span class="n">mean</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="nf">factor</span><span class="p">(</span><span class="n">missing</span><span class="p">)),</span> <span class="n">size</span><span class="o">=</span><span class="m">2.0</span><span class="p">)</span> <span class="o">+</span>
-     <span class="nf">scale_shape_manual</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">19</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span>
-
-<span class="n">z</span> <span class="o">+</span> <span class="nf">geom_polygon</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">w</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">long</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">lat</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="n">group</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="s">&#39;grey80&#39;</span><span class="p">)</span> <span class="o">+</span>
-    <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span>
-    <span class="nf">scale_colour_gradient</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="s">&#39;#56B1F7&#39;</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="s">&#39;#132B43&#39;</span><span class="p">,</span>
-                          <span class="n">limits</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0.0</span><span class="p">,</span> <span class="m">0.32</span><span class="p">),</span>
-                          <span class="nf">expression</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">Mean</span><span class="o">~</span><span class="n">chla</span><span class="o">~</span><span class="n">values</span><span class="o">~</span><span class="p">(</span><span class="n">mu</span><span class="o">~</span><span class="n">g</span><span class="o">~</span><span class="n">l</span><span class="o">^</span><span class="m">-1</span><span class="p">))))</span> <span class="o">+</span>
-    <span class="nf">coord_fixed</span><span class="p">(</span><span class="m">1.3</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="n">ylim</span><span class="p">)</span> <span class="o">+</span>
-    <span class="nf">ggtitle</span><span class="p">(</span><span class="s">&#39;Mean chla values at marlin tag locations&#39;</span><span class="p">)</span>
+<span class="c1"># plot using ggplot</span>
+<span class="n">myColor</span> <span class="o">&lt;-</span> <span class="n">colors</span><span class="o">$</span><span class="n">algae</span>
+<span class="n">z</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">alldata</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">lon</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">lat</span><span class="p">))</span> <span class="o">+</span> 
+   <span class="nf">geom_point</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">colour</span> <span class="o">=</span> <span class="n">mean</span><span class="p">,</span> <span class="n">shape</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span><span class="n">missing</span><span class="p">)),</span> <span class="n">size</span> <span class="o">=</span> <span class="m">2</span><span class="n">.</span><span class="p">)</span> <span class="o">+</span> 
+   <span class="nf">scale_shape_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">19</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span>
+<span class="n">z</span> <span class="o">+</span> <span class="nf">geom_polygon</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">w</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">long</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">lat</span><span class="p">,</span> <span class="n">group</span> <span class="o">=</span> <span class="n">group</span><span class="p">),</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&quot;grey80&quot;</span><span class="p">)</span> <span class="o">+</span> 
+  <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span> 
+  <span class="nf">scale_colour_gradientn</span><span class="p">(</span><span class="n">colours</span> <span class="o">=</span> <span class="n">myColor</span><span class="p">,</span> <span class="n">limits</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="n">.</span><span class="p">,</span> <span class="m">0.32</span><span class="p">),</span> <span class="s">&quot;Chla&quot;</span><span class="p">)</span> <span class="o">+</span> 
+  <span class="nf">coord_fixed</span><span class="p">(</span><span class="m">1.3</span><span class="p">,</span> <span class="n">xlim</span> <span class="o">=</span> <span class="n">xlim</span><span class="p">,</span> <span class="n">ylim</span> <span class="o">=</span> <span class="n">ylim</span><span class="p">)</span> <span class="o">+</span> <span class="nf">ggtitle</span><span class="p">(</span><span class="s">&quot;Mean chla values at marlin tag locations&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/2017-08-01-xtractoR_8_1.png" src="../../../_images/2017-08-01-xtractoR_8_1.png" />
+<img alt="../../../_images/2017-08-01-xtractoR_8_0.png" src="../../../_images/2017-08-01-xtractoR_8_0.png" />
 </div>
 </div>
 <p>We can do the same for topography data. Let’s use the <code class="docutils literal notranslate"><span class="pre">ETOPO360</span></code> dataset to display the depth at the tag locations.</p>
@@ -588,37 +582,31 @@
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">ylim</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">15</span><span class="p">,</span> <span class="m">30</span><span class="p">)</span>
 <span class="n">xlim</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">-160</span><span class="p">,</span> <span class="m">-105</span><span class="p">)</span>
-<span class="n">topo</span> <span class="o">&lt;-</span> <span class="nf">xtracto</span><span class="p">(</span><span class="n">tagData</span><span class="o">$</span><span class="n">lon</span><span class="p">,</span> <span class="n">tagData</span><span class="o">$</span><span class="n">lat</span><span class="p">,</span> <span class="n">tagData</span><span class="o">$</span><span class="n">date</span><span class="p">,</span> <span class="s">&#39;ETOPO360&#39;</span><span class="p">,</span> <span class="m">0.1</span><span class="p">,</span> <span class="m">0.1</span><span class="p">)</span>
+<span class="n">topo</span> <span class="o">&lt;-</span> <span class="nf">xtracto</span><span class="p">(</span><span class="s">&quot;ETOPO180&quot;</span><span class="p">,</span> <span class="n">tagData</span><span class="o">$</span><span class="n">lon</span><span class="p">,</span> <span class="n">tagData</span><span class="o">$</span><span class="n">lat</span><span class="p">,</span> <span class="n">xlen</span> <span class="o">=</span> <span class="n">.</span><span class="m">1</span><span class="p">,</span> <span class="n">ylen</span> <span class="o">=</span> <span class="n">.</span><span class="m">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">ylim</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">15</span><span class="p">,</span> <span class="m">30</span><span class="p">)</span>
-<span class="n">xlim</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">-160</span><span class="p">,</span> <span class="m">-105</span><span class="p">)</span>
-<span class="n">alldata</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">tagData</span><span class="p">,</span> <span class="n">topo</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">alldata</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">topo</span><span class="p">,</span> <span class="n">tagData</span><span class="p">)</span>
 <span class="n">alldata</span><span class="o">$</span><span class="n">lon</span> <span class="o">&lt;-</span> <span class="n">alldata</span><span class="o">$</span><span class="n">lon</span> <span class="o">-</span> <span class="m">360</span>
-
-<span class="n">z</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">alldata</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">lon</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">lat</span><span class="p">))</span> <span class="o">+</span>
-     <span class="nf">geom_point</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">colour</span><span class="o">=</span><span class="n">mean</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="m">2.0</span><span class="p">)</span> <span class="o">+</span>
-     <span class="nf">scale_shape_manual</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">19</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span>
-
-<span class="n">z</span> <span class="o">+</span> <span class="nf">geom_polygon</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">w</span><span class="p">,</span>
-                 <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">long</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">lat</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="n">group</span><span class="p">),</span>
-                 <span class="n">fill</span><span class="o">=</span><span class="s">&#39;grey80&#39;</span><span class="p">)</span> <span class="o">+</span>
-    <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span>
-    <span class="nf">scale_colour_gradient</span><span class="p">(</span><span class="s">&#39;Depth (m)&#39;</span><span class="p">)</span> <span class="o">+</span>
-    <span class="nf">coord_fixed</span><span class="p">(</span><span class="m">1.3</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="n">ylim</span><span class="p">)</span> <span class="o">+</span>
-    <span class="nf">ggtitle</span><span class="p">(</span><span class="s">&#39;Bathymetry at marlin tag locations&#39;</span><span class="p">)</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">alldata</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;mean&#39;</span>
+<span class="n">z</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">alldata</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">lon</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">lat</span><span class="p">))</span> <span class="o">+</span> 
+   <span class="nf">geom_point</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">colour</span> <span class="o">=</span> <span class="n">mean</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="m">2</span><span class="n">.</span><span class="p">)</span> <span class="o">+</span> 
+  <span class="nf">scale_shape_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">19</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span>
+<span class="n">z</span> <span class="o">+</span> <span class="nf">geom_polygon</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">w</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">long</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">lat</span><span class="p">,</span> <span class="n">group</span> <span class="o">=</span> <span class="n">group</span><span class="p">),</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&quot;grey80&quot;</span><span class="p">)</span> <span class="o">+</span> 
+  <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span> 
+  <span class="nf">scale_colour_gradient</span><span class="p">(</span><span class="s">&quot;Depth&quot;</span><span class="p">)</span> <span class="o">+</span> 
+  <span class="nf">coord_fixed</span><span class="p">(</span><span class="m">1.3</span><span class="p">,</span> <span class="n">xlim</span> <span class="o">=</span> <span class="n">xlim</span><span class="p">,</span> <span class="n">ylim</span> <span class="o">=</span> <span class="n">ylim</span><span class="p">)</span> <span class="o">+</span> <span class="nf">ggtitle</span><span class="p">(</span><span class="s">&quot;Bathymetry at marlin tag locations&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/2017-08-01-xtractoR_11_1.png" src="../../../_images/2017-08-01-xtractoR_11_1.png" />
+<img alt="../../../_images/2017-08-01-xtractoR_11_0.png" src="../../../_images/2017-08-01-xtractoR_11_0.png" />
 </div>
 </div>
-<p>For more information and example on the other routines see the full example from the documentation at <a class="reference external" href="https://cran.r-project.org/web/packages/xtractomatic/vignettes/Usingxtractomatic.html">https://cran.r-project.org/web/packages/xtractomatic/vignettes/Usingxtractomatic.html</a></p>
+<p>For more information and example on the other routines see the full example from the documentation at <a class="reference external" href="https://rmendels.github.io/Usingxtractomatic_3.4.0.nb.html">https://rmendels.github.io/Usingxtractomatic_3.4.0.nb.html</a></p>
 <p>PS: note that R and all the <code class="docutils literal notranslate"><span class="pre">xtractomatic</span></code> dependencies are already included in the <a class="reference external" href="http://ioos.github.io/notebooks_demos/other_resources/">IOOS conda environment</a>.</p>
 </div>
 
@@ -631,16 +619,16 @@
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-env-IOOS-r"
+            mode: "r"
         },
         kernelOptions: {
-            kernelName: "conda-env-IOOS-r",
+            kernelName: "ir",
             path: "./content/Code Gallery/data_access_notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-env-IOOS-r'</script>
+    <script>kernelName = 'ir'</script>
 
               </div>
               
@@ -675,5 +663,12 @@
   <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
   
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-W7S16LPGS7"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-W7S16LPGS7');
+                </script>
+
   </body>
 </html>

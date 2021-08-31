@@ -418,11 +418,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/ioos/notebooks_demos"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/ioos/ioos_code_lab"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/ioos/notebooks_demos/issues/new?title=Issue%20on%20page%20%2Fcontent/Code Gallery/data_access_notebooks/2016-12-22-boston_light_swim.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/ioos/ioos_code_lab/issues/new?title=Issue%20on%20page%20%2Fcontent/Code Gallery/data_access_notebooks/2016-12-22-boston_light_swim.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -443,7 +443,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/ioos/notebooks_demos/master?urlpath=lab/tree/jupyterbook/content/Code Gallery/data_access_notebooks/2016-12-22-boston_light_swim.ipynb"><button type="button"
+        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/ioos/ioos_code_lab/master?urlpath=lab/tree/jupyterbook/content/Code Gallery/data_access_notebooks/2016-12-22-boston_light_swim.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../_static/images/logo_binder.svg"
@@ -451,7 +451,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/ioos/notebooks_demos/blob/master/jupyterbook/content/Code Gallery/data_access_notebooks/2016-12-22-boston_light_swim.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/ioos/ioos_code_lab/blob/master/jupyterbook/content/Code Gallery/data_access_notebooks/2016-12-22-boston_light_swim.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -479,7 +479,9 @@
 and how to obtain near real-time data with <a class="reference external" href="https://ioos.github.io/notebooks_demos//notebooks/2016-10-12-fetching_data"><code class="docutils literal notranslate"><span class="pre">pyoos</span></code></a>.
 In this notebook we will use both to find all observations and model data around the Boston Harbor to access the sea water temperature.</p>
 <p>This workflow is part of an example to advise swimmers of the annual <a class="reference external" href="http://bostonlightswim.org/">Boston lighthouse swim</a> of the Boston Harbor water temperature conditions prior to the race. For more information regarding the workflow presented here see <a class="reference external" href="http://dx.doi.org/10.3390/jmse4040068">Signell, Richard P.; Fernandes, Filipe; Wilcox, Kyle.   2016. “Dynamic Reusable Workflows for Ocean Science.” <em>J. Mar. Sci. Eng.</em> 4, no. 4: 68</a>.</p>
-<div class="cell docutils container">
+<div class="alert alert-danger">
+  <strong>This notebook is stale and won't run due to missing data upstream and changes in the libraries used.</strong>
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
 
@@ -999,7 +1001,7 @@ while the models can be 30 to 60 minutes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/2016-12-22-boston_light_swim_23_0.png" src="../../../_images/2016-12-22-boston_light_swim_23_0.png" />
+<img alt="../../../_images/2016-12-22-boston_light_swim_24_0.png" src="../../../_images/2016-12-22-boston_light_swim_24_0.png" />
 </div>
 </div>
 <p>Now it is time to loop the models we found above,</p>
@@ -1496,5 +1498,12 @@ $<span class="math notranslate nohighlight">\( \text{CRMS} = \sqrt{\left(\mathbf
   <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
   
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-W7S16LPGS7"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-W7S16LPGS7');
+                </script>
+
   </body>
 </html>

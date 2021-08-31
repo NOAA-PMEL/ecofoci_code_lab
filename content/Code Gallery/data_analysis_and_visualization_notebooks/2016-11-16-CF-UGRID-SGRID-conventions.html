@@ -416,11 +416,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/ioos/notebooks_demos"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/ioos/ioos_code_lab"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/ioos/notebooks_demos/issues/new?title=Issue%20on%20page%20%2Fcontent/Code Gallery/data_analysis_and_visualization_notebooks/2016-11-16-CF-UGRID-SGRID-conventions.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/ioos/ioos_code_lab/issues/new?title=Issue%20on%20page%20%2Fcontent/Code Gallery/data_analysis_and_visualization_notebooks/2016-11-16-CF-UGRID-SGRID-conventions.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -441,7 +441,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/ioos/notebooks_demos/master?urlpath=lab/tree/jupyterbook/content/Code Gallery/data_analysis_and_visualization_notebooks/2016-11-16-CF-UGRID-SGRID-conventions.ipynb"><button type="button"
+        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/ioos/ioos_code_lab/master?urlpath=lab/tree/jupyterbook/content/Code Gallery/data_analysis_and_visualization_notebooks/2016-11-16-CF-UGRID-SGRID-conventions.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../_static/images/logo_binder.svg"
@@ -449,7 +449,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/ioos/notebooks_demos/blob/master/jupyterbook/content/Code Gallery/data_analysis_and_visualization_notebooks/2016-11-16-CF-UGRID-SGRID-conventions.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/ioos/ioos_code_lab/blob/master/jupyterbook/content/Code Gallery/data_analysis_and_visualization_notebooks/2016-11-16-CF-UGRID-SGRID-conventions.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -522,37 +522,33 @@ From iris own docs:</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">iris</span>
 
-<span class="n">iris</span><span class="o">.</span><span class="n">FUTURE</span><span class="o">.</span><span class="n">netcdf_promote</span> <span class="o">=</span> <span class="kc">True</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://tds.marine.rutgers.edu/thredds/dodsC/roms/espresso/2013_da/his/ESPRESSO_Real-Time_v2_History_fmrc.ncd&quot;</span>
-
 <span class="n">cubes</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/filipe/miniconda3/envs/IOOS/lib/python3.7/site-packages/iris/__init__.py:237: IrisDeprecation: setting the &#39;Future&#39; property &#39;netcdf_promote&#39; is deprecated and will be removed in a future release. Please remove code that sets this property.
-  warn_deprecated(msg.format(name))
-/home/filipe/miniconda3/envs/IOOS/lib/python3.7/site-packages/iris/fileformats/cf.py:1069: UserWarning: Ignoring formula terms variable &#39;zeta&#39; referenced by data variable &#39;u&#39; via variable &#39;s_rho&#39;: Dimensions (&#39;run&#39;, &#39;time&#39;, &#39;eta_rho&#39;, &#39;xi_rho&#39;) do not span (&#39;run&#39;, &#39;time&#39;, &#39;s_rho&#39;, &#39;eta_u&#39;, &#39;xi_u&#39;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/cf.py:1207: UserWarning: Ignoring formula terms variable &#39;zeta&#39; referenced by data variable &#39;u&#39; via variable &#39;s_rho&#39;: Dimensions (&#39;run&#39;, &#39;time&#39;, &#39;eta_rho&#39;, &#39;xi_rho&#39;) do not span (&#39;run&#39;, &#39;time&#39;, &#39;s_rho&#39;, &#39;eta_u&#39;, &#39;xi_u&#39;)
   warnings.warn(msg)
-/home/filipe/miniconda3/envs/IOOS/lib/python3.7/site-packages/iris/fileformats/cf.py:1069: UserWarning: Ignoring formula terms variable &#39;h&#39; referenced by data variable &#39;u&#39; via variable &#39;s_rho&#39;: Dimensions (&#39;eta_rho&#39;, &#39;xi_rho&#39;) do not span (&#39;run&#39;, &#39;time&#39;, &#39;s_rho&#39;, &#39;eta_u&#39;, &#39;xi_u&#39;)
+/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/cf.py:1207: UserWarning: Ignoring formula terms variable &#39;h&#39; referenced by data variable &#39;u&#39; via variable &#39;s_rho&#39;: Dimensions (&#39;eta_rho&#39;, &#39;xi_rho&#39;) do not span (&#39;run&#39;, &#39;time&#39;, &#39;s_rho&#39;, &#39;eta_u&#39;, &#39;xi_u&#39;)
   warnings.warn(msg)
-/home/filipe/miniconda3/envs/IOOS/lib/python3.7/site-packages/iris/fileformats/cf.py:1069: UserWarning: Ignoring formula terms variable &#39;zeta&#39; referenced by data variable &#39;v&#39; via variable &#39;s_rho&#39;: Dimensions (&#39;run&#39;, &#39;time&#39;, &#39;eta_rho&#39;, &#39;xi_rho&#39;) do not span (&#39;run&#39;, &#39;time&#39;, &#39;s_rho&#39;, &#39;eta_v&#39;, &#39;xi_v&#39;)
+/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/cf.py:1207: UserWarning: Ignoring formula terms variable &#39;zeta&#39; referenced by data variable &#39;v&#39; via variable &#39;s_rho&#39;: Dimensions (&#39;run&#39;, &#39;time&#39;, &#39;eta_rho&#39;, &#39;xi_rho&#39;) do not span (&#39;run&#39;, &#39;time&#39;, &#39;s_rho&#39;, &#39;eta_v&#39;, &#39;xi_v&#39;)
   warnings.warn(msg)
-/home/filipe/miniconda3/envs/IOOS/lib/python3.7/site-packages/iris/fileformats/cf.py:1069: UserWarning: Ignoring formula terms variable &#39;h&#39; referenced by data variable &#39;v&#39; via variable &#39;s_rho&#39;: Dimensions (&#39;eta_rho&#39;, &#39;xi_rho&#39;) do not span (&#39;run&#39;, &#39;time&#39;, &#39;s_rho&#39;, &#39;eta_v&#39;, &#39;xi_v&#39;)
+/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/cf.py:1207: UserWarning: Ignoring formula terms variable &#39;h&#39; referenced by data variable &#39;v&#39; via variable &#39;s_rho&#39;: Dimensions (&#39;eta_rho&#39;, &#39;xi_rho&#39;) do not span (&#39;run&#39;, &#39;time&#39;, &#39;s_rho&#39;, &#39;eta_v&#39;, &#39;xi_v&#39;)
   warnings.warn(msg)
-/home/filipe/miniconda3/envs/IOOS/lib/python3.7/site-packages/iris/fileformats/netcdf.py:599: UserWarning: Unable to find coordinate for variable &#39;zeta&#39;
-  &#39;{!r}&#39;.format(name))
-/home/filipe/miniconda3/envs/IOOS/lib/python3.7/site-packages/iris/fileformats/netcdf.py:599: UserWarning: Unable to find coordinate for variable &#39;h&#39;
-  &#39;{!r}&#39;.format(name))
-/home/filipe/miniconda3/envs/IOOS/lib/python3.7/site-packages/iris/fileformats/netcdf.py:719: UserWarning: Unable to construct Ocean s-coordinate, generic form 1 factory due to insufficient source coordinates.
-  warnings.warn(&#39;{}&#39;.format(e))
-/home/filipe/miniconda3/envs/IOOS/lib/python3.7/site-packages/iris/fileformats/netcdf.py:599: UserWarning: Unable to find coordinate for variable &#39;zeta&#39;
-  &#39;{!r}&#39;.format(name))
-/home/filipe/miniconda3/envs/IOOS/lib/python3.7/site-packages/iris/fileformats/netcdf.py:599: UserWarning: Unable to find coordinate for variable &#39;h&#39;
-  &#39;{!r}&#39;.format(name))
-/home/filipe/miniconda3/envs/IOOS/lib/python3.7/site-packages/iris/fileformats/netcdf.py:719: UserWarning: Unable to construct Ocean s-coordinate, generic form 1 factory due to insufficient source coordinates.
-  warnings.warn(&#39;{}&#39;.format(e))
+/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/netcdf.py:683: UserWarning: Unable to find coordinate for variable &#39;zeta&#39;
+  warnings.warn(
+/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/netcdf.py:683: UserWarning: Unable to find coordinate for variable &#39;h&#39;
+  warnings.warn(
+/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/netcdf.py:814: UserWarning: Unable to construct Ocean s-coordinate, generic form 1 factory due to insufficient source coordinates.
+  warnings.warn(&quot;{}&quot;.format(e))
+/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/netcdf.py:683: UserWarning: Unable to find coordinate for variable &#39;zeta&#39;
+  warnings.warn(
+/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/netcdf.py:683: UserWarning: Unable to find coordinate for variable &#39;h&#39;
+  warnings.warn(
+/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/netcdf.py:814: UserWarning: Unable to construct Ocean s-coordinate, generic form 1 factory due to insufficient source coordinates.
+  warnings.warn(&quot;{}&quot;.format(e))
 </pre></div>
 </div>
 </div>
@@ -567,99 +563,99 @@ This behavior will be default in future versions of <code class="docutils litera
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0: S-coordinate bottom control parameter / (1) (scalar cube)
-1: surface v-momentum stress / (newton meter-2) (forecast_reference_time: 1929; -- : 157; -- : 81; -- : 130)
-2: number of time-steps between restart records / (1) (scalar cube)
-3: tracers outflow, nudging inverse time scale / (second-1) (-- : 4; -- : 2)
-4: tracers inflow, nudging inverse time scale / (second-1) (-- : 4; -- : 2)
-5: 3D momentum nudging/relaxation inverse time scale / (day-1) (scalar cube)
-6: constant Schmidt number for TKE / (1) (scalar cube)
-7: surface u-momentum stress / (newton meter-2) (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 129)
-8: number of long time-steps / (1)     (scalar cube)
-9: free-surface outflow, nudging inverse time scale / (second-1) (-- : 4)
-10: surface flux from wave dissipation / (1) (scalar cube)
-11: tracer point sources and sink activation switch / (1) (-- : 2)
-12: mask on RHO-points / (1)            (-- : 82; -- : 130)
-13: domain length in the ETA-direction / (meter) (scalar cube)
-14: vertically integrated v-momentum component / (meter second-1) (forecast_reference_time: 1929; -- : 157; -- : 81; -- : 130)
-15: starting time-step for accumulation of time-averaged fields / (1) (scalar cube)
-16: nonlinear model Laplacian mixing coefficient for tracers / (meter2 second-1) (-- : 2)
-17: 2D momentum inflow, nudging inverse time scale / (second-1) (-- : 4)
-18: Coriolis parameter at RHO-points / (second-1) (-- : 82; -- : 130)
-19: mask on psi-points / (1)            (-- : 81; -- : 129)
-20: curvilinear coordinate metric in ETA / (meter-1) (-- : 82; -- : 130)
-21: Power-law shape barotropic filter parameter / (1) (scalar cube)
-22: quadratic drag coefficient / (1)    (scalar cube)
-23: linear drag coefficient / (meter second-1) (scalar cube)
-24: vertical momentum component / (meter second-1) (forecast_reference_time: 1929; -- : 157; ocean_s_coordinate_g1: 37; -- : 82; -- : 130)
-25: number of time-steps between time-averaged records / (1) (scalar cube)
-26: number of time-steps between history records / (1) (scalar cube)
-27: 2D momentum nudging/relaxation inverse time scale / (day-1) (scalar cube)
-28: turbulent length scale exponent / (1) (scalar cube)
-29: number of time-steps between the creation of history files / (1) (scalar cube)
-30: shear production coefficient / (1)  (scalar cube)
-31: surface flux due to Craig and Banner wave breaking / (1) (scalar cube)
-32: background vertical mixing coefficient for turbulent energy / (meter2 second-1) (scalar cube)
-33: S-coordinate surface/bottom layer width / (meter) (scalar cube)
-34: minimum value of specific turbulent kinetic energy / (1) (scalar cube)
-35: 2D momentum outflow, nudging inverse time scale / (second-1) (-- : 4)
-36: number of time-steps between the creation of average files / (1) (scalar cube)
-37: stability coefficient / (1)         (scalar cube)
-38: buoyancy production coefficient (plus) / (1) (scalar cube)
-39: slipperiness parameter / (1)        (scalar cube)
-40: time averaged v-flux for 3D equations coupling / (meter3 second-1) (forecast_reference_time: 1929; -- : 157; -- : 81; -- : 130)
-41: NetCDF-4/HDF5 file format shuffle filer flag / (1) (scalar cube)
-42: mask on U-points / (1)              (-- : 82; -- : 129)
-43: Power-law shape barotropic filter parameter / (1) (scalar cube)
-44: bottom roughness / (meter)          (scalar cube)
-45: surface net heat flux / (watt meter-2) (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 130)
-46: bottom v-momentum stress / (newton meter-2) (forecast_reference_time: 1929; -- : 157; -- : 81; -- : 130)
-47: surface roughness / (meter)         (scalar cube)
-48: NetCDF-4/HDF5 file format deflate filer flag / (1) (scalar cube)
-49: grid / (1)                          (scalar cube)
-50: background vertical mixing coefficient for momentum / (meter2 second-1) (scalar cube)
-51: background vertical mixing coefficient for length scale / (meter2 second-1) (scalar cube)
-52: time averaged u-flux for 2D equations / (meter3 second-1) (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 129)
-53: 3D momentum outflow, nudging inverse time scale / (second-1) (-- : 4)
-54: dissipation coefficient / (1)       (scalar cube)
-55: stability exponent / (1)            (scalar cube)
-56: constant Schmidt number for PSI / (1) (scalar cube)
-57: background vertical mixing coefficient for tracers / (meter2 second-1) (-- : 2)
-58: minimum Value of dissipation / (1)  (scalar cube)
-59: Power-law shape barotropic filter parameter / (1) (scalar cube)
-60: angle between XI-axis and EAST / (radians) (-- : 82; -- : 130)
-61: grid type logical switch / (1)      (scalar cube)
-62: vertical terrain-following transformation equation / (1) (scalar cube)
-63: wave amplitude factor for surface roughness / (1) (scalar cube)
-64: time stamp assigned to model initilization / (days since 2006-01-01 00:00:00) (scalar cube)
-65: bottom u-momentum stress / (newton meter-2) (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 129)
-66: 3D momentum inflow, nudging inverse time scale / (second-1) (-- : 4)
-67: vertically integrated u-momentum component / (meter second-1) (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 129)
-68: S-coordinate surface control parameter / (1) (scalar cube)
-69: Tracers nudging/relaxation inverse time scale / (day-1) (-- : 2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0: 3D momentum inflow, nudging inverse time scale / (second-1) (-- : 4)
+1: Tracers nudging/relaxation inverse time scale / (day-1) (-- : 2)
+2: time averaged u-flux for 2D equations / (meter3 second-1) (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 129)
+3: surface net heat flux / (watt meter-2) (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 130)
+4: wave amplitude factor for surface roughness / (unknown) (scalar cube)
+5: dissipation coefficient / (unknown) (scalar cube)
+6: vertical terrain-following stretching function / (unknown) (scalar cube)
+7: turbulent length scale exponent / (unknown) (scalar cube)
+8: number of time-steps between the creation of average files / (unknown) (scalar cube)
+9: number of time-steps between restart records / (unknown) (scalar cube)
+10: 3D momentum outflow, nudging inverse time scale / (second-1) (-- : 4)
+11: background vertical mixing coefficient for momentum / (meter2 second-1) (scalar cube)
+12: 2D momentum outflow, nudging inverse time scale / (second-1) (-- : 4)
+13: NetCDF-4/HDF5 file format deflate level parameter / (unknown) (scalar cube)
+14: starting time-step for accumulation of time-averaged fields / (unknown) (scalar cube)
+15: constant Schmidt number for TKE / (unknown) (scalar cube)
+16: vertical terrain-following transformation equation / (unknown) (scalar cube)
+17: mask on V-points / (no_unit)        (-- : 81; -- : 130)
+18: number of time-steps between history records / (unknown) (scalar cube)
+19: Power-law shape barotropic filter parameter / (unknown) (scalar cube)
+20: time stamp assigned to model initilization / (days since 2006-01-01 00:00:00) (scalar cube)
+21: stability exponent / (unknown)      (scalar cube)
+22: turbulent kinetic energy exponent / (unknown) (scalar cube)
+23: surface flux due to Craig and Banner wave breaking / (unknown) (scalar cube)
+24: linear drag coefficient / (meter second-1) (scalar cube)
+25: 3D momentum nudging/relaxation inverse time scale / (day-1) (scalar cube)
+26: number of short time-steps / (unknown) (scalar cube)
+27: surface roughness / (meter)         (scalar cube)
+28: mask on psi-points / (no_unit)      (-- : 81; -- : 129)
+29: bottom u-momentum stress / (newton meter-2) (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 129)
+30: S-coordinate bottom control parameter / (unknown) (scalar cube)
+31: minimum Value of dissipation / (unknown) (scalar cube)
+32: Charnok factor for surface roughness / (unknown) (scalar cube)
+33: number of long time-steps / (unknown) (scalar cube)
+34: mask on RHO-points / (no_unit)      (-- : 82; -- : 130)
+35: NetCDF-4/HDF5 file format deflate filer flag / (unknown) (scalar cube)
+36: vertical momentum component / (meter second-1) (forecast_reference_time: 1929; -- : 157; ocean_s_coordinate_g1: 37; -- : 82; -- : 130)
+37: vertically integrated v-momentum component / (meter second-1) (forecast_reference_time: 1929; -- : 157; -- : 81; -- : 130)
+38: bottom roughness / (meter)          (scalar cube)
+39: surface u-momentum stress / (newton meter-2) (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 129)
+40: angle between XI-axis and EAST / (radians) (-- : 82; -- : 130)
+41: Coriolis parameter at RHO-points / (second-1) (-- : 82; -- : 130)
+42: minimum value of specific turbulent kinetic energy / (unknown) (scalar cube)
+43: constant Schmidt number for PSI / (unknown) (scalar cube)
+44: grid / (unknown)                    (scalar cube)
+45: 2D momentum nudging/relaxation inverse time scale / (day-1) (scalar cube)
+46: time averaged u-flux for 3D equations coupling / (meter3 second-1) (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 129)
+47: background vertical mixing coefficient for tracers / (meter2 second-1) (-- : 2)
+48: S-coordinate surface/bottom layer width / (meter) (scalar cube)
+49: time averaged v-flux for 3D equations coupling / (meter3 second-1) (forecast_reference_time: 1929; -- : 157; -- : 81; -- : 130)
+50: S-coordinate surface control parameter / (unknown) (scalar cube)
+51: vertically integrated u-momentum component / (meter second-1) (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 129)
+52: tracers inflow, nudging inverse time scale / (second-1) (-- : 4; -- : 2)
+53: surface v-momentum stress / (newton meter-2) (forecast_reference_time: 1929; -- : 157; -- : 81; -- : 130)
+54: tracer point sources and sink activation switch / (no_unit) (-- : 2)
+55: nonlinear model Laplacian mixing coefficient for momentum / (meter2 second-1) (scalar cube)
+56: Power-law shape barotropic filter parameter / (unknown) (scalar cube)
+57: free-surface inflow, nudging inverse time scale / (second-1) (-- : 4)
+58: domain length in the XI-direction / (meter) (scalar cube)
+59: size of short time-steps / (second) (scalar cube)
+60: stability coefficient / (unknown)   (scalar cube)
+61: nonlinear model Laplacian mixing coefficient for tracers / (meter2 second-1) (-- : 2)
+62: bottom v-momentum stress / (newton meter-2) (forecast_reference_time: 1929; -- : 157; -- : 81; -- : 130)
+63: number of time-steps between time-averaged records / (unknown) (scalar cube)
+64: grid type logical switch / (no_unit) (scalar cube)
+65: number of time-steps between the creation of history files / (unknown) (scalar cube)
+66: 2D momentum inflow, nudging inverse time scale / (second-1) (-- : 4)
+67: background vertical mixing coefficient for length scale / (meter2 second-1) (scalar cube)
+68: time averaged v-flux for 2D equations / (meter3 second-1) (forecast_reference_time: 1929; -- : 157; -- : 81; -- : 130)
+69: Power-law shape barotropic filter parameter / (unknown) (scalar cube)
 70: curvilinear coordinate metric in XI / (meter-1) (-- : 82; -- : 130)
-71: mask on V-points / (1)              (-- : 81; -- : 130)
-72: size of short time-steps / (second) (scalar cube)
-73: time averaged u-flux for 3D equations coupling / (meter3 second-1) (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 129)
-74: nonlinear model Laplacian mixing coefficient for momentum / (meter2 second-1) (scalar cube)
-75: NetCDF-4/HDF5 file format deflate level parameter / (1) (scalar cube)
-76: mean density used in Boussinesq approximation / (kilogram meter-3) (scalar cube)
-77: vertical terrain-following stretching function / (1) (scalar cube)
-78: free-surface inflow, nudging inverse time scale / (second-1) (-- : 4)
-79: turbulent kinetic energy exponent / (1) (scalar cube)
-80: buoyancy production coefficient (minus) / (1) (scalar cube)
-81: number of short time-steps / (1)    (scalar cube)
-82: size of long time-steps / (second)  (scalar cube)
-83: time averaged v-flux for 2D equations / (meter3 second-1) (forecast_reference_time: 1929; -- : 157; -- : 81; -- : 130)
-84: domain length in the XI-direction / (meter) (scalar cube)
+71: surface flux from wave dissipation / (unknown) (scalar cube)
+72: shear production coefficient / (unknown) (scalar cube)
+73: mean density used in Boussinesq approximation / (kilogram meter-3) (scalar cube)
+74: size of long time-steps / (second)  (scalar cube)
+75: domain length in the ETA-direction / (meter) (scalar cube)
+76: background vertical mixing coefficient for turbulent energy / (meter2 second-1) (scalar cube)
+77: mask on U-points / (no_unit)        (-- : 82; -- : 129)
+78: buoyancy production coefficient (minus) / (unknown) (scalar cube)
+79: curvilinear coordinate metric in ETA / (meter-1) (-- : 82; -- : 130)
+80: slipperiness parameter / (unknown)  (scalar cube)
+81: NetCDF-4/HDF5 file format shuffle filer flag / (unknown) (scalar cube)
+82: free-surface outflow, nudging inverse time scale / (second-1) (-- : 4)
+83: quadratic drag coefficient / (unknown) (scalar cube)
+84: tracers outflow, nudging inverse time scale / (second-1) (-- : 4; -- : 2)
 85: free-surface nudging/relaxation inverse time scale / (day-1) (scalar cube)
-86: Charnok factor for surface roughness / (1) (scalar cube)
+86: buoyancy production coefficient (plus) / (unknown) (scalar cube)
 87: eastward_sea_water_velocity / (meter second-1) (forecast_reference_time: 1929; -- : 157; ocean_s_coordinate_g1: 36; -- : 82; -- : 129)
 88: northward_sea_water_velocity / (meter second-1) (forecast_reference_time: 1929; -- : 157; ocean_s_coordinate_g1: 36; -- : 81; -- : 130)
 89: sea_floor_depth / (meter)           (-- : 82; -- : 130)
 90: sea_surface_height / (meter)        (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 130)
 91: sea_water_potential_temperature / (Celsius) (forecast_reference_time: 1929; -- : 157; ocean_s_coordinate_g1: 36; -- : 82; -- : 130)
-92: sea_water_salinity / (1)            (forecast_reference_time: 1929; -- : 157; ocean_s_coordinate_g1: 36; -- : 82; -- : 130)
+92: sea_water_salinity / (unknown)      (forecast_reference_time: 1929; -- : 157; ocean_s_coordinate_g1: 36; -- : 82; -- : 130)
 </pre></div>
 </div>
 </div>
@@ -685,7 +681,7 @@ We recommend <code class="docutils literal notranslate"><span class="pre">xarray
 <p>Moving on, let’s extract a single phenomena from the list of cubes above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cube</span> <span class="o">=</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract_strict</span><span class="p">(</span><span class="s2">&quot;sea_surface_height&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cube</span> <span class="o">=</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract_cube</span><span class="p">(</span><span class="s2">&quot;sea_surface_height&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">cube</span><span class="p">)</span>
 </pre></div>
@@ -718,7 +714,7 @@ We recommend <code class="docutils literal notranslate"><span class="pre">xarray
           cpu: x86_64
           featureType: GRID
           field: free-surface, scalar, series
-          file: espresso_his_4638_0004.nc
+          file: espresso_his_4638_0001.nc
           flt_file: espresso_flt_4638.nc
           format: netCDF-4/HDF5 file
           fpos_file: /home/om/cron/glider_floats/data/maracoos_floats.in
@@ -758,7 +754,7 @@ FMRC...
 (Note that <code class="docutils literal notranslate"><span class="pre">ocean_s_coordinate_g1</span></code> is actually <code class="docutils literal notranslate"><span class="pre">CF-1.7</span></code> but was backported to <code class="docutils literal notranslate"><span class="pre">iris</span></code> because it is widely adopted and the CF conventions document evolves quite slowly.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract_strict</span><span class="p">(</span><span class="s2">&quot;sea_water_potential_temperature&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract_cube</span><span class="p">(</span><span class="s2">&quot;sea_water_potential_temperature&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
 </pre></div>
@@ -799,7 +795,7 @@ FMRC...
           cpu: x86_64
           featureType: GRID
           field: temperature, scalar, series
-          file: espresso_his_4638_0004.nc
+          file: espresso_his_4638_0001.nc
           flt_file: espresso_flt_4638.nc
           format: netCDF-4/HDF5 file
           fpos_file: /home/om/cron/glider_floats/data/maracoos_floats.in
@@ -837,7 +833,7 @@ FMRC...
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract_strict</span><span class="p">(</span><span class="s2">&quot;sea_water_potential_temperature&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="n">cubes</span><span class="o">.</span><span class="n">extract_cube</span><span class="p">(</span><span class="s2">&quot;sea_water_potential_temperature&quot;</span><span class="p">)</span>
 
 <span class="c1"># Surface at the last time step.</span>
 <span class="n">T</span> <span class="o">=</span> <span class="n">temp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
@@ -915,7 +911,7 @@ FMRC...
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">iris.plot</span> <span class="k">as</span> <span class="nn">qplt</span>
 
-<span class="n">qplt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_profile</span><span class="p">)</span>
+<span class="n">qplt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_profile</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -933,7 +929,7 @@ FMRC...
 <span class="n">t</span> <span class="o">=</span> <span class="n">t_profile</span><span class="o">.</span><span class="n">data</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">t_profile</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="s2">&quot;sea_surface_height_above_reference_ellipsoid&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">points</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">z</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -988,7 +984,7 @@ if the data is <code class="docutils literal notranslate"><span class="pre">UGRI
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">))</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="s2">&quot;50m&quot;</span><span class="p">)</span>
     <span class="n">gl</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">gl</span><span class="o">.</span><span class="n">xlabels_top</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">ylabels_right</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">top_labels</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">right_labels</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">gl</span><span class="o">.</span><span class="n">xformatter</span> <span class="o">=</span> <span class="n">LONGITUDE_FORMATTER</span>
     <span class="n">gl</span><span class="o">.</span><span class="n">yformatter</span> <span class="o">=</span> <span class="n">LATITUDE_FORMATTER</span>
     <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
@@ -998,7 +994,7 @@ if the data is <code class="docutils literal notranslate"><span class="pre">UGRI
 
 <span class="n">kw</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;marker&quot;</span><span class="p">:</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;linestyle&quot;</span><span class="p">:</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;darkgray&quot;</span><span class="p">}</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">triplot</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">triangles</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -1204,7 +1200,7 @@ There is plenty of room to create convenience methods using the low level access
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_map</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">)):</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">))</span>
     <span class="n">gl</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">gl</span><span class="o">.</span><span class="n">xlabels_top</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">ylabels_right</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">top_labels</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">right_labels</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">gl</span><span class="o">.</span><span class="n">xformatter</span> <span class="o">=</span> <span class="n">LONGITUDE_FORMATTER</span>
     <span class="n">gl</span><span class="o">.</span><span class="n">yformatter</span> <span class="o">=</span> <span class="n">LATITUDE_FORMATTER</span>
     <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
@@ -1289,5 +1285,12 @@ There is plenty of room to create convenience methods using the low level access
   <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
   
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-W7S16LPGS7"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-W7S16LPGS7');
+                </script>
+
   </body>
 </html>

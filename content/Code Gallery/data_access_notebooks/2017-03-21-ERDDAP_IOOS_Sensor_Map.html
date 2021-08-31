@@ -416,11 +416,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/ioos/notebooks_demos"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/ioos/ioos_code_lab"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/ioos/notebooks_demos/issues/new?title=Issue%20on%20page%20%2Fcontent/Code Gallery/data_access_notebooks/2017-03-21-ERDDAP_IOOS_Sensor_Map.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/ioos/ioos_code_lab/issues/new?title=Issue%20on%20page%20%2Fcontent/Code Gallery/data_access_notebooks/2017-03-21-ERDDAP_IOOS_Sensor_Map.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -441,7 +441,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/ioos/notebooks_demos/master?urlpath=lab/tree/jupyterbook/content/Code Gallery/data_access_notebooks/2017-03-21-ERDDAP_IOOS_Sensor_Map.ipynb"><button type="button"
+        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/ioos/ioos_code_lab/master?urlpath=lab/tree/jupyterbook/content/Code Gallery/data_access_notebooks/2017-03-21-ERDDAP_IOOS_Sensor_Map.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../_static/images/logo_binder.svg"
@@ -449,7 +449,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/ioos/notebooks_demos/blob/master/jupyterbook/content/Code Gallery/data_access_notebooks/2017-03-21-ERDDAP_IOOS_Sensor_Map.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/ioos/ioos_code_lab/blob/master/jupyterbook/content/Code Gallery/data_access_notebooks/2017-03-21-ERDDAP_IOOS_Sensor_Map.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -484,7 +484,9 @@ had selected buoy 44011 on George’s Bank:</p>
 <p>is fairly easy to understand,
 and that a program could construct that URL fairly easily.
 Let’s explore how that could work…</p>
-<div class="cell docutils container">
+<div class="alert alert-danger">
+  <strong>This notebook is stale and won't run due to missing data upstream and changes in the libraries used.</strong>
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
@@ -690,7 +692,7 @@ Let’s explore how that could work…</p>
   items = np.asanyarray(items)
 </pre></div>
 </div>
-<img alt="../../../_images/2017-03-21-ERDDAP_IOOS_Sensor_Map_7_1.png" src="../../../_images/2017-03-21-ERDDAP_IOOS_Sensor_Map_7_1.png" />
+<img alt="../../../_images/2017-03-21-ERDDAP_IOOS_Sensor_Map_8_1.png" src="../../../_images/2017-03-21-ERDDAP_IOOS_Sensor_Map_8_1.png" />
 </div>
 </div>
 <p>You may notice that slicing the time dimension on the sever side is very fast when compared with an OPeNDAP request. The downloading of the time dimension data, slice, and subsequent downloading of the actual data are all much faster.</p>
@@ -824,7 +826,7 @@ Let’s explore how that could work…</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/2017-03-21-ERDDAP_IOOS_Sensor_Map_11_0.png" src="../../../_images/2017-03-21-ERDDAP_IOOS_Sensor_Map_11_0.png" />
+<img alt="../../../_images/2017-03-21-ERDDAP_IOOS_Sensor_Map_12_0.png" src="../../../_images/2017-03-21-ERDDAP_IOOS_Sensor_Map_12_0.png" />
 </div>
 </div>
 <p>Wow! Wintertime is pretty rough out on George’s Bank!</p>
@@ -941,5 +943,12 @@ Here is how to get a <code class="docutils literal notranslate"><span class="pre
   <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
   
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-W7S16LPGS7"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-W7S16LPGS7');
+                </script>
+
   </body>
 </html>

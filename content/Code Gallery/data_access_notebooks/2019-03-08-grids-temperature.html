@@ -416,11 +416,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/ioos/notebooks_demos"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/ioos/ioos_code_lab"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/ioos/notebooks_demos/issues/new?title=Issue%20on%20page%20%2Fcontent/Code Gallery/data_access_notebooks/2019-03-08-grids-temperature.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/ioos/ioos_code_lab/issues/new?title=Issue%20on%20page%20%2Fcontent/Code Gallery/data_access_notebooks/2019-03-08-grids-temperature.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -441,7 +441,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/ioos/notebooks_demos/master?urlpath=lab/tree/jupyterbook/content/Code Gallery/data_access_notebooks/2019-03-08-grids-temperature.ipynb"><button type="button"
+        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/ioos/ioos_code_lab/master?urlpath=lab/tree/jupyterbook/content/Code Gallery/data_access_notebooks/2019-03-08-grids-temperature.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../_static/images/logo_binder.svg"
@@ -449,7 +449,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/ioos/notebooks_demos/blob/master/jupyterbook/content/Code Gallery/data_access_notebooks/2019-03-08-grids-temperature.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/ioos/ioos_code_lab/blob/master/jupyterbook/content/Code Gallery/data_access_notebooks/2019-03-08-grids-temperature.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -558,8 +558,23 @@ horizontal temperature slices from a variety of ocean models with minimum specif
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>curl error details: 
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Could not get data from NYHOPS
 [Errno -68] NetCDF: I/O failure: b&#39;http://colossus.dl.stevens-tech.edu:8080/thredds/dodsC/latest/Complete_gcmplt.nc&#39;
+Could not get data from OSU-ROMS
+[Errno -68] NetCDF: I/O failure: b&#39;http://ona.coas.oregonstate.edu:8080/thredds/dodsC/NANOOS/OCOS&#39;
+Could not get data from Hawaii-ROMS
+[Errno -72] NetCDF: Malformed or inaccessible DAP2 DDS or DAP4 DMR response: b&#39;http://oos.soest.hawaii.edu/thredds/dodsC/hioos/roms_forec/hiig/ROMS_Hawaii_Regional_Ocean_Model_best.ncd&#39;
+Could not get data from WCOFS
+[Errno -68] NetCDF: I/O failure: b&#39;http://opendap.co-ops.nos.noaa.gov/thredds/dodsC/WCOFS/fmrc/Aggregated_7_day_WCOFS_Fields_Forecast_best.ncd&#39;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>curl error details: 
+syntax error, unexpected $end, expecting SCAN_ATTR or SCAN_DATASET or SCAN_ERROR
+context: ^
+curl error details: 
 </pre></div>
 </div>
 </div>
@@ -679,7 +694,7 @@ the coordinates we need for plotting, so we need to add an exception code for th
     <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">bbox</span><span class="p">)</span>
 
     <span class="n">gl</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">gl</span><span class="o">.</span><span class="n">xlabels_top</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">ylabels_right</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">top_labels</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">right_labels</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">gl</span><span class="o">.</span><span class="n">ylines</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">xlines</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">gl</span><span class="o">.</span><span class="n">xformatter</span> <span class="o">=</span> <span class="n">LONGITUDE_FORMATTER</span>
     <span class="n">gl</span><span class="o">.</span><span class="n">yformatter</span> <span class="o">=</span> <span class="n">LATITUDE_FORMATTER</span>
@@ -716,15 +731,16 @@ the coordinates we need for plotting, so we need to add an exception code for th
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/2019-03-08-grids-temperature_11_0.png" src="../../../_images/2019-03-08-grids-temperature_11_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/cartopy/mpl/geoaxes.py:1702: UserWarning: The input coordinates to pcolormesh are interpreted as cell centers, but are not monotonically increasing or decreasing. This may lead to incorrectly calculated cell edges, in which case, please supply explicit cell edges to pcolormesh.
+  X, Y, C, shading = self._pcolorargs(&#39;pcolormesh&#39;, *args,
+</pre></div>
+</div>
 <img alt="../../../_images/2019-03-08-grids-temperature_11_1.png" src="../../../_images/2019-03-08-grids-temperature_11_1.png" />
 <img alt="../../../_images/2019-03-08-grids-temperature_11_2.png" src="../../../_images/2019-03-08-grids-temperature_11_2.png" />
 <img alt="../../../_images/2019-03-08-grids-temperature_11_3.png" src="../../../_images/2019-03-08-grids-temperature_11_3.png" />
 <img alt="../../../_images/2019-03-08-grids-temperature_11_4.png" src="../../../_images/2019-03-08-grids-temperature_11_4.png" />
 <img alt="../../../_images/2019-03-08-grids-temperature_11_5.png" src="../../../_images/2019-03-08-grids-temperature_11_5.png" />
 <img alt="../../../_images/2019-03-08-grids-temperature_11_6.png" src="../../../_images/2019-03-08-grids-temperature_11_6.png" />
-<img alt="../../../_images/2019-03-08-grids-temperature_11_7.png" src="../../../_images/2019-03-08-grids-temperature_11_7.png" />
-<img alt="../../../_images/2019-03-08-grids-temperature_11_8.png" src="../../../_images/2019-03-08-grids-temperature_11_8.png" />
 </div>
 </div>
 <p>It is relatively easy to change to any other variable like salinity for example.
@@ -785,5 +801,12 @@ those can be challenging due to the heterogeneity of vertical coordinates in the
   <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
   
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-W7S16LPGS7"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-W7S16LPGS7');
+                </script>
+
   </body>
 </html>

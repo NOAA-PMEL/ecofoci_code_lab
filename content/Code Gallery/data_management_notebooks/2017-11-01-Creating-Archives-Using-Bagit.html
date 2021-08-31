@@ -416,11 +416,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/ioos/notebooks_demos"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/ioos/ioos_code_lab"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/ioos/notebooks_demos/issues/new?title=Issue%20on%20page%20%2Fcontent/Code Gallery/data_management_notebooks/2017-11-01-Creating-Archives-Using-Bagit.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/ioos/ioos_code_lab/issues/new?title=Issue%20on%20page%20%2Fcontent/Code Gallery/data_management_notebooks/2017-11-01-Creating-Archives-Using-Bagit.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -441,7 +441,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/ioos/notebooks_demos/master?urlpath=lab/tree/jupyterbook/content/Code Gallery/data_management_notebooks/2017-11-01-Creating-Archives-Using-Bagit.ipynb"><button type="button"
+        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/ioos/ioos_code_lab/master?urlpath=lab/tree/jupyterbook/content/Code Gallery/data_management_notebooks/2017-11-01-Creating-Archives-Using-Bagit.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../_static/images/logo_binder.svg"
@@ -449,7 +449,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/ioos/notebooks_demos/blob/master/jupyterbook/content/Code Gallery/data_management_notebooks/2017-11-01-Creating-Archives-Using-Bagit.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/ioos/ioos_code_lab/blob/master/jupyterbook/content/Code Gallery/data_management_notebooks/2017-11-01-Creating-Archives-Using-Bagit.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -481,7 +481,7 @@
 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;dsg&quot;</span><span class="p">,</span> <span class="s2">&quot;timeseriesProfile.csv&quot;</span><span class="p">)</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;timeseriesProfile.csv&quot;</span><span class="p">)</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">])</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -613,13 +613,13 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pocean.dsg.timeseriesProfile.om.OrthogonalMultidimensionalTimeseriesProfile&#39;&gt;
 root group (NETCDF4 data model, file format HDF5):
     Conventions: CF-1.6
-    date_created: 2017-11-27T15:11:00Z
+    date_created: 2021-08-24T23:45:00Z
     featureType: timeSeriesProfile
     cdm_data_type: TimeseriesProfile
     naming_authority: ioos
     id: Station1
     dimensions(sizes): station(1), time(100), depth(4)
-    variables(dimensions): &lt;class &#39;str&#39;&gt; station(station), float64 lat(station), float64 lon(station), int32 crs(), float64 time(time), int32 depth(depth), int32 index(time,depth,station), float64 humidity(time,depth,station), float64 temperature(time,depth,station)
+    variables(dimensions): &lt;class &#39;str&#39;&gt; station(station), float64 lat(station), float64 lon(station), int32 crs(), float64 time(time), float64 depth(depth), int32 index(time, depth, station), float64 humidity(time, depth, station), float64 temperature(time, depth, station)
     groups: 
 </pre></div>
 </div>
@@ -648,7 +648,7 @@ root group (NETCDF4 data model, file format HDF5):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/tmp/tmp5qrdn3qe/data/parameter1.nc&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/tmp/tmp30n1un_k/data/parameter1.nc&#39;
 </pre></div>
 </div>
 </div>
@@ -692,7 +692,7 @@ root group (NETCDF4 data model, file format HDF5):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">/tmp/tmp5qrdn3qe</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">/tmp/tmp30n1un_k</span>
 ├── bag-info.txt
 ├── bagit.txt
 ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">data</span>
@@ -701,7 +701,7 @@ root group (NETCDF4 data model, file format HDF5):
 └── tagmanifest-sha256.txt
 
 1 directory, 5 files
-63d47afc3b8b227aac251a234ecbb9cfc6cc01d1dd1aa34c65969fdabf0740f1  data/parameter1.nc
+966f9dda7df28cf50304d5cc67e08084020446e13521b40ee94cce35e5c75ec8  data/parameter1.nc
 </pre></div>
 </div>
 </div>
@@ -726,7 +726,7 @@ root group (NETCDF4 data model, file format HDF5):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">/tmp/tmp5qrdn3qe</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">/tmp/tmp30n1un_k</span>
 ├── bag-info.txt
 ├── bagit.txt
 ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">data</span>
@@ -738,10 +738,10 @@ root group (NETCDF4 data model, file format HDF5):
 └── tagmanifest-sha256.txt
 
 1 directory, 8 files
-63d47afc3b8b227aac251a234ecbb9cfc6cc01d1dd1aa34c65969fdabf0740f1  data/parameter1.nc
-63d47afc3b8b227aac251a234ecbb9cfc6cc01d1dd1aa34c65969fdabf0740f1  data/parameter2.nc
-63d47afc3b8b227aac251a234ecbb9cfc6cc01d1dd1aa34c65969fdabf0740f1  data/parameter3.nc
-63d47afc3b8b227aac251a234ecbb9cfc6cc01d1dd1aa34c65969fdabf0740f1  data/parameter4.nc
+966f9dda7df28cf50304d5cc67e08084020446e13521b40ee94cce35e5c75ec8  data/parameter1.nc
+966f9dda7df28cf50304d5cc67e08084020446e13521b40ee94cce35e5c75ec8  data/parameter2.nc
+966f9dda7df28cf50304d5cc67e08084020446e13521b40ee94cce35e5c75ec8  data/parameter3.nc
+966f9dda7df28cf50304d5cc67e08084020446e13521b40ee94cce35e5c75ec8  data/parameter4.nc
 </pre></div>
 </div>
 </div>
@@ -801,5 +801,12 @@ root group (NETCDF4 data model, file format HDF5):
   <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
   
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-W7S16LPGS7"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-W7S16LPGS7');
+                </script>
+
   </body>
 </html>
