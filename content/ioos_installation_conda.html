@@ -457,15 +457,15 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#linux-os-x">
-     Linux/OS X
+    <a class="reference internal nav-link" href="#linux-macos">
+     Linux/macOS
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-the-ioos-anaconda-environment">
-   Create the IOOS Anaconda environment
+  <a class="reference internal nav-link" href="#create-the-ioos-conda-environment">
+   Create the IOOS conda environment
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -474,13 +474,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#if-miniconda-is-not-your-default-python-environment">
-   If Miniconda is not your default python environment…
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-we-use-and-recommend-anaconda">
-   Why we use and recommend Anaconda
+  <a class="reference internal nav-link" href="#why-we-use-and-recommend-conda">
+   Why we use and recommend conda
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -512,8 +507,8 @@ you can install it by typing <code class="docutils literal notranslate"><span cl
 <div class="section" id="install">
 <h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
 <p>Download and install the appropriate Miniconda installer from <a class="reference external" href="http://conda.pydata.org/miniconda.html">http://conda.pydata.org/miniconda.html</a>.
-With Anaconda you can create environments that use any Python version (e.g. Python 2.7 or Python 3.6),
-so install the latest Python 3.x and if find out later you need a Python 2.7 environment,
+With conda you can create environments that use any Python version (e.g. Python 2.7 or Python 3.9),
+so install the latest Python 3 and if find out later you need a Python 2.7 environment,
 you can create one.
 Windows users also need to choose between 32-bit (old Windows XP) or 64-bit (modern Windows) versions.</p>
 <div class="section" id="windows">
@@ -528,33 +523,30 @@ you might choose <code class="docutils literal notranslate"><span class="pre">c:
 <p>On the “Advanced Installation Options” screen,
 leave the boxes checked if you want Miniconda 3 to be your default python.
 If you are going to be switching from Python 2 to Python 3 or perhaps some other Python distribution,
-it’s best uncheck the boxes and use the <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Command</span> <span class="pre">Prompt</span></code> or <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Navigator</span></code> (see below for instructions) to start Anaconda.</p>
+it is best uncheck the boxes and use the <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Command</span> <span class="pre">Prompt</span></code> or <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Navigator</span></code> (see below for instructions) to start Anaconda.</p>
 </div>
-<div class="section" id="linux-os-x">
-<h3>Linux/OS X<a class="headerlink" href="#linux-os-x" title="Permalink to this headline">¶</a></h3>
-<p>Copy-and-paste this:</p>
+<div class="section" id="linux-macos">
+<h3>Linux/macOS<a class="headerlink" href="#linux-macos" title="Permalink to this headline">¶</a></h3>
+<p>Copy-and-paste this in the terminal:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[[</span> <span class="k">$(</span>uname<span class="k">)</span> <span class="o">==</span> <span class="s2">&quot;Darwin&quot;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
   <span class="nv">url</span><span class="o">=</span>https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
 <span class="k">elif</span> <span class="o">[[</span> <span class="k">$(</span>uname<span class="k">)</span> <span class="o">==</span> <span class="s2">&quot;Linux&quot;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
   <span class="nv">url</span><span class="o">=</span>https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 <span class="k">fi</span>
 curl <span class="nv">$url</span> -o miniconda.sh
-bash miniconda.sh -b
+sh miniconda.sh
 <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/miniconda3/bin:<span class="nv">$PATH</span>
 </pre></div>
 </div>
-<p>We also recommend to add the following line to your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> file to make Miniconda the Python found first than the system Python:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export PATH=$HOME/miniconda3/bin:$PATH
-</pre></div>
+<p>and use all the default options, except for the license agreement where you must actively change it to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p>
 </div>
 </div>
-</div>
-<div class="section" id="create-the-ioos-anaconda-environment">
-<h2>Create the IOOS Anaconda environment<a class="headerlink" href="#create-the-ioos-anaconda-environment" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-the-ioos-conda-environment">
+<h2>Create the IOOS conda environment<a class="headerlink" href="#create-the-ioos-conda-environment" title="Permalink to this headline">¶</a></h2>
 <p>Download the <a class="reference external" href="https://raw.githubusercontent.com/ioos/ioos_code_lab/master/.binder/environment.yml">environment.yml</a>,
 or the <a class="reference external" href="https://raw.githubusercontent.com/ioos/ioos_code_lab/master/.binder/environment-python_and_r.yml">environment-python_and_r.yml</a> for a bigger environment with the R packages,
 by right clicking with the mouse and choosing <code class="docutils literal notranslate"><span class="pre">save</span> <span class="pre">as...</span></code>,
-or, on <code class="docutils literal notranslate"><span class="pre">OS</span> <span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">Linux</span></code>, use these commands to download:</p>
+or, on <code class="docutils literal notranslate"><span class="pre">macOS</span></code> and <code class="docutils literal notranslate"><span class="pre">Linux</span></code>, use these commands to download:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">url</span><span class="o">=</span>https://raw.githubusercontent.com/ioos/ioos_code_lab/master/environment.yml
 curl <span class="nv">$url</span> -o environment.yml
 </pre></div>
@@ -562,16 +554,16 @@ curl <span class="nv">$url</span> -o environment.yml
 <p>Then from the directory where you saved the file above,
 type the following commands in the terminal or Windows command prompt:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda config --add channels conda-forge --force
+conda config --set channel_priority strict
 conda update --yes --all
 conda env create --quiet --file environment.yml
 </pre></div>
 </div>
-<p>The last line actually creates the IOOS environment,
+<p>The last line creates the IOOS environment,
 and since lots of packages are downloaded,
-you should go get a coffee.</p>
+you should probably go get a coffee.</p>
 <p>Once the environment is done building, you can activate it by typing:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>activate IOOS  <span class="c1"># Windows</span>
-<span class="nb">source</span> activate IOOS  <span class="c1"># OS X and Linux</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate IOOS
 </pre></div>
 </div>
 </div>
@@ -579,28 +571,13 @@ you should go get a coffee.</p>
 <h2>Exiting the IOOS environment<a class="headerlink" href="#exiting-the-ioos-environment" title="Permalink to this headline">¶</a></h2>
 <p>If you want to leave the IOOS environment and return to the root environment,
 you can type</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>deactivate  <span class="c1"># Windows</span>
-<span class="nb">source</span> deactivate  <span class="c1"># OS X and Linux</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda deactivate
 </pre></div>
 </div>
 </div>
-<div class="section" id="if-miniconda-is-not-your-default-python-environment">
-<h2>If Miniconda is not your default python environment…<a class="headerlink" href="#if-miniconda-is-not-your-default-python-environment" title="Permalink to this headline">¶</a></h2>
-<p>If you choose not to add Miniconda Python Distribution to your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> or Windows path,
-you must remember to activate the IOOS environment every time,
-by typing in a command prompt</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export PATH=$HOME/miniconda3/bin:$PATH &amp;&amp; source activate IOOS  # OS X and Linux
-</pre></div>
-</div>
-<p>Windows users can navigate to the Anaconda Command Prompt (e.g. Start Menu=&gt;Anaconda3 on Windows 7) and type <code class="docutils literal notranslate"><span class="pre">activate</span> <span class="pre">IOOS</span></code>.</p>
-<p>On all systems, to start the Jupyter notebook, just type:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="why-we-use-and-recommend-anaconda">
-<h2>Why we use and recommend Anaconda<a class="headerlink" href="#why-we-use-and-recommend-anaconda" title="Permalink to this headline">¶</a></h2>
-<p>Anaconda users can just <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code>,
+<div class="section" id="why-we-use-and-recommend-conda">
+<h2>Why we use and recommend conda<a class="headerlink" href="#why-we-use-and-recommend-conda" title="Permalink to this headline">¶</a></h2>
+<p>Conda users can just <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code>,
 which installs not only binary packages for their platform,
 but the binary libraries they depend on.
 So it’s easier than <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> and, thanks to binary relocation,
