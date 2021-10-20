@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -33,19 +33,19 @@
     
   <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -74,6 +74,10 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../../../_static/IOOS_logo.png" class="logo" alt="logo">
       
       
@@ -85,7 +89,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p class="caption" role="heading">
  <span class="caption-text">
   Code Gallery
  </span>
@@ -284,7 +288,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Video Tutorials
  </span>
@@ -316,7 +320,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Other Resources
  </span>
@@ -348,7 +352,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Contact Us
  </span>
@@ -499,7 +503,7 @@
         
               <div>
                 
-  <div class="section" id="parsing-conventions-and-standards-with-python">
+  <div class="tex2jax_ignore mathjax_ignore section" id="parsing-conventions-and-standards-with-python">
 <h1>Parsing Conventions and standards with Python<a class="headerlink" href="#parsing-conventions-and-standards-with-python" title="Permalink to this headline">¶</a></h1>
 <p>Metadata conventions, like the Climate and Forecast (CF) conventions,
 can be cumbersome to adhere to but it will be very handy when you or other users manipulate the data later in time.</p>
@@ -524,30 +528,30 @@ From iris own docs:</p>
 
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://tds.marine.rutgers.edu/thredds/dodsC/roms/espresso/2013_da/his/ESPRESSO_Real-Time_v2_History_fmrc.ncd&quot;</span>
-<span class="n">cubes</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">cubes</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">load_raw</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/cf.py:1207: UserWarning: Ignoring formula terms variable &#39;zeta&#39; referenced by data variable &#39;u&#39; via variable &#39;s_rho&#39;: Dimensions (&#39;run&#39;, &#39;time&#39;, &#39;eta_rho&#39;, &#39;xi_rho&#39;) do not span (&#39;run&#39;, &#39;time&#39;, &#39;s_rho&#39;, &#39;eta_u&#39;, &#39;xi_u&#39;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/cf.py:1205: UserWarning: Ignoring formula terms variable &#39;zeta&#39; referenced by data variable &#39;v&#39; via variable &#39;s_rho&#39;: Dimensions (&#39;run&#39;, &#39;time&#39;, &#39;eta_rho&#39;, &#39;xi_rho&#39;) do not span (&#39;run&#39;, &#39;time&#39;, &#39;s_rho&#39;, &#39;eta_v&#39;, &#39;xi_v&#39;)
   warnings.warn(msg)
-/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/cf.py:1207: UserWarning: Ignoring formula terms variable &#39;h&#39; referenced by data variable &#39;u&#39; via variable &#39;s_rho&#39;: Dimensions (&#39;eta_rho&#39;, &#39;xi_rho&#39;) do not span (&#39;run&#39;, &#39;time&#39;, &#39;s_rho&#39;, &#39;eta_u&#39;, &#39;xi_u&#39;)
+/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/cf.py:1205: UserWarning: Ignoring formula terms variable &#39;h&#39; referenced by data variable &#39;v&#39; via variable &#39;s_rho&#39;: Dimensions (&#39;eta_rho&#39;, &#39;xi_rho&#39;) do not span (&#39;run&#39;, &#39;time&#39;, &#39;s_rho&#39;, &#39;eta_v&#39;, &#39;xi_v&#39;)
   warnings.warn(msg)
-/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/cf.py:1207: UserWarning: Ignoring formula terms variable &#39;zeta&#39; referenced by data variable &#39;v&#39; via variable &#39;s_rho&#39;: Dimensions (&#39;run&#39;, &#39;time&#39;, &#39;eta_rho&#39;, &#39;xi_rho&#39;) do not span (&#39;run&#39;, &#39;time&#39;, &#39;s_rho&#39;, &#39;eta_v&#39;, &#39;xi_v&#39;)
+/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/cf.py:1205: UserWarning: Ignoring formula terms variable &#39;zeta&#39; referenced by data variable &#39;u&#39; via variable &#39;s_rho&#39;: Dimensions (&#39;run&#39;, &#39;time&#39;, &#39;eta_rho&#39;, &#39;xi_rho&#39;) do not span (&#39;run&#39;, &#39;time&#39;, &#39;s_rho&#39;, &#39;eta_u&#39;, &#39;xi_u&#39;)
   warnings.warn(msg)
-/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/cf.py:1207: UserWarning: Ignoring formula terms variable &#39;h&#39; referenced by data variable &#39;v&#39; via variable &#39;s_rho&#39;: Dimensions (&#39;eta_rho&#39;, &#39;xi_rho&#39;) do not span (&#39;run&#39;, &#39;time&#39;, &#39;s_rho&#39;, &#39;eta_v&#39;, &#39;xi_v&#39;)
+/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/cf.py:1205: UserWarning: Ignoring formula terms variable &#39;h&#39; referenced by data variable &#39;u&#39; via variable &#39;s_rho&#39;: Dimensions (&#39;eta_rho&#39;, &#39;xi_rho&#39;) do not span (&#39;run&#39;, &#39;time&#39;, &#39;s_rho&#39;, &#39;eta_u&#39;, &#39;xi_u&#39;)
   warnings.warn(msg)
-/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/netcdf.py:683: UserWarning: Unable to find coordinate for variable &#39;zeta&#39;
+/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/netcdf.py:679: UserWarning: Unable to find coordinate for variable &#39;zeta&#39;
   warnings.warn(
-/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/netcdf.py:683: UserWarning: Unable to find coordinate for variable &#39;h&#39;
+/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/netcdf.py:679: UserWarning: Unable to find coordinate for variable &#39;h&#39;
   warnings.warn(
-/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/netcdf.py:814: UserWarning: Unable to construct Ocean s-coordinate, generic form 1 factory due to insufficient source coordinates.
+/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/netcdf.py:870: UserWarning: Unable to construct Ocean s-coordinate, generic form 1 factory due to insufficient source coordinates.
   warnings.warn(&quot;{}&quot;.format(e))
-/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/netcdf.py:683: UserWarning: Unable to find coordinate for variable &#39;zeta&#39;
+/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/netcdf.py:679: UserWarning: Unable to find coordinate for variable &#39;zeta&#39;
   warnings.warn(
-/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/netcdf.py:683: UserWarning: Unable to find coordinate for variable &#39;h&#39;
+/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/netcdf.py:679: UserWarning: Unable to find coordinate for variable &#39;h&#39;
   warnings.warn(
-/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/netcdf.py:814: UserWarning: Unable to construct Ocean s-coordinate, generic form 1 factory due to insufficient source coordinates.
+/home/filipe/miniconda3/envs/IOOS/lib/python3.9/site-packages/iris/fileformats/netcdf.py:870: UserWarning: Unable to construct Ocean s-coordinate, generic form 1 factory due to insufficient source coordinates.
   warnings.warn(&quot;{}&quot;.format(e))
 </pre></div>
 </div>
@@ -563,99 +567,99 @@ This behavior will be default in future versions of <code class="docutils litera
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0: 3D momentum inflow, nudging inverse time scale / (second-1) (-- : 4)
-1: Tracers nudging/relaxation inverse time scale / (day-1) (-- : 2)
-2: time averaged u-flux for 2D equations / (meter3 second-1) (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 129)
-3: surface net heat flux / (watt meter-2) (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 130)
-4: wave amplitude factor for surface roughness / (unknown) (scalar cube)
-5: dissipation coefficient / (unknown) (scalar cube)
-6: vertical terrain-following stretching function / (unknown) (scalar cube)
-7: turbulent length scale exponent / (unknown) (scalar cube)
-8: number of time-steps between the creation of average files / (unknown) (scalar cube)
-9: number of time-steps between restart records / (unknown) (scalar cube)
-10: 3D momentum outflow, nudging inverse time scale / (second-1) (-- : 4)
-11: background vertical mixing coefficient for momentum / (meter2 second-1) (scalar cube)
-12: 2D momentum outflow, nudging inverse time scale / (second-1) (-- : 4)
-13: NetCDF-4/HDF5 file format deflate level parameter / (unknown) (scalar cube)
-14: starting time-step for accumulation of time-averaged fields / (unknown) (scalar cube)
-15: constant Schmidt number for TKE / (unknown) (scalar cube)
-16: vertical terrain-following transformation equation / (unknown) (scalar cube)
-17: mask on V-points / (no_unit)        (-- : 81; -- : 130)
-18: number of time-steps between history records / (unknown) (scalar cube)
-19: Power-law shape barotropic filter parameter / (unknown) (scalar cube)
-20: time stamp assigned to model initilization / (days since 2006-01-01 00:00:00) (scalar cube)
-21: stability exponent / (unknown)      (scalar cube)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0: background vertical mixing coefficient for tracers / (meter2 second-1) (-- : 2)
+1: surface flux from wave dissipation / (unknown) (scalar cube)
+2: domain length in the XI-direction / (meter) (scalar cube)
+3: quadratic drag coefficient / (unknown) (scalar cube)
+4: NetCDF-4/HDF5 file format deflate filer flag / (unknown) (scalar cube)
+5: bottom roughness / (meter)          (scalar cube)
+6: 2D momentum nudging/relaxation inverse time scale / (day-1) (scalar cube)
+7: number of time-steps between restart records / (unknown) (scalar cube)
+8: background vertical mixing coefficient for length scale / (meter2 second-1) (scalar cube)
+9: tracer point sources and sink activation switch / (no_unit) (-- : 2)
+10: tracers outflow, nudging inverse time scale / (second-1) (-- : 4; -- : 2)
+11: starting time-step for accumulation of time-averaged fields / (unknown) (scalar cube)
+12: surface flux due to Craig and Banner wave breaking / (unknown) (scalar cube)
+13: shear production coefficient / (unknown) (scalar cube)
+14: grid type logical switch / (no_unit) (scalar cube)
+15: surface u-momentum stress / (newton meter-2) (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 129)
+16: mask on U-points / (no_unit)        (-- : 82; -- : 129)
+17: bottom u-momentum stress / (newton meter-2) (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 129)
+18: number of time-steps between the creation of average files / (unknown) (scalar cube)
+19: 3D momentum outflow, nudging inverse time scale / (second-1) (-- : 4)
+20: bottom v-momentum stress / (newton meter-2) (forecast_reference_time: 1929; -- : 157; -- : 81; -- : 130)
+21: wave amplitude factor for surface roughness / (unknown) (scalar cube)
 22: turbulent kinetic energy exponent / (unknown) (scalar cube)
-23: surface flux due to Craig and Banner wave breaking / (unknown) (scalar cube)
-24: linear drag coefficient / (meter second-1) (scalar cube)
-25: 3D momentum nudging/relaxation inverse time scale / (day-1) (scalar cube)
-26: number of short time-steps / (unknown) (scalar cube)
-27: surface roughness / (meter)         (scalar cube)
-28: mask on psi-points / (no_unit)      (-- : 81; -- : 129)
-29: bottom u-momentum stress / (newton meter-2) (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 129)
-30: S-coordinate bottom control parameter / (unknown) (scalar cube)
-31: minimum Value of dissipation / (unknown) (scalar cube)
-32: Charnok factor for surface roughness / (unknown) (scalar cube)
+23: stability coefficient / (unknown)   (scalar cube)
+24: vertically integrated u-momentum component / (meter second-1) (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 129)
+25: northward_sea_water_velocity / (meter second-1) (forecast_reference_time: 1929; -- : 157; ocean_s_coordinate_g1: 36; -- : 81; -- : 130)
+26: stability exponent / (unknown)      (scalar cube)
+27: Charnok factor for surface roughness / (unknown) (scalar cube)
+28: time averaged v-flux for 2D equations / (meter3 second-1) (forecast_reference_time: 1929; -- : 157; -- : 81; -- : 130)
+29: nonlinear model Laplacian mixing coefficient for momentum / (meter2 second-1) (scalar cube)
+30: time averaged u-flux for 2D equations / (meter3 second-1) (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 129)
+31: number of time-steps between history records / (unknown) (scalar cube)
+32: angle between XI-axis and EAST / (radians) (-- : 82; -- : 130)
 33: number of long time-steps / (unknown) (scalar cube)
-34: mask on RHO-points / (no_unit)      (-- : 82; -- : 130)
-35: NetCDF-4/HDF5 file format deflate filer flag / (unknown) (scalar cube)
-36: vertical momentum component / (meter second-1) (forecast_reference_time: 1929; -- : 157; ocean_s_coordinate_g1: 37; -- : 82; -- : 130)
-37: vertically integrated v-momentum component / (meter second-1) (forecast_reference_time: 1929; -- : 157; -- : 81; -- : 130)
-38: bottom roughness / (meter)          (scalar cube)
-39: surface u-momentum stress / (newton meter-2) (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 129)
-40: angle between XI-axis and EAST / (radians) (-- : 82; -- : 130)
-41: Coriolis parameter at RHO-points / (second-1) (-- : 82; -- : 130)
-42: minimum value of specific turbulent kinetic energy / (unknown) (scalar cube)
-43: constant Schmidt number for PSI / (unknown) (scalar cube)
-44: grid / (unknown)                    (scalar cube)
-45: 2D momentum nudging/relaxation inverse time scale / (day-1) (scalar cube)
+34: NetCDF-4/HDF5 file format deflate level parameter / (unknown) (scalar cube)
+35: 2D momentum inflow, nudging inverse time scale / (second-1) (-- : 4)
+36: 2D momentum outflow, nudging inverse time scale / (second-1) (-- : 4)
+37: minimum value of specific turbulent kinetic energy / (unknown) (scalar cube)
+38: curvilinear coordinate metric in XI / (meter-1) (-- : 82; -- : 130)
+39: time stamp assigned to model initilization / (days since 2006-01-01 00:00:00) (scalar cube)
+40: constant Schmidt number for TKE / (unknown) (scalar cube)
+41: Power-law shape barotropic filter parameter / (unknown) (scalar cube)
+42: background vertical mixing coefficient for turbulent energy / (meter2 second-1) (scalar cube)
+43: curvilinear coordinate metric in ETA / (meter-1) (-- : 82; -- : 130)
+44: buoyancy production coefficient (minus) / (unknown) (scalar cube)
+45: vertically integrated v-momentum component / (meter second-1) (forecast_reference_time: 1929; -- : 157; -- : 81; -- : 130)
 46: time averaged u-flux for 3D equations coupling / (meter3 second-1) (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 129)
-47: background vertical mixing coefficient for tracers / (meter2 second-1) (-- : 2)
-48: S-coordinate surface/bottom layer width / (meter) (scalar cube)
-49: time averaged v-flux for 3D equations coupling / (meter3 second-1) (forecast_reference_time: 1929; -- : 157; -- : 81; -- : 130)
-50: S-coordinate surface control parameter / (unknown) (scalar cube)
-51: vertically integrated u-momentum component / (meter second-1) (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 129)
-52: tracers inflow, nudging inverse time scale / (second-1) (-- : 4; -- : 2)
-53: surface v-momentum stress / (newton meter-2) (forecast_reference_time: 1929; -- : 157; -- : 81; -- : 130)
-54: tracer point sources and sink activation switch / (no_unit) (-- : 2)
-55: nonlinear model Laplacian mixing coefficient for momentum / (meter2 second-1) (scalar cube)
-56: Power-law shape barotropic filter parameter / (unknown) (scalar cube)
-57: free-surface inflow, nudging inverse time scale / (second-1) (-- : 4)
-58: domain length in the XI-direction / (meter) (scalar cube)
-59: size of short time-steps / (second) (scalar cube)
-60: stability coefficient / (unknown)   (scalar cube)
-61: nonlinear model Laplacian mixing coefficient for tracers / (meter2 second-1) (-- : 2)
-62: bottom v-momentum stress / (newton meter-2) (forecast_reference_time: 1929; -- : 157; -- : 81; -- : 130)
-63: number of time-steps between time-averaged records / (unknown) (scalar cube)
-64: grid type logical switch / (no_unit) (scalar cube)
-65: number of time-steps between the creation of history files / (unknown) (scalar cube)
-66: 2D momentum inflow, nudging inverse time scale / (second-1) (-- : 4)
-67: background vertical mixing coefficient for length scale / (meter2 second-1) (scalar cube)
-68: time averaged v-flux for 2D equations / (meter3 second-1) (forecast_reference_time: 1929; -- : 157; -- : 81; -- : 130)
-69: Power-law shape barotropic filter parameter / (unknown) (scalar cube)
-70: curvilinear coordinate metric in XI / (meter-1) (-- : 82; -- : 130)
-71: surface flux from wave dissipation / (unknown) (scalar cube)
-72: shear production coefficient / (unknown) (scalar cube)
-73: mean density used in Boussinesq approximation / (kilogram meter-3) (scalar cube)
-74: size of long time-steps / (second)  (scalar cube)
-75: domain length in the ETA-direction / (meter) (scalar cube)
-76: background vertical mixing coefficient for turbulent energy / (meter2 second-1) (scalar cube)
-77: mask on U-points / (no_unit)        (-- : 82; -- : 129)
-78: buoyancy production coefficient (minus) / (unknown) (scalar cube)
-79: curvilinear coordinate metric in ETA / (meter-1) (-- : 82; -- : 130)
-80: slipperiness parameter / (unknown)  (scalar cube)
-81: NetCDF-4/HDF5 file format shuffle filer flag / (unknown) (scalar cube)
-82: free-surface outflow, nudging inverse time scale / (second-1) (-- : 4)
-83: quadratic drag coefficient / (unknown) (scalar cube)
-84: tracers outflow, nudging inverse time scale / (second-1) (-- : 4; -- : 2)
-85: free-surface nudging/relaxation inverse time scale / (day-1) (scalar cube)
-86: buoyancy production coefficient (plus) / (unknown) (scalar cube)
-87: eastward_sea_water_velocity / (meter second-1) (forecast_reference_time: 1929; -- : 157; ocean_s_coordinate_g1: 36; -- : 82; -- : 129)
-88: northward_sea_water_velocity / (meter second-1) (forecast_reference_time: 1929; -- : 157; ocean_s_coordinate_g1: 36; -- : 81; -- : 130)
-89: sea_floor_depth / (meter)           (-- : 82; -- : 130)
-90: sea_surface_height / (meter)        (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 130)
-91: sea_water_potential_temperature / (Celsius) (forecast_reference_time: 1929; -- : 157; ocean_s_coordinate_g1: 36; -- : 82; -- : 130)
-92: sea_water_salinity / (unknown)      (forecast_reference_time: 1929; -- : 157; ocean_s_coordinate_g1: 36; -- : 82; -- : 130)
+47: vertical momentum component / (meter second-1) (forecast_reference_time: 1929; -- : 157; ocean_s_coordinate_g1: 37; -- : 82; -- : 130)
+48: size of long time-steps / (second)  (scalar cube)
+49: free-surface outflow, nudging inverse time scale / (second-1) (-- : 4)
+50: buoyancy production coefficient (plus) / (unknown) (scalar cube)
+51: S-coordinate surface control parameter / (unknown) (scalar cube)
+52: 3D momentum nudging/relaxation inverse time scale / (day-1) (scalar cube)
+53: vertical terrain-following stretching function / (unknown) (scalar cube)
+54: nonlinear model Laplacian mixing coefficient for tracers / (meter2 second-1) (-- : 2)
+55: free-surface inflow, nudging inverse time scale / (second-1) (-- : 4)
+56: domain length in the ETA-direction / (meter) (scalar cube)
+57: S-coordinate surface/bottom layer width / (meter) (scalar cube)
+58: number of time-steps between the creation of history files / (unknown) (scalar cube)
+59: Coriolis parameter at RHO-points / (second-1) (-- : 82; -- : 130)
+60: surface net heat flux / (watt meter-2) (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 130)
+61: mean density used in Boussinesq approximation / (kilogram meter-3) (scalar cube)
+62: slipperiness parameter / (unknown)  (scalar cube)
+63: S-coordinate bottom control parameter / (unknown) (scalar cube)
+64: vertical terrain-following transformation equation / (unknown) (scalar cube)
+65: sea_water_potential_temperature / (Celsius) (forecast_reference_time: 1929; -- : 157; ocean_s_coordinate_g1: 36; -- : 82; -- : 130)
+66: time averaged v-flux for 3D equations coupling / (meter3 second-1) (forecast_reference_time: 1929; -- : 157; -- : 81; -- : 130)
+67: constant Schmidt number for PSI / (unknown) (scalar cube)
+68: minimum Value of dissipation / (unknown) (scalar cube)
+69: NetCDF-4/HDF5 file format shuffle filer flag / (unknown) (scalar cube)
+70: tracers inflow, nudging inverse time scale / (second-1) (-- : 4; -- : 2)
+71: background vertical mixing coefficient for momentum / (meter2 second-1) (scalar cube)
+72: mask on V-points / (no_unit)        (-- : 81; -- : 130)
+73: mask on psi-points / (no_unit)      (-- : 81; -- : 129)
+74: Power-law shape barotropic filter parameter / (unknown) (scalar cube)
+75: linear drag coefficient / (meter second-1) (scalar cube)
+76: eastward_sea_water_velocity / (meter second-1) (forecast_reference_time: 1929; -- : 157; ocean_s_coordinate_g1: 36; -- : 82; -- : 129)
+77: Tracers nudging/relaxation inverse time scale / (day-1) (-- : 2)
+78: surface roughness / (meter)         (scalar cube)
+79: number of short time-steps / (unknown) (scalar cube)
+80: grid / (unknown)                    (scalar cube)
+81: dissipation coefficient / (unknown) (scalar cube)
+82: turbulent length scale exponent / (unknown) (scalar cube)
+83: 3D momentum inflow, nudging inverse time scale / (second-1) (-- : 4)
+84: size of short time-steps / (second) (scalar cube)
+85: Power-law shape barotropic filter parameter / (unknown) (scalar cube)
+86: free-surface nudging/relaxation inverse time scale / (day-1) (scalar cube)
+87: mask on RHO-points / (no_unit)      (-- : 82; -- : 130)
+88: sea_water_salinity / (unknown)      (forecast_reference_time: 1929; -- : 157; ocean_s_coordinate_g1: 36; -- : 82; -- : 130)
+89: surface v-momentum stress / (newton meter-2) (forecast_reference_time: 1929; -- : 157; -- : 81; -- : 130)
+90: number of time-steps between time-averaged records / (unknown) (scalar cube)
+91: sea_surface_height / (meter)        (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 130)
+92: sea_floor_depth / (meter)           (-- : 82; -- : 130)
 </pre></div>
 </div>
 </div>
@@ -688,64 +692,63 @@ We recommend <code class="docutils literal notranslate"><span class="pre">xarray
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sea_surface_height / (meter)        (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 130)
-     Dimension coordinates:
-          forecast_reference_time                           x          -         -        -
-     Auxiliary coordinates:
-          time                                              x          x         -        -
-          latitude                                          -          -         x        x
-          longitude                                         -          -         x        x
-     Attributes:
-          CPP_options: MyCPP, ADD_FSOBC, ADD_M2OBC, ANA_BSFLUX, ANA_BTFLUX, ASSUMED_SHAPE, AVERAGES,...
-          Conventions: CF-1.4, SGRID-0.3
-          DODS_EXTRA.Unlimited_Dimension: ocean_time
-          EXTRA_DIMENSION.N: 36
-          _ChunkSizes: [  1  82 130]
-          _CoordSysBuilder: ucar.nc2.dataset.conv.CF1Convention
-          ana_file: ROMS/Functionals/ana_btflux.h, /home/julia/ROMS/espresso/RealTime/Comp...
-          avg_base: espresso_avg_4638
-          bry_file: ../Data/espresso_bdry_new.nc
-          cdm_data_type: GRID
-          clm_file: ../Data/espresso_clm_new.nc
-          code_dir: /home/julia/ROMS/espresso/svn1409
-          compiler_command: /opt/pgisoft/openmpi/bin/mpif90
-          compiler_flags:  -O3 -Mfree
-          compiler_system: pgi
-          cpu: x86_64
-          featureType: GRID
-          field: free-surface, scalar, series
-          file: espresso_his_4638_0001.nc
-          flt_file: espresso_flt_4638.nc
-          format: netCDF-4/HDF5 file
-          fpos_file: /home/om/cron/glider_floats/data/maracoos_floats.in
-          frc_file_01: /home/om/roms/espresso/Data/espresso_tide_c05_20060101.nc
-          frc_file_02: ../Data/espresso_river.nc
-          frc_file_03: ../Data/rain_ncepnam_3hourly_MAB_and_GoM.nc
-          frc_file_04: ../Data/swrad_ncepnam_3hourly_MAB_and_GoM.nc
-          frc_file_05: ../Data/Tair_ncepnam_3hourly_MAB_and_GoM.nc
-          frc_file_06: ../Data/Pair_ncepnam_3hourly_MAB_and_GoM.nc
-          frc_file_07: ../Data/Qair_ncepnam_3hourly_MAB_and_GoM.nc
-          frc_file_08: ../Data/lwrad_down_ncepnam_3hourly_MAB_and_GoM.nc
-          frc_file_09: ../Data/Uwind_ncepnam_3hourly_MAB_and_GoM.nc
-          frc_file_10: ../Data/Vwind_ncepnam_3hourly_MAB_and_GoM.nc
-          grd_file: /home/om/roms/espresso/Data/espresso_grid_c05.nc
-          header_dir: /home/julia/ROMS/espresso/RealTime/Compile/fwd
-          header_file: espresso.h
-          his_base: espresso_his_4638
-          history: ROMS/TOMS, Version 3.5, Sunday - September 16, 2018 -  5:16:50 AM ;
-FMRC...
-          ini_file: /home/julia/ROMS/espresso/RealTime/Storage/run04/espresso_ini_4638.nc
-          location: Proto fmrc:espresso_2013_da_his
-          os: Linux
-          rst_file: espresso_rst_4638.nc
-          script_file: nl_ocean_espresso.in
-          summary: Operational nowcast/forecast system version 2 for MARACOOS project (http://maracoos.org)....
-          svn_rev: exported
-          svn_url: https://www.myroms.org/svn/src/trunk
-          tiling: 004x002
-          time: ocean_time
-          title: ROMS ESPRESSO Real-Time Operational IS4DVAR Forecast System Version 2 (NEW)...
-          type: ROMS/TOMS history file
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sea_surface_height / (meter)           (forecast_reference_time: 1929; -- : 157; -- : 82; -- : 130)
+    Dimension coordinates:
+        forecast_reference_time                                x          -         -        -
+    Auxiliary coordinates:
+        time                                                   x          x         -        -
+        latitude                                               -          -         x        x
+        longitude                                              -          -         x        x
+    Attributes:
+        CPP_options                    MyCPP, ADD_FSOBC, ADD_M2OBC, ANA_BSFLUX, ANA_BTFLUX, ASSUMED_SHAPE, AVERAGES,...
+        Conventions                    CF-1.4, SGRID-0.3
+        DODS_EXTRA.Unlimited_Dimension ocean_time
+        EXTRA_DIMENSION.N              36
+        _ChunkSizes                    array([ 1, 82, 130], dtype=int32)
+        _CoordSysBuilder               ucar.nc2.dataset.conv.CF1Convention
+        ana_file                       ROMS/Functionals/ana_btflux.h, /home/julia/ROMS/espresso/RealTime/Comp...
+        avg_base                       espresso_avg_4638
+        bry_file                       ../Data/espresso_bdry_new.nc
+        cdm_data_type                  GRID
+        clm_file                       ../Data/espresso_clm_new.nc
+        code_dir                       /home/julia/ROMS/espresso/svn1409
+        compiler_command               /opt/pgisoft/openmpi/bin/mpif90
+        compiler_flags                  -O3 -Mfree
+        compiler_system                pgi
+        cpu                            x86_64
+        featureType                    GRID
+        field                          free-surface, scalar, series
+        file                           espresso_his_4638_0007.nc
+        flt_file                       espresso_flt_4638.nc
+        format                         netCDF-4/HDF5 file
+        fpos_file                      /home/om/cron/glider_floats/data/maracoos_floats.in
+        frc_file_01                    /home/om/roms/espresso/Data/espresso_tide_c05_20060101.nc
+        frc_file_02                    ../Data/espresso_river.nc
+        frc_file_03                    ../Data/rain_ncepnam_3hourly_MAB_and_GoM.nc
+        frc_file_04                    ../Data/swrad_ncepnam_3hourly_MAB_and_GoM.nc
+        frc_file_05                    ../Data/Tair_ncepnam_3hourly_MAB_and_GoM.nc
+        frc_file_06                    ../Data/Pair_ncepnam_3hourly_MAB_and_GoM.nc
+        frc_file_07                    ../Data/Qair_ncepnam_3hourly_MAB_and_GoM.nc
+        frc_file_08                    ../Data/lwrad_down_ncepnam_3hourly_MAB_and_GoM.nc
+        frc_file_09                    ../Data/Uwind_ncepnam_3hourly_MAB_and_GoM.nc
+        frc_file_10                    ../Data/Vwind_ncepnam_3hourly_MAB_and_GoM.nc
+        grd_file                       /home/om/roms/espresso/Data/espresso_grid_c05.nc
+        header_dir                     /home/julia/ROMS/espresso/RealTime/Compile/fwd
+        header_file                    espresso.h
+        his_base                       espresso_his_4638
+        history                        &#39;ROMS/TOMS, Version 3.5, Sunday - September 16, 2018 -  5:16:50 AM ;\nFMRC...
+        ini_file                       /home/julia/ROMS/espresso/RealTime/Storage/run04/espresso_ini_4638.nc
+        location                       Proto fmrc:espresso_2013_da_his
+        os                             Linux
+        rst_file                       espresso_rst_4638.nc
+        script_file                    nl_ocean_espresso.in
+        summary                        Operational nowcast/forecast system version 2 for MARACOOS project (http://maracoos.org)....
+        svn_rev                        exported
+        svn_url                        https://www.myroms.org/svn/src/trunk
+        tiling                         004x002
+        time                           ocean_time
+        title                          ROMS ESPRESSO Real-Time Operational IS4DVAR Forecast System Version 2 (NEW)...
+        type                           ROMS/TOMS history file
 </pre></div>
 </div>
 </div>
@@ -761,72 +764,71 @@ FMRC...
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sea_water_potential_temperature / (Celsius) (forecast_reference_time: 1929; -- : 157; ocean_s_coordinate_g1: 36; -- : 82; -- : 130)
-     Dimension coordinates:
-          forecast_reference_time                                   x          -                           -        -        -
-          ocean_s_coordinate_g1                                     -          -                           x        -        -
-     Auxiliary coordinates:
-          time                                                      x          x                           -        -        -
-          sea_surface_height                                        x          x                           -        x        x
-          S-coordinate stretching curves at RHO-points              -          -                           x        -        -
-          latitude                                                  -          -                           -        x        x
-          longitude                                                 -          -                           -        x        x
-          sea_floor_depth                                           -          -                           -        x        x
-     Derived coordinates:
-          sea_surface_height_above_reference_ellipsoid              x          x                           x        x        x
-     Scalar coordinates:
-          S-coordinate parameter, critical depth: 5.0 meter
-     Attributes:
-          CPP_options: MyCPP, ADD_FSOBC, ADD_M2OBC, ANA_BSFLUX, ANA_BTFLUX, ASSUMED_SHAPE, AVERAGES,...
-          Conventions: CF-1.4, SGRID-0.3
-          DODS_EXTRA.Unlimited_Dimension: ocean_time
-          EXTRA_DIMENSION.N: 36
-          _ChunkSizes: [  1  36  82 130]
-          _CoordSysBuilder: ucar.nc2.dataset.conv.CF1Convention
-          ana_file: ROMS/Functionals/ana_btflux.h, /home/julia/ROMS/espresso/RealTime/Comp...
-          avg_base: espresso_avg_4638
-          bry_file: ../Data/espresso_bdry_new.nc
-          cdm_data_type: GRID
-          clm_file: ../Data/espresso_clm_new.nc
-          code_dir: /home/julia/ROMS/espresso/svn1409
-          compiler_command: /opt/pgisoft/openmpi/bin/mpif90
-          compiler_flags:  -O3 -Mfree
-          compiler_system: pgi
-          cpu: x86_64
-          featureType: GRID
-          field: temperature, scalar, series
-          file: espresso_his_4638_0001.nc
-          flt_file: espresso_flt_4638.nc
-          format: netCDF-4/HDF5 file
-          fpos_file: /home/om/cron/glider_floats/data/maracoos_floats.in
-          frc_file_01: /home/om/roms/espresso/Data/espresso_tide_c05_20060101.nc
-          frc_file_02: ../Data/espresso_river.nc
-          frc_file_03: ../Data/rain_ncepnam_3hourly_MAB_and_GoM.nc
-          frc_file_04: ../Data/swrad_ncepnam_3hourly_MAB_and_GoM.nc
-          frc_file_05: ../Data/Tair_ncepnam_3hourly_MAB_and_GoM.nc
-          frc_file_06: ../Data/Pair_ncepnam_3hourly_MAB_and_GoM.nc
-          frc_file_07: ../Data/Qair_ncepnam_3hourly_MAB_and_GoM.nc
-          frc_file_08: ../Data/lwrad_down_ncepnam_3hourly_MAB_and_GoM.nc
-          frc_file_09: ../Data/Uwind_ncepnam_3hourly_MAB_and_GoM.nc
-          frc_file_10: ../Data/Vwind_ncepnam_3hourly_MAB_and_GoM.nc
-          grd_file: /home/om/roms/espresso/Data/espresso_grid_c05.nc
-          header_dir: /home/julia/ROMS/espresso/RealTime/Compile/fwd
-          header_file: espresso.h
-          his_base: espresso_his_4638
-          history: ROMS/TOMS, Version 3.5, Sunday - September 16, 2018 -  5:16:50 AM ;
-FMRC...
-          ini_file: /home/julia/ROMS/espresso/RealTime/Storage/run04/espresso_ini_4638.nc
-          location: Proto fmrc:espresso_2013_da_his
-          os: Linux
-          rst_file: espresso_rst_4638.nc
-          script_file: nl_ocean_espresso.in
-          summary: Operational nowcast/forecast system version 2 for MARACOOS project (http://maracoos.org)....
-          svn_rev: exported
-          svn_url: https://www.myroms.org/svn/src/trunk
-          tiling: 004x002
-          time: ocean_time
-          title: ROMS ESPRESSO Real-Time Operational IS4DVAR Forecast System Version 2 (NEW)...
-          type: ROMS/TOMS history file
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sea_water_potential_temperature / (Celsius)          (forecast_reference_time: 1929; -- : 157; ocean_s_coordinate_g1: 36; -- : 82; -- : 130)
+    Dimension coordinates:
+        forecast_reference_time                                              x          -                           -        -        -
+        ocean_s_coordinate_g1                                                -          -                           x        -        -
+    Auxiliary coordinates:
+        time                                                                 x          x                           -        -        -
+        sea_surface_height                                                   x          x                           -        x        x
+        S-coordinate stretching curves at RHO-points                         -          -                           x        -        -
+        latitude                                                             -          -                           -        x        x
+        longitude                                                            -          -                           -        x        x
+        sea_floor_depth                                                      -          -                           -        x        x
+    Derived coordinates:
+        sea_surface_height_above_reference_ellipsoid                         x          x                           x        x        x
+    Scalar coordinates:
+        S-coordinate parameter, critical depth       5.0 meter
+    Attributes:
+        CPP_options                                  MyCPP, ADD_FSOBC, ADD_M2OBC, ANA_BSFLUX, ANA_BTFLUX, ASSUMED_SHAPE, AVERAGES,...
+        Conventions                                  CF-1.4, SGRID-0.3
+        DODS_EXTRA.Unlimited_Dimension               ocean_time
+        EXTRA_DIMENSION.N                            36
+        _ChunkSizes                                  array([ 1, 36, 82, 130], dtype=int32)
+        _CoordSysBuilder                             ucar.nc2.dataset.conv.CF1Convention
+        ana_file                                     ROMS/Functionals/ana_btflux.h, /home/julia/ROMS/espresso/RealTime/Comp...
+        avg_base                                     espresso_avg_4638
+        bry_file                                     ../Data/espresso_bdry_new.nc
+        cdm_data_type                                GRID
+        clm_file                                     ../Data/espresso_clm_new.nc
+        code_dir                                     /home/julia/ROMS/espresso/svn1409
+        compiler_command                             /opt/pgisoft/openmpi/bin/mpif90
+        compiler_flags                                -O3 -Mfree
+        compiler_system                              pgi
+        cpu                                          x86_64
+        featureType                                  GRID
+        field                                        temperature, scalar, series
+        file                                         espresso_his_4638_0007.nc
+        flt_file                                     espresso_flt_4638.nc
+        format                                       netCDF-4/HDF5 file
+        fpos_file                                    /home/om/cron/glider_floats/data/maracoos_floats.in
+        frc_file_01                                  /home/om/roms/espresso/Data/espresso_tide_c05_20060101.nc
+        frc_file_02                                  ../Data/espresso_river.nc
+        frc_file_03                                  ../Data/rain_ncepnam_3hourly_MAB_and_GoM.nc
+        frc_file_04                                  ../Data/swrad_ncepnam_3hourly_MAB_and_GoM.nc
+        frc_file_05                                  ../Data/Tair_ncepnam_3hourly_MAB_and_GoM.nc
+        frc_file_06                                  ../Data/Pair_ncepnam_3hourly_MAB_and_GoM.nc
+        frc_file_07                                  ../Data/Qair_ncepnam_3hourly_MAB_and_GoM.nc
+        frc_file_08                                  ../Data/lwrad_down_ncepnam_3hourly_MAB_and_GoM.nc
+        frc_file_09                                  ../Data/Uwind_ncepnam_3hourly_MAB_and_GoM.nc
+        frc_file_10                                  ../Data/Vwind_ncepnam_3hourly_MAB_and_GoM.nc
+        grd_file                                     /home/om/roms/espresso/Data/espresso_grid_c05.nc
+        header_dir                                   /home/julia/ROMS/espresso/RealTime/Compile/fwd
+        header_file                                  espresso.h
+        his_base                                     espresso_his_4638
+        history                                      &#39;ROMS/TOMS, Version 3.5, Sunday - September 16, 2018 -  5:16:50 AM ;\nFMRC...
+        ini_file                                     /home/julia/ROMS/espresso/RealTime/Storage/run04/espresso_ini_4638.nc
+        location                                     Proto fmrc:espresso_2013_da_his
+        os                                           Linux
+        rst_file                                     espresso_rst_4638.nc
+        script_file                                  nl_ocean_espresso.in
+        summary                                      Operational nowcast/forecast system version 2 for MARACOOS project (http://maracoos.org)....
+        svn_rev                                      exported
+        svn_url                                      https://www.myroms.org/svn/src/trunk
+        tiling                                       004x002
+        time                                         ocean_time
+        title                                        ROMS ESPRESSO Real-Time Operational IS4DVAR Forecast System Version 2 (NEW)...
+        type                                         ROMS/TOMS history file
 </pre></div>
 </div>
 </div>
@@ -1284,7 +1286,7 @@ There is plenty of room to create convenience methods using the low level access
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
