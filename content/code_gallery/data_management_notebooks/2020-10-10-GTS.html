@@ -493,8 +493,7 @@
         
               <div>
                 
-  <p><a href="https://colab.research.google.com/github/MathewBiddle/notebooks_demos/blob/GTS_widgets/notebooks/2020-10-10-GTS.ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="ioos-gts-statistics">
+  <div class="tex2jax_ignore mathjax_ignore section" id="ioos-gts-statistics">
 <h1>IOOS GTS Statistics<a class="headerlink" href="#ioos-gts-statistics" title="Permalink to this headline">¶</a></h1>
 <p>The Global Telecommunication System (GTS) is a coordinated effort for rapid distribution of observations.
 The GTS monthly reports show the number of messages released to GTS for each station.
@@ -518,7 +517,7 @@ The reports contain the following fields:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_date</span> <span class="o">=</span> <span class="s1">&#39;2021-07-01&#39;</span>
-<span class="n">end_date</span> <span class="o">=</span> <span class="s1">&#39;2021-09-30&#39;</span>
+<span class="n">end_date</span> <span class="o">=</span> <span class="s1">&#39;2021-10-30&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -558,6 +557,7 @@ The reports contain the following fields:</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading https://www.ndbc.noaa.gov/ioosstats/rpts/2021_07_ioos_regional.csv
 Loading https://www.ndbc.noaa.gov/ioosstats/rpts/2021_08_ioos_regional.csv
 Loading https://www.ndbc.noaa.gov/ioosstats/rpts/2021_09_ioos_regional.csv
+Loading https://www.ndbc.noaa.gov/ioosstats/rpts/2021_10_ioos_regional.csv
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -585,43 +585,43 @@ Loading https://www.ndbc.noaa.gov/ioosstats/rpts/2021_09_ioos_regional.csv
   <tbody>
     <tr>
       <th>count</th>
-      <td>521.000000</td>
-      <td>521.00000</td>
+      <td>695.000000</td>
+      <td>695.000000</td>
     </tr>
     <tr>
       <th>mean</th>
-      <td>5550.111324</td>
-      <td>1263.75048</td>
+      <td>5492.500719</td>
+      <td>1207.418705</td>
     </tr>
     <tr>
       <th>std</th>
-      <td>5873.776497</td>
-      <td>2957.83903</td>
+      <td>5841.635417</td>
+      <td>2841.529514</td>
     </tr>
     <tr>
       <th>min</th>
       <td>0.000000</td>
-      <td>0.00000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>25%</th>
       <td>0.000000</td>
-      <td>0.00000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>50%</th>
       <td>2576.000000</td>
-      <td>0.00000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>75%</th>
-      <td>8798.000000</td>
-      <td>1432.00000</td>
+      <td>8789.000000</td>
+      <td>1409.000000</td>
     </tr>
     <tr>
       <th>max</th>
       <td>17814.000000</td>
-      <td>17814.00000</td>
+      <td>17814.000000</td>
     </tr>
   </tbody>
 </table>
@@ -639,7 +639,8 @@ Loading https://www.ndbc.noaa.gov/ioosstats/rpts/2021_09_ioos_regional.csv
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;2021-07-01T00:00:00.000000000&#39;, &#39;2021-08-01T00:00:00.000000000&#39;,
-       &#39;2021-09-01T00:00:00.000000000&#39;], dtype=&#39;datetime64[ns]&#39;)
+       &#39;2021-09-01T00:00:00.000000000&#39;, &#39;2021-10-01T00:00:00.000000000&#39;],
+      dtype=&#39;datetime64[ns]&#39;)
 </pre></div>
 </div>
 </div>
@@ -656,7 +657,7 @@ Loading https://www.ndbc.noaa.gov/ioosstats/rpts/2021_09_ioos_regional.csv
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/2020-10-10-GTS_7_0.png" src="../../../_images/2020-10-10-GTS_7_0.png" />
+<img alt="../../../_images/2020-10-10-GTS_6_0.png" src="../../../_images/2020-10-10-GTS_6_0.png" />
 </div>
 </div>
 <p>Let us check the montly sum of data released both for individual met and wave and the totals.</p>
@@ -692,9 +693,10 @@ Loading https://www.ndbc.noaa.gov/ioosstats/rpts/2021_09_ioos_regional.csv
 time (UTC)                                
 2021-07     1000690.0  227112.0  1227802.0
 2021-08      967746.0  226282.0  1194028.0
-2021-09      923172.0  205020.0  1128192.0 
+2021-09      923172.0  205020.0  1128192.0
+2021-10      925680.0  180742.0  1106422.0 
 
-Sum for time period 2021-07 to 2021-09: 3550022
+Sum for time period 2021-07 to 2021-10: 4656444
 </pre></div>
 </div>
 </div>
@@ -724,7 +726,7 @@ Sum for time period 2021-07 to 2021-09: 3550022
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;# observations&#39;)
 </pre></div>
 </div>
-<img alt="../../../_images/2020-10-10-GTS_13_1.png" src="../../../_images/2020-10-10-GTS_13_1.png" />
+<img alt="../../../_images/2020-10-10-GTS_12_1.png" src="../../../_images/2020-10-10-GTS_12_1.png" />
 </div>
 </div>
 <p>Those plots are intersting to understand the RAs role in the GTS ingest and how much data is being released over time. It would be nice to see those per buoy on a map.</p>
@@ -956,7 +958,7 @@ Sum for time period 2021-07 to 2021-09: 3550022
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "af6cf69292424d2487fe03f486a9f842", "version_major": 2, "version_minor": 0}
+{"model_id": "a6fe66bc0d3b468b8c72bab20ab3143c", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 </div>
