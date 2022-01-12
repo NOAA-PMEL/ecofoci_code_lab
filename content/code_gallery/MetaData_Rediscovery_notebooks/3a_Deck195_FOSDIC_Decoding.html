@@ -1,0 +1,1404 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FOSDIC Deck 195 Decoding &#8212; EcoSystems Fisheries-Oceanograpy Coordinated Investigations (EcoFOCI)</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../../_static/FOCI_logo.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Plot all identified Ship Class ID’s and color code by SST" href="4_ICOADS_GeoViews_Explore.html" />
+    <link rel="prev" title="Summary" href="2_Summary.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/FOCI_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">EcoSystems Fisheries-Oceanograpy Coordinated Investigations (EcoFOCI)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Code Gallery
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../data_access.html">
+   Data Access
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data_access_notebooks/2022-01-06-CrossSound_RetrieveAndProcess.html">
+     Cross Sound ADCP Data Retrieval (a convenient tutorial)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../data_analysis_and_visualization.html">
+   Data Analysis And Visualization
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../data_management.html">
+   Data Management
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ecofocipy.html">
+   EcoFOCIpy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Other Projects
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../MetaData_Rediscovery.html">
+   MetaData Rediscovery
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1_Table_Of_Contents.html">
+     Table of Contents
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2_Summary.html">
+     Summary
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     FOSDIC Deck 195 Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_Explore.html">
+     Plot all identified Ship Class ID’s and color code by SST
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre00.html">
+     Exploring Deck 195 Prefix’s Vessel ID:00
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre01.html">
+     Exploring Deck 195 Prefix’s Vessel ID:01
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre02.html">
+     Exploring Deck 195 Prefix’s Vessel ID:02
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre03.html">
+     Exploring Deck 195 Prefix’s Vessel ID:03
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre04.html">
+     Exploring Deck 195 Prefix’s Vessel ID:04
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre05.html">
+     Exploring Deck 195 Prefix’s Vessel ID:05
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre06.html">
+     Exploring Deck 195 Prefix’s Vessel ID:06
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre07.html">
+     Exploring Deck 195 Prefix’s Vessel ID:07
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre08.html">
+     Exploring Deck 195 Prefix’s Vessel ID:08
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre09.html">
+     Exploring Deck 195 Prefix’s Vessel ID:09
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre10.html">
+     Exploring Deck 195 Prefix’s Vessel ID:10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre11.html">
+     Exploring Deck 195 Prefix’s Vessel ID:11
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre12.html">
+     Exploring Deck 195 Prefix’s Vessel ID:12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre13.html">
+     Exploring Deck 195 Prefix’s Vessel ID:13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre14.html">
+     Exploring Deck 195 Prefix’s Vessel ID:14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre15.html">
+     Exploring Deck 195 Prefix’s Vessel ID:15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre16.html">
+     Exploring Deck 195 Prefix’s Vessel ID:16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre17.html">
+     Exploring Deck 195 Prefix’s Vessel ID:17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre18.html">
+     Exploring Deck 195 Prefix’s Vessel ID:18
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre19.html">
+     Exploring Deck 195 Prefix’s Vessel ID:19
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre20.html">
+     Exploring Deck 195 Prefix’s Vessel ID:20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre21.html">
+     Exploring Deck 195 Prefix’s Vessel ID:21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre22.html">
+     Exploring Deck 195 Prefix’s Vessel ID:22
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre23.html">
+     Exploring Deck 195 Prefix’s Vessel ID:23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre25.html">
+     Exploring Deck 195 Prefix’s Vessel ID:25
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre26.html">
+     Exploring Deck 195 Prefix’s Vessel ID:26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre27.html">
+     Exploring Deck 195 Prefix’s Vessel ID:27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre28.html">
+     Exploring Deck 195 Prefix’s Vessel ID:28
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre29.html">
+     Exploring Deck 195 Prefix’s Vessel ID:29
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre30.html">
+     Exploring Deck 195 Prefix’s Vessel ID:30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre31.html">
+     Exploring Deck 195 Prefix’s Vessel ID:31
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre32.html">
+     Exploring Deck 195 Prefix’s Vessel ID:32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre33.html">
+     Exploring Deck 195 Prefix’s Vessel ID:33
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre34.html">
+     Exploring Deck 195 Prefix’s Vessel ID:34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre35.html">
+     Exploring Deck 195 Prefix’s Vessel ID:35
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre37.html">
+     Exploring Deck 195 Prefix’s Vessel ID:37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre38.html">
+     Exploring Deck 195 Prefix’s Vessel ID:38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre39.html">
+     Exploring Deck 195 Prefix’s Vessel ID:39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre40.html">
+     Exploring Deck 195 Prefix’s Vessel ID:40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre41.html">
+     Exploring Deck 195 Prefix’s Vessel ID:41
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre42.html">
+     Exploring Deck 195 Prefix’s Vessel ID:42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre43.html">
+     Exploring Deck 195 Prefix’s Vessel ID:43
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre44.html">
+     Exploring Deck 195 Prefix’s Vessel ID:44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre45.html">
+     Exploring Deck 195 Prefix’s Vessel ID:45
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre46.html">
+     Exploring Deck 195 Prefix’s Vessel ID:46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre47.html">
+     Exploring Deck 195 Prefix’s Vessel ID:47
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre48.html">
+     Exploring Deck 195 Prefix’s Vessel ID:48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre49.html">
+     Exploring Deck 195 Prefix’s Vessel ID:49
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_ICOADS_GeoViews_pre50.html">
+     Exploring Deck 195 Prefix’s Vessel ID:50
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Other Resources - Outside of EcoFOCI
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://ioos.github.io/ioos_code_lab">
+   IOOS Examples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://help.aodn.org.au/aodn-data-tools/user-code-library/">
+   Opening netCDF files - hints from AODN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="http://unidata.github.io/notebook-gallery/">
+   Unidata Jupyter Notebook Gallery
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="http://iobis.org/tutorial/">
+   Extracting and Enriching OBIS data with R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/USGS-R">
+   USGS-R Examples
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contact Us
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../contact_us.html">
+   Contact Us
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a href="https://www.ecofoci.noaa.gov">EcoFOCI</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/code_gallery/MetaData_Rediscovery_notebooks/3a_Deck195_FOSDIC_Decoding.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/shaunwbell/ecofoci_code_lab"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/shaunwbell/ecofoci_code_lab/issues/new?title=Issue%20on%20page%20%2Fcontent/code_gallery/MetaData_Rediscovery_notebooks/3a_Deck195_FOSDIC_Decoding.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/shaunwbell/ecofoci_code_lab/main?urlpath=lab/tree/jupyterbook/content/code_gallery/MetaData_Rediscovery_notebooks/3a_Deck195_FOSDIC_Decoding.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/shaunwbell/ecofoci_code_lab/blob/main/jupyterbook/content/code_gallery/MetaData_Rediscovery_notebooks/3a_Deck195_FOSDIC_Decoding.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   FOSDIC Deck 195 Decoding
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decoding-details">
+     Decoding Details
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-initial-stats">
+   Some Initial Stats
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prepare-for-merging-with-vessel-meta-archive">
+   Prepare for Merging with Vessel Meta Archive
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="fosdic-deck-195-decoding">
+<h1>FOSDIC Deck 195 Decoding<a class="headerlink" href="#fosdic-deck-195-decoding" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>digital collection of FOSDIC data can be obtained at <a class="reference external" href="https://rda.ucar.edu/datasets/ds258.4/index.html#%21sfol-wl-/data/ds258.4">https://rda.ucar.edu/datasets/ds258.4/index.html#!sfol-wl-/data/ds258.4</a></p></li>
+<li><p>pdf explaining original deck 195 format can be found at <a class="reference external" href="https://icoads.noaa.gov/reclaim/pdf/">https://icoads.noaa.gov/reclaim/pdf/</a></p></li>
+</ul>
+<div class="section" id="decoding-details">
+<h2>Decoding Details<a class="headerlink" href="#decoding-details" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>cassette / reel information is maintained in headerlines that begin with ‘00000195’, other details about the FOSDIC conversion format not pertaining to the original records are available at <a class="reference external" href="https://rda.ucar.edu/datasets/ds258.4/docs/fosdic_description.txt">https://rda.ucar.edu/datasets/ds258.4/docs/fosdic_description.txt</a></p></li>
+<li><p>This project is focused on providing ship type information and connecting to meta information for SST/Seawter Temp Bias (but also to look into air bias).  To that end, present weather and sea state will remain as strings but ship number and temperatures will get converted per description.</p></li>
+<li><p>Final entry will enclude the complete FOSDIC record entry for future reference</p></li>
+<li><p>Location, date/time will also be converted to geocoordinates.</p></li>
+<li><p>The only QC that will happen other than conversion checks, is to remove empty entries</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">datetime</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../FOSDIC_COPY/fosdic_cd195&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#define some essential conversion functions from the Deck 195 Manual</span>
+
+<span class="k">def</span> <span class="nf">wind_dir</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="k">def</span> <span class="nf">slp</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mi">100</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    
+<span class="k">def</span> <span class="nf">airtemp</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="k">elif</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">::]))</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    
+<span class="k">def</span> <span class="nf">watertemp</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>    
+
+<span class="k">def</span> <span class="nf">inport</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="c1">#make anything other than blank &quot;TRUE&quot;</span>
+    <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>  
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+<span class="k">def</span> <span class="nf">geo_loc</span><span class="p">(</span><span class="n">quadrant</span><span class="p">,</span><span class="n">latitude</span><span class="p">,</span><span class="n">longitude</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">quadrant</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">latitude</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="nb">int</span><span class="p">(</span><span class="n">longitude</span><span class="p">)]</span>
+        <span class="k">elif</span> <span class="n">quadrant</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">latitude</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="n">longitude</span><span class="p">)]</span>    
+        <span class="k">elif</span> <span class="n">quadrant</span> <span class="o">==</span> <span class="s1">&#39;2&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="nb">int</span><span class="p">(</span><span class="n">latitude</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="nb">int</span><span class="p">(</span><span class="n">longitude</span><span class="p">)]</span>
+        <span class="k">elif</span> <span class="n">quadrant</span> <span class="o">==</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="nb">int</span><span class="p">(</span><span class="n">latitude</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="n">longitude</span><span class="p">)]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]</span>
+    <span class="k">except</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]</span>
+        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">count</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">row</span><span class="p">[:</span><span class="mi">8</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;00000195&#39;</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Headerlines: rowumber-</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">row</span> <span class="o">==</span> <span class="s1">&#39;                                                                                </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">:</span> <span class="c1">#blank line</span>
+        <span class="k">continue</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1">#create dictionary where key is row number                    </span>
+        <span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">counter</span><span class="p">:{</span><span class="s1">&#39;shipclass&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span>
+                    <span class="s1">&#39;shipno&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span>
+                    <span class="s1">&#39;year&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">7</span><span class="p">],</span>
+                    <span class="s1">&#39;month&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="mi">7</span><span class="p">:</span><span class="mi">9</span><span class="p">],</span>
+                    <span class="s1">&#39;day&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="mi">9</span><span class="p">:</span><span class="mi">11</span><span class="p">],</span>
+                    <span class="s1">&#39;hour&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="mi">11</span><span class="p">:</span><span class="mi">13</span><span class="p">],</span>
+                    <span class="s1">&#39;quadrant&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="mi">13</span><span class="p">:</span><span class="mi">14</span><span class="p">],</span>
+                    <span class="s1">&#39;lat_coded&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="mi">14</span><span class="p">:</span><span class="mi">16</span><span class="p">],</span>
+                    <span class="s1">&#39;lon_coded&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="mi">16</span><span class="p">:</span><span class="mi">19</span><span class="p">],</span>
+                    <span class="s1">&#39;ship_speed_kts&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="mi">19</span><span class="p">:</span><span class="mi">21</span><span class="p">],</span> <span class="c1">#knots</span>
+                    <span class="s1">&#39;ship_course_deg&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="mi">21</span><span class="p">:</span><span class="mi">23</span><span class="p">],</span> <span class="c1">#degrees</span>
+                    <span class="s1">&#39;wind_dir_deg&#39;</span><span class="p">:</span><span class="n">wind_dir</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">23</span><span class="p">:</span><span class="mi">25</span><span class="p">]),</span> <span class="c1">#*10 as its cut to nearest ten degrees</span>
+                    <span class="s1">&#39;wind_speed_kts&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="mi">25</span><span class="p">:</span><span class="mi">27</span><span class="p">],</span> <span class="c1">#knots</span>
+                    <span class="s1">&#39;sealevelpressure_inHg&#39;</span><span class="p">:</span><span class="n">slp</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">27</span><span class="p">:</span><span class="mi">31</span><span class="p">]),</span> <span class="c1">#in</span>
+                    <span class="s1">&#39;drybulb_temperature_degF&#39;</span><span class="p">:</span><span class="n">airtemp</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">31</span><span class="p">:</span><span class="mi">34</span><span class="p">]),</span> <span class="c1">#degF</span>
+                    <span class="s1">&#39;wetbulb_temperature_degF&#39;</span><span class="p">:</span><span class="n">airtemp</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">34</span><span class="p">:</span><span class="mi">37</span><span class="p">]),</span> <span class="c1">#degF</span>
+                    <span class="s1">&#39;water_injection_temperature_degF&#39;</span><span class="p">:</span><span class="n">watertemp</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">37</span><span class="p">:</span><span class="mi">39</span><span class="p">]),</span> <span class="c1">#degF</span>
+                    <span class="s1">&#39;present_wx&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="mi">39</span><span class="p">:</span><span class="mi">48</span><span class="p">],</span> <span class="c1">#see encoding but this involves multiple fields: wx, clouds, vis</span>
+                    <span class="s1">&#39;sea_surface_temperature_degF&#39;</span><span class="p">:</span><span class="n">watertemp</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">48</span><span class="p">:</span><span class="mi">50</span><span class="p">]),</span> <span class="c1">#degF</span>
+                    <span class="s1">&#39;sea_and_swell&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="mi">50</span><span class="p">:</span><span class="mi">56</span><span class="p">],</span> <span class="c1">#see encoding but this involves multiple fields</span>
+                    <span class="s1">&#39;inport_obs_indicator&#39;</span><span class="p">:</span><span class="n">inport</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">56</span><span class="p">:</span><span class="mi">57</span><span class="p">]),</span> <span class="c1">#X=True,blank=False</span>
+                    <span class="c1">#58 on - not used</span>
+                    <span class="s1">&#39;latitude_DegN&#39;</span><span class="p">:</span><span class="n">geo_loc</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">13</span><span class="p">:</span><span class="mi">14</span><span class="p">],</span><span class="n">row</span><span class="p">[</span><span class="mi">14</span><span class="p">:</span><span class="mi">16</span><span class="p">],</span><span class="n">row</span><span class="p">[</span><span class="mi">16</span><span class="p">:</span><span class="mi">19</span><span class="p">])[</span><span class="mi">0</span><span class="p">],</span> <span class="c1">#+N,+E</span>
+                    <span class="s1">&#39;longitude_DegE&#39;</span><span class="p">:</span><span class="n">geo_loc</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">13</span><span class="p">:</span><span class="mi">14</span><span class="p">],</span><span class="n">row</span><span class="p">[</span><span class="mi">14</span><span class="p">:</span><span class="mi">16</span><span class="p">],</span><span class="n">row</span><span class="p">[</span><span class="mi">16</span><span class="p">:</span><span class="mi">19</span><span class="p">])[</span><span class="mi">1</span><span class="p">],</span> <span class="c1">#+N,+E</span>
+                    <span class="s1">&#39;datetime&#39;</span><span class="p">:</span><span class="s1">&#39;19&#39;</span><span class="o">+</span><span class="n">row</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;-&#39;</span><span class="o">+</span><span class="n">row</span><span class="p">[</span><span class="mi">7</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;-&#39;</span><span class="o">+</span><span class="n">row</span><span class="p">[</span><span class="mi">9</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="n">row</span><span class="p">[</span><span class="mi">11</span><span class="p">:</span><span class="mi">13</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;:00:00&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;rawentry_80char&#39;</span><span class="p">:</span><span class="n">row</span>
+                    <span class="p">}})</span>
+        <span class="n">counter</span> <span class="o">+=</span><span class="mi">1</span>
+
+        
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Headerlines: rowumber-0
+Headerlines: rowumber-11900
+Headerlines: rowumber-24532
+Headerlines: rowumber-36153
+Headerlines: rowumber-48354
+Headerlines: rowumber-60146
+Headerlines: rowumber-72265
+Headerlines: rowumber-84308
+Headerlines: rowumber-96273
+Headerlines: rowumber-108434
+Headerlines: rowumber-120708
+Headerlines: rowumber-133038
+Headerlines: rowumber-145374
+Headerlines: rowumber-157128
+Headerlines: rowumber-169710
+Headerlines: rowumber-181385
+Headerlines: rowumber-193689
+Headerlines: rowumber-205917
+Headerlines: rowumber-217943
+Headerlines: rowumber-229640
+Headerlines: rowumber-241251
+Headerlines: rowumber-252753
+Headerlines: rowumber-264969
+Headerlines: rowumber-277353
+Headerlines: rowumber-289685
+Headerlines: rowumber-301329
+Headerlines: rowumber-313251
+Headerlines: rowumber-325285
+Headerlines: rowumber-337365
+Headerlines: rowumber-348882
+Headerlines: rowumber-360892
+Headerlines: rowumber-372911
+Headerlines: rowumber-385279
+Headerlines: rowumber-397246
+Headerlines: rowumber-409214
+Headerlines: rowumber-421541
+Headerlines: rowumber-433915
+Headerlines: rowumber-445552
+Headerlines: rowumber-457497
+Headerlines: rowumber-470070
+Headerlines: rowumber-481914
+Headerlines: rowumber-493433
+Headerlines: rowumber-505361
+Headerlines: rowumber-517759
+Headerlines: rowumber-529326
+Headerlines: rowumber-541973
+Headerlines: rowumber-553944
+Headerlines: rowumber-565653
+Headerlines: rowumber-577107
+Headerlines: rowumber-589695
+Headerlines: rowumber-601358
+Headerlines: rowumber-613256
+Headerlines: rowumber-625754
+Headerlines: rowumber-636789
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">orient</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../data/FOSDIC_cd195.csv&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="some-initial-stats">
+<h1>Some Initial Stats<a class="headerlink" href="#some-initial-stats" title="Permalink to this headline">¶</a></h1>
+<p>Number of unique Ship Classes is: 93
+Number of unique Ship Classes with &gt;10 samples is: 76<br />
+<em>this does have some clearly challenged values still like, -1 &amp; J1 but represents 638678 of 638709 samples</em></p>
+<p>All Ship Class Groups are shown below</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;shipclass&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;  &#39;, &#39; 1&#39;, &#39; 2&#39;, &#39; 4&#39;, &#39; 5&#39;, &#39; 6&#39;, &#39; 8&#39;, &#39; 9&#39;, &#39;&amp;&amp;&#39;, &#39;-1&#39;, &#39;0 &#39;, &#39;00&#39;, &#39;01&#39;, &#39;02&#39;, &#39;03&#39;, &#39;06&#39;, &#39;07&#39;, &#39;08&#39;, &#39;09&#39;, &#39;1 &#39;, &#39;1*&#39;, &#39;10&#39;, &#39;11&#39;, &#39;12&#39;, &#39;13&#39;, &#39;14&#39;, &#39;15&#39;, &#39;16&#39;, &#39;17&#39;, &#39;18&#39;, &#39;19&#39;, &#39;20&#39;, &#39;21&#39;, &#39;22&#39;, &#39;23&#39;, &#39;25&#39;, &#39;26&#39;, &#39;27&#39;, &#39;28&#39;, &#39;29&#39;, &#39;30&#39;, &#39;31&#39;, &#39;32&#39;, &#39;33&#39;, &#39;34&#39;, &#39;35&#39;, &#39;37&#39;, &#39;38&#39;, &#39;39&#39;, &#39;40&#39;, &#39;41&#39;, &#39;42&#39;, &#39;43&#39;, &#39;44&#39;, &#39;45&#39;, &#39;46&#39;, &#39;47&#39;, &#39;48&#39;, &#39;49&#39;, &#39;50&#39;, &#39;51&#39;, &#39;52&#39;, &#39;54&#39;, &#39;55&#39;, &#39;56&#39;, &#39;58&#39;, &#39;59&#39;, &#39;60&#39;, &#39;61&#39;, &#39;62&#39;, &#39;65&#39;, &#39;68&#39;, &#39;71&#39;, &#39;76&#39;, &#39;77&#39;, &#39;78&#39;, &#39;81&#39;, &#39;82&#39;, &#39;84&#39;, &#39;85&#39;, &#39;86&#39;, &#39;88&#39;, &#39;89&#39;, &#39;9 &#39;, &#39;90&#39;, &#39;91&#39;, &#39;94&#39;, &#39;95&#39;, &#39;96&#39;, &#39;97&#39;, &#39;98&#39;, &#39;J1&#39;, &#39;Z5&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<p>And ship counts within each group</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">g</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;shipclass&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">g</span><span class="o">.</span><span class="n">shipno</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   [&#39;   &#39;]
+ 1 [&#39;111&#39; &#39;145&#39; &#39;265&#39;]
+ 2 [&#39;221&#39;]
+ 4 [&#39; 76&#39; &#39;394&#39; &#39;012&#39;]
+ 5 [&#39;229&#39;]
+ 6 [&#39;048&#39; &#39;012&#39; &#39;106&#39;]
+ 8 [&#39;131&#39;]
+ 9 [&#39;   &#39;]
+&amp;&amp; [&#39;&amp;&amp;&amp;&#39; &#39;)3&amp;&#39;]
+-1 [&#39;318&#39; &#39;292&#39; &#39;015&#39;]
+0  [&#39;010&#39;]
+00 [&#39;007&#39;]
+01 [&#39;061&#39; &#39;041&#39; &#39;040&#39; &#39;034&#39; &#39;038&#39; &#39;045&#39; &#39;046&#39; &#39;042&#39; &#39;033&#39; &#39;544&#39; &#39;044&#39; &#39;060&#39;
+ &#39;056&#39; &#39;058&#39; &#39;059&#39; &#39;036&#39; &#39;035&#39; &#39;063&#39; &#39;262&#39;]
+02 [&#39;130&#39; &#39;027&#39; &#39;039&#39; &#39;072&#39; &#39;070&#39; &#39;136&#39; &#39;068&#39; &#39;071&#39; &#39;073&#39; &#39;028&#39; &#39;024&#39; &#39;029&#39;
+ &#39;038&#39; &#39;032&#39; &#39;035&#39; &#39;031&#39; &#39;069&#39;]
+03 [&#39;002&#39; &#39;001&#39;]
+06 [&#39;052&#39; &#39;042&#39; &#39;006&#39; &#39;012&#39; &#39;004&#39; &#39;013&#39; &#39;005&#39; &#39;086&#39; &#39;103&#39; &#39;040&#39; &#39;104&#39; &#39;007&#39;
+ &#39;011&#39; &#39;010&#39; &#39;066&#39; &#39;060&#39; &#39;091&#39; &#39;046&#39; &#39;047&#39; &#39;065&#39; &#39;055&#39; &#39;048&#39; &#39;080&#39; &#39;087&#39;
+ &#39;051&#39; &#39;105&#39; &#39;054&#39; &#39;008&#39; &#39;050&#39; &#39;062&#39; &#39;053&#39; &#39;056&#39; &#39;041&#39; &#39;082&#39; &#39;058&#39; &#39;095&#39;
+ &#39;063&#39; &#39;085&#39; &#39;009&#39; &#39;)04&#39; &#39;043&#39;]
+07 [&#39;004&#39; &#39;031&#39; &#39;006&#39; &#39;013&#39; &#39;015&#39; &#39;025&#39; &#39;002&#39; &#39;003&#39; &#39;017&#39; &#39;024&#39; &#39;021&#39; &#39;016&#39;
+ &#39;009&#39; &#39;014&#39; &#39;020&#39; &#39;011&#39; &#39;012&#39;]
+08 [&#39;029&#39; &#39;011&#39; &#39;026&#39; &#39;025&#39; &#39;034&#39; &#39;013&#39; &#39;020&#39; &#39;031&#39; &#39;016&#39;]
+09 [&#39;024&#39; &#39;026&#39; &#39;025&#39; &#39;029&#39; &#39;050&#39;]
+1  [&#39;129&#39; &#39;242&#39;]
+1* [&#39;184&#39;]
+10 [&#39;009&#39; &#39;069&#39; &#39;011&#39; &#39;013&#39; &#39;072&#39; &#39;001&#39; &#39;031&#39; &#39;029&#39; &#39;012&#39; &#39;020&#39; &#39;023&#39; &#39;063&#39;
+ &#39;071&#39; &#39;018&#39; &#39;028&#39; &#39;096&#39; &#39;103&#39; &#39;100&#39; &#39;104&#39; &#39;068&#39; &#39;090&#39; &#39;097&#39; &#39;016&#39; &#39;-07&#39;
+ &#39;060&#39; &#39;059&#39; &#39;070&#39; &#39;085&#39; &#39;076&#39; &#39;064&#39; &#39;075&#39; &#39;099&#39; &#39;074&#39; &#39;088&#39; &#39;086&#39; &#39;058&#39;
+ &#39;098&#39; &#39;082&#39; &#39;102&#39; &#39;025&#39; &#39;067&#39; &#39;0*5&#39; &#39;021&#39; &#39;20-&#39; &#39;057&#39;]
+11 [&#39;- 4&#39; &#39;015&#39;]
+12 [&#39;210&#39; &#39;457&#39; &#39;362&#39; &#39;458&#39; &#39;454&#39; &#39;395&#39; &#39;359&#39; &#39;462&#39; &#39;396&#39; &#39;381&#39; &#39;440&#39; &#39;432&#39;
+ &#39;247&#39; &#39;248&#39; &#39;215&#39; &#39;228&#39; &#39;216&#39; &#39;211&#39; &#39;217&#39; &#39;154&#39; &#39;148&#39; &#39;149&#39; &#39;150&#39; &#39;629&#39;
+ &#39;405&#39; &#39;477&#39; &#39;873&#39; &#39;710&#39; &#39;156&#39; &#39;358&#39; &#39;394&#39; &#39;647&#39; &#39;441&#39; &#39;223&#39; &#39;361&#39; &#39;382&#39;
+ &#39;551&#39; &#39;741&#39; &#39;552&#39; &#39;494&#39; &#39;874&#39; &#39;570&#39; &#39;581&#39; &#39;220&#39; &#39;880&#39; &#39;463&#39; &#39;493&#39; &#39;798&#39;
+ &#39;476&#39; &#39;587&#39; &#39;383&#39; &#39;442&#39; &#39;571&#39; &#39;576&#39; &#39;363&#39; &#39;709&#39; &#39;569&#39; &#39;430&#39; &#39;573&#39; &#39;876&#39;
+ &#39;655&#39; &#39;588&#39; &#39;732&#39; &#39;517&#39; &#39;520&#39; &#39;666&#39; &#39;628&#39; &#39;832&#39; &#39;686&#39; &#39;706&#39; &#39;425&#39; &#39;419&#39;
+ &#39;421&#39; &#39;402&#39; &#39;574&#39; &#39;806&#39; &#39;729&#39; &#39;222&#39; &#39;654&#39; &#39;724&#39; &#39;689&#39; &#39;691&#39; &#39;641&#39; &#39;360&#39;
+ &#39;487&#39; &#39;357&#39; &#39;611&#39; &#39;495&#39; &#39;230&#39; &#39;497&#39; &#39;341&#39; &#39;878&#39; &#39;586&#39; &#39;662&#39; &#39;471&#39; &#39;742&#39;
+ &#39;518&#39; &#39;600&#39; &#39;649&#39; &#39;575&#39; &#39;679&#39; &#39;483&#39; &#39;519&#39; &#39;479&#39; &#39;221&#39; &#39;624&#39; &#39;453&#39; &#39;439&#39;
+ &#39;399&#39; &#39;356&#39; &#39;366&#39; &#39;379&#39; &#39;386&#39; &#39;388&#39; &#39;367&#39; &#39;515&#39; &#39;435&#39; &#39;365&#39; &#39;391&#39; &#39;371&#39;
+ &#39;661&#39; &#39;385&#39; &#39;368&#39; &#39;491&#39; &#39;486&#39; &#39;554&#39; &#39;433&#39; &#39;460&#39; &#39;414&#39; &#39;393&#39; &#39;398&#39; &#39;465&#39;
+ &#39;387&#39; &#39;445&#39; &#39;411&#39; &#39;434&#39; &#39;213&#39; &#39;350&#39; &#39;544&#39; &#39;066&#39; &#39;472&#39; &#39;377&#39; &#39;605&#39; &#39;659&#39;
+ &#39;598&#39; &#39;041&#39; &#39;508&#39; &#39;353&#39; &#39;470&#39; &#39;480&#39; &#39;349&#39; &#39;660&#39; &#39;670&#39; &#39;644&#39; &#39;468&#39; &#39;407&#39;
+ &#39;390&#39; &#39;481&#39; &#39;675&#39; &#39;606&#39; &#39;473&#39; &#39;580&#39; &#39;623&#39; &#39;636&#39; &#39;632&#39; &#39;246&#39; &#39;426&#39; &#39;159&#39;
+ &#39;147&#39; &#39;153&#39; &#39;157&#39; &#39;428&#39; &#39;620&#39; &#39;145&#39; &#39;144&#39; &#39;422&#39; &#39;128&#39; &#39;578&#39; &#39;427&#39; &#39;239&#39;
+ &#39;126&#39; &#39;807&#39; &#39;251&#39; &#39;151&#39; &#39;420&#39; &#39;152&#39; &#39;118&#39; &#39;158&#39; &#39;188&#39; &#39;572&#39; &#39;403&#39; &#39;461&#39;
+ &#39;626&#39; &#39;418&#39; &#39;805&#39; &#39;862&#39; &#39;455&#39; &#39;424&#39; &#39;429&#39; &#39;511&#39; &#39;550&#39; &#39;456&#39; &#39;743&#39; &#39;831&#39;
+ &#39;583&#39; &#39;610&#39; &#39;109&#39; &#39;164&#39; &#39;233&#39; &#39;563&#39; &#39;492&#39; &#39;488&#39; &#39;638&#39; &#39;602&#39; &#39;608&#39; &#39;380&#39;
+ &#39;579&#39; &#39;546&#39; &#39;658&#39; &#39;526&#39; &#39;351&#39; &#39;669&#39; &#39;792&#39; &#39;585&#39; &#39;681&#39; &#39;734&#39; &#39;355&#39; &#39;417&#39;
+ &#39;650&#39; &#39;630&#39; &#39;106&#39; &#39;510&#39; &#39;528&#39; &#39;446&#39; &#39;577&#39; &#39;631&#39; &#39;547&#39; &#39;423&#39; &#39;155&#39; &#39;160&#39;
+ &#39;637&#39; &#39;640&#39; &#39;601&#39; &#39;808&#39; &#39;756&#39; &#39;408&#39; &#39;613&#39; &#39;604&#39; &#39;187&#39; &#39;431&#39; &#39;343&#39; &#39;509&#39;
+ &#39;621&#39; &#39;437&#39; &#39;*7 &#39; &#39;115&#39; &#39;116&#39; &#39;237&#39; &#39;137&#39; &#39;450&#39; &#39;514&#39; &#39;406&#39; &#39;113&#39; &#39;498&#39;
+ &#39;234&#39; &#39;560&#39; &#39;558&#39; &#39;562&#39; &#39;218&#39; &#39;392&#39; &#39;231&#39; &#39;545&#39; &#39;685&#39; &#39;484&#39; &#39;680&#39; &#39;668&#39;
+ &#39;529&#39; &#39;527&#39; &#39;609&#39; &#39;612&#39; &#39;634&#39; &#39;617&#39; &#39;635&#39; &#39;633&#39; &#39;489&#39; &#39;618&#39; &#39;199&#39; &#39;438&#39;
+ &#39;615&#39; &#39;627&#39; &#39;490&#39; &#39;496&#39; &#39;614&#39; &#39;625&#39; &#39;142&#39; &#39;464&#39; &#39;697&#39; &#39;603&#39; &#39;242&#39; &#39;232&#39;
+ &#39;557&#39; &#39;800&#39; &#39;607&#39; &#39;796&#39; &#39;553&#39; &#39;642&#39; &#39;372&#39; &#39;643&#39; &#39;645&#39;]
+13 [&#39;359&#39; &#39;383&#39;]
+14 [&#39;326&#39; &#39;174&#39; &#39;178&#39; &#39;135&#39; &#39;240&#39; &#39;182&#39; &#39;142&#39; &#39;139&#39; &#39;705&#39; &#39;181&#39; &#39;179&#39; &#39;101&#39;
+ &#39;016&#39; &#39;176&#39; &#39;177&#39; &#39;100&#39; &#39;175&#39; &#39;408&#39; &#39;341&#39; &#39;681&#39; &#39;797&#39; &#39;581&#39; &#39;583&#39; &#39;200&#39;
+ &#39;698&#39; &#39;795&#39; &#39;368&#39; &#39;363&#39; &#39;259&#39; &#39;683&#39; &#39;218&#39; &#39;536&#39; &#39;701&#39; &#39;231&#39; &#39;586&#39; &#39;420&#39;
+ &#39;345&#39; &#39;697&#39; &#39;349&#39; &#39;708&#39; &#39;201&#39; &#39;202&#39; &#39;203&#39; &#39;796&#39; &#39;589&#39; &#39;418&#39; &#39;331&#39; &#39;330&#39;
+ &#39;063&#39; &#39;168&#39; &#39;141&#39; &#39;343&#39; &#39;184&#39; &#39;449&#39; &#39;406&#39; &#39;510&#39; &#39;382&#39; &#39;152&#39; &#39;415&#39; &#39;304&#39;
+ &#39;372&#39; &#39;340&#39; &#39;411&#39; &#39;419&#39; &#39;438&#39; &#39;049&#39; &#39;450&#39; &#39;022&#39; &#39;261&#39; &#39;739&#39; &#39;199&#39; &#39;680&#39;
+ &#39;023&#39; &#39;041&#39; &#39;026&#39; &#39;011&#39; &#39;009&#39; &#39;017&#39; &#39;019&#39; &#39;025&#39; &#39;035&#39; &#39;032&#39; &#39;040&#39; &#39;030&#39;
+ &#39;644&#39; &#39;265&#39; &#39;034&#39; &#39;262&#39; &#39;339&#39; &#39;405&#39; &#39;213&#39; &#39;070&#39; &#39;146&#39; &#39;575&#39; &#39;190&#39; &#39;693&#39;
+ &#39;327&#39; &#39;329&#39; &#39;763&#39; &#39;398&#39; &#39;196&#39; &#39;682&#39; &#39;792&#39; &#39;322&#39; &#39;138&#39; &#39;246&#39; &#39;134&#39; &#39;015&#39;
+ &#39;039&#39; &#39;260&#39; &#39;263&#39; &#39;020&#39; &#39;634&#39; &#39;637&#39; &#39;014&#39; &#39;167&#39; &#39;366&#39; &#39;050&#39; &#39;640&#39; &#39;029&#39;
+ &#39;745&#39; &#39;166&#39; &#39;530&#39; &#39;045&#39; &#39;150&#39; &#39;148&#39; &#39;051&#39; &#39;153&#39; &#39;214&#39; &#39;799&#39; &#39;006&#39; &#39;129&#39;
+ &#39;249&#39; &#39;332&#39; &#39;147&#39; &#39;684&#39; &#39;060&#39; &#39;352&#39; &#39;047&#39; &#39;362&#39; &#39;578&#39; &#39;399&#39; &#39;335&#39; &#39;694&#39;
+ &#39;685&#39; &#39;665&#39; &#39;059&#39; &#39;334&#39; &#39;008&#39; &#39;642&#39; &#39;028&#39; &#39;053&#39; &#39;005&#39; &#39;137&#39; &#39;169&#39; &#39;253&#39;
+ &#39;252&#39; &#39;387&#39; &#39;392&#39; &#39;131&#39; &#39;102&#39; &#39;258&#39; &#39;220&#39; &#39;385&#39; &#39;325&#39; &#39;194&#39; &#39;794&#39; &#39;400&#39;
+ &#39;105&#39; &#39;242&#39; &#39;323&#39; &#39;793&#39; &#39;161&#39; &#39;197&#39; &#39;210&#39; &#39;057&#39; &#39;529&#39; &#39;065&#39; &#39;790&#39; &#39;212&#39;
+ &#39;173&#39; &#39;764&#39; &#39;054&#39; &#39;215&#39; &#39;132&#39; &#39;130&#39; &#39;251&#39; &#39;151&#39; &#39;676&#39; &#39;068&#39; &#39;317&#39; &#39;393&#39;
+ &#39;384&#39; &#39;394&#39; &#39;241&#39; &#39;191&#39; &#39;066&#39; &#39;133&#39; &#39;010&#39; &#39;171&#39; &#39;769&#39; &#39;S10&#39; &#39;320&#39; &#39;33 &#39;
+ &#39;018&#39; &#39;Z18&#39; &#39;423&#39; &#39;585&#39; &#39;643&#39; &#39;696&#39; &#39;636&#39; &#39;  5&#39; &#39;535&#39; &#39;198&#39; &#39;007&#39;]
+15 [&#39;235&#39; &#39;165&#39; &#39;168&#39; &#39;477&#39; &#39;317&#39; &#39;215&#39; &#39;242&#39; &#39;229&#39; &#39;230&#39; &#39;119&#39; &#39;398&#39; &#39;394&#39;
+ &#39;118&#39; &#39;405&#39; &#39;129&#39; &#39;126&#39; &#39;207&#39; &#39;395&#39; &#39;384&#39; &#39;179&#39; &#39;138&#39; &#39;299&#39; &#39;390&#39; &#39;388&#39;
+ &#39;258&#39; &#39;183&#39; &#39;117&#39; &#39;366&#39; &#39;287&#39; &#39;116&#39; &#39;163&#39; &#39;186&#39; &#39;391&#39; &#39;339&#39; &#39;400&#39; &#39;479&#39;
+ &#39;481&#39; &#39;243&#39; &#39;241&#39; &#39;153&#39; &#39;396&#39; &#39;251&#39; &#39;476&#39; &#39;392&#39; &#39;365&#39; &#39;246&#39; &#39;393&#39; &#39;316&#39;
+ &#39;397&#39; &#39;402&#39; &#39;295&#39; &#39;381&#39; &#39;331&#39; &#39;329&#39; &#39;383&#39; &#39;361&#39; &#39;419&#39; &#39;421&#39; &#39;362&#39; &#39;332&#39;
+ &#39;313&#39; &#39;423&#39; &#39;336&#39; &#39;373&#39; &#39;422&#39; &#39;244&#39; &#39;314&#39; &#39;386&#39; &#39;315&#39; &#39;245&#39; &#39;385&#39; &#39;216&#39;
+ &#39;232&#39; &#39;408&#39; &#39;399&#39; &#39;410&#39; &#39;406&#39; &#39;271&#39; &#39;272&#39; &#39;192&#39; &#39;175&#39; &#39;208&#39; &#39;167&#39; &#39;334&#39;
+ &#39;475&#39; &#39;199&#39; &#39;276&#39; &#39;274&#39; &#39;169&#39; &#39;337&#39; &#39;409&#39; &#39;333&#39; &#39;374&#39; &#39;309&#39; &#39;187&#39; &#39;210&#39;
+ &#39;278&#39; &#39;180&#39; &#39;424&#39; &#39;171&#39; &#39;418&#39; &#39;369&#39; &#39;221&#39; &#39;387&#39; &#39;247&#39; &#39;158&#39; &#39;154&#39; &#39;236&#39;
+ &#39;145&#39; &#39;203&#39; &#39;142&#39; &#39;213&#39; &#39;480&#39; &#39;312&#39; &#39;120&#39; &#39;092&#39; &#39;340&#39; &#39;184&#39; &#39;341&#39; &#39;330&#39;
+ &#39;198&#39; &#39;262&#39; &#39;281&#39; &#39;282&#39; &#39;206&#39; &#39;182&#39; &#39;254&#39; &#39;181&#39; &#39;567&#39; &#39;264&#39; &#39;228&#39; &#39;308&#39;
+ &#39;250&#39; &#39;238&#39; &#39;284&#39; &#39;266&#39; &#39;202&#39; &#39;200&#39; &#39;178&#39; &#39;201&#39; &#39;224&#39; &#39;304&#39; &#39;220&#39; &#39;217&#39;
+ &#39;283&#39; &#39;260&#39; &#39;239&#39; &#39;306&#39; &#39;255&#39; &#39;189&#39; &#39;240&#39; &#39;218&#39; &#39;261&#39; &#39;286&#39; &#39;293&#39; &#39;225&#39;
+ &#39;214&#39; &#39;305&#39; &#39;263&#39; &#39;231&#39; &#39;234&#39; &#39;172&#39; &#39;412&#39; &#39;237&#39; &#39;268&#39; &#39;269&#39; &#39;288&#39; &#39;414&#39;
+ &#39;259&#39; &#39;*54&#39; &#39;223&#39; &#39;256&#39; &#39;310&#39; &#39;307&#39; &#39;311&#39; &#39;267&#39; &#39;401&#39; &#39;403&#39; &#39;146&#39; &#39;404&#39;
+ &#39;292&#39; &#39;300&#39; &#39;188&#39; &#39;280&#39; &#39;367&#39; &#39;372&#39; &#39;265&#39; &#39;212&#39; &#39;285&#39; &#39;249&#39; &#39;325&#39; &#39;194&#39;
+ &#39;328&#39; &#39;270&#39; &#39;382&#39; &#39;413&#39; &#39;389&#39; &#39;298&#39; &#39;086&#39; &#39;170&#39; &#39;454&#39; &#39;123&#39; &#39;318&#39; &#39;319&#39;
+ &#39;326&#39; &#39;327&#39; &#39;222&#39; &#39;193&#39; &#39;144&#39; &#39;185&#39; &#39;191&#39; &#39;050&#39; &#39;322&#39;]
+16 [&#39;032&#39; &#39;001&#39;]
+17 [&#39;026&#39; &#39;020&#39; &#39;001&#39; &#39;002&#39; &#39;009&#39; &#39;008&#39; &#39;017&#39;]
+18 [&#39;009&#39; &#39;012&#39; &#39;011&#39;]
+19 [&#39;003&#39;]
+20 [&#39;018&#39; &#39;015&#39; &#39;019&#39; &#39;017&#39; &#39;021&#39; &#39;020&#39; &#39;016&#39; &#39;022&#39;]
+21 [&#39;018&#39; &#39;005&#39; &#39;033&#39; &#39;009&#39; &#39;011&#39; &#39;012&#39; &#39;007&#39; &#39;008&#39; &#39;016&#39; &#39;010&#39; &#39;015&#39; &#39;017&#39;
+ &#39;004&#39; &#39;034&#39; &#39;014&#39;]
+22 [&#39;255&#39; &#39;258&#39; &#39;257&#39; &#39;076&#39; &#39;058&#39; &#39;128&#39; &#39;131&#39; &#39;217&#39; &#39;220&#39; &#39;219&#39; &#39;127&#39; &#39;031&#39;
+ &#39;043&#39; &#39;062&#39; &#39;013&#39; &#39;087&#39; &#39;025&#39; &#39;022&#39; &#39;108&#39; &#39;111&#39; &#39;110&#39; &#39;317&#39; &#39;323&#39; &#39;297&#39;
+ &#39;016&#39; &#39;056&#39; &#39;059&#39; &#39;268&#39; &#39;246&#39; &#39;060&#39; &#39;055&#39; &#39;322&#39; &#39;304&#39; &#39;109&#39; &#39;320&#39; &#39;324&#39;
+ &#39;298&#39; &#39;300&#39; &#39;154&#39; &#39;118&#39; &#39;267&#39; &#39;119&#39; &#39;002&#39; &#39;123&#39; &#39;270&#39; &#39;107&#39; &#39;S58&#39; &#39;136&#39;
+ &#39;137&#39; &#39;274&#39; &#39;104&#39; &#39;283&#39; &#39;305&#39; &#39;152&#39; &#39;084&#39; &#39;126&#39; &#39;102&#39; &#39;117&#39; &#39;120&#39; &#39;116&#39;
+ &#39;105&#39; &#39;153&#39; &#39;271&#39; &#39;024&#39; &#39;072&#39; &#39;075&#39; &#39;0  &#39; &#39;113&#39; &#39;079&#39; &#39;103&#39; &#39;007&#39; &#39;156&#39;
+ &#39;083&#39; &#39;021&#39; &#39;035&#39; &#39;082&#39;]
+23 [&#39;017&#39;]
+25 [&#39;238&#39;]
+26 [&#39;006&#39; &#39;004&#39;]
+27 [&#39;006&#39; &#39;008&#39; &#39;004&#39;]
+28 [&#39;018&#39; &#39;015&#39; &#39;014&#39;]
+29 [&#39;005&#39; &#39;002&#39;]
+30 [&#39;-01&#39; &#39;057&#39;]
+31 [&#39;053&#39; &#39;034&#39; &#39;024&#39; &#39;001&#39; &#39;032&#39; &#39;010&#39; &#39;012&#39; &#39;013&#39; &#39;047&#39; &#39;003&#39; &#39;005&#39; &#39;009&#39;
+ &#39;038&#39;]
+32 [&#39;050&#39; &#39;063&#39; &#39;064&#39; &#39;070&#39; &#39;052&#39; &#39;059&#39; &#39;008&#39; &#39;058&#39; &#39;065&#39; &#39;071&#39; &#39;066&#39; &#39;087&#39;
+ &#39;067&#39; &#39;089&#39; &#39;086&#39; &#39;102&#39; &#39;062&#39; &#39;101&#39; &#39;068&#39; &#39;056&#39; &#39;022&#39;]
+33 [&#39;005&#39; &#39;009&#39; &#39;008&#39; &#39;004&#39; &#39;010&#39; &#39;001&#39; &#39;012&#39;]
+34 [&#39;257&#39;]
+35 [&#39;012&#39; &#39;018&#39; &#39;028&#39; &#39;009&#39; &#39;023&#39;]
+37 [&#39;019&#39; &#39;022&#39; &#39;017&#39; &#39;028&#39; &#39;024&#39; &#39;013&#39; &#39;025&#39; &#39;021&#39; &#39;012&#39; &#39;016&#39; &#39;011&#39; &#39;010&#39;]
+38 [&#39;021&#39; &#39;009&#39; &#39;020&#39; &#39;018&#39; &#39;017&#39; &#39;008&#39; &#39;019&#39; &#39;003&#39; &#39;045&#39;]
+39 [&#39;013&#39; &#39;009&#39; &#39;004&#39; &#39;003&#39; &#39;008&#39; &#39;005&#39; &#39;006&#39; &#39;014&#39; &#39;011&#39; &#39;001&#39; &#39;X04&#39; &#39;010&#39;
+ &#39;002&#39; &#39;012&#39; &#39;007&#39;]
+40 [&#39;121&#39; &#39;110&#39; &#39;320&#39; &#39;460&#39; &#39;425&#39; &#39;068&#39; &#39;217&#39; &#39;182&#39; &#39;025&#39; &#39;003&#39; &#39;169&#39; &#39;168&#39;
+ &#39;172&#39; &#39;067&#39; &#39;173&#39; &#39;197&#39;]
+41 [&#39;015&#39; &#39;021&#39; &#39;004&#39; &#39;009&#39; &#39;011&#39; &#39;003&#39; &#39;019&#39; &#39;012&#39; &#39;002&#39; &#39;014&#39; &#39;016&#39; &#39;-78&#39;
+ &#39;0-3&#39;]
+42 [&#39;002&#39; &#39;005&#39; &#39;247&#39; &#39;003&#39; &#39;006&#39; &#39;008&#39; &#39;001&#39;]
+43 [&#39;034&#39; &#39;011&#39; &#39;042&#39; &#39;031&#39; &#39;015&#39; &#39;025&#39; &#39;030&#39; &#39;014&#39; &#39;016&#39; &#39;012&#39; &#39;010&#39; &#39;008&#39;
+ &#39;007&#39; &#39;001&#39; &#39;0 0&#39; &#39;022&#39; &#39;013&#39; &#39;020&#39; &#39;009&#39; &#39;029&#39; &#39;021&#39; &#39;019&#39; &#39;026&#39; &#39;024&#39;]
+44 [&#39;005&#39; &#39;001&#39; &#39;004&#39;]
+45 [&#39;001&#39; &#39;004&#39; &#39;005&#39;]
+46 [&#39;030&#39; &#39;070&#39; &#39;068&#39; &#39;044&#39; &#39;032&#39; &#39;042&#39; &#39;033&#39; &#39;067&#39; &#39;046&#39; &#39;097&#39; &#39;029&#39; &#39;066&#39;
+ &#39;031&#39; &#39;012&#39;]
+47 [&#39;055&#39; &#39;048&#39; &#39;062&#39; &#39;061&#39; &#39;053&#39; &#39;056&#39;]
+48 [&#39;004&#39; &#39;005&#39; &#39;008&#39; &#39;007&#39; &#39;002&#39; &#39;020&#39;]
+49 [&#39;001&#39; &#39;003&#39;]
+50 [&#39;001&#39; &#39;011&#39; &#39;013&#39; &#39;017&#39; &#39;006&#39; &#39;005&#39; &#39;009&#39; &#39;010&#39;]
+51 [&#39;013&#39; &#39;023&#39; &#39;136&#39; &#39;077&#39; &#39;121&#39; &#39;024&#39; &#39;018&#39; &#39;129&#39; &#39;207&#39; &#39;123&#39; &#39;133&#39; &#39;124&#39;
+ &#39;113&#39; &#39;170&#39; &#39;118&#39; &#39;119&#39; &#39;025&#39; &#39;027&#39; &#39;080&#39; &#39;111&#39; &#39;100&#39; &#39;020&#39; &#39;072&#39; &#39;042&#39;
+ &#39;101&#39; &#39;090&#39; &#39;103&#39; &#39;097&#39; &#39;071&#39; &#39;096&#39; &#39;095&#39; &#39;099&#39; &#39;014&#39; &#39;102&#39; &#39;016&#39; &#39;106&#39;
+ &#39;110&#39; &#39;161&#39; &#39;162&#39; &#39;139&#39; &#39;125&#39; &#39;048&#39; &#39;047&#39; &#39;017&#39; &#39;112&#39; &#39;015&#39; &#39;140&#39; &#39;138&#39;
+ &#39;126&#39; &#39;051&#39; &#39;022&#39; &#39;049&#39; &#39;105&#39; &#39;029&#39; &#39;046&#39; &#39;094&#39; &#39;079&#39; &#39;108&#39; &#39;074&#39; &#39;073&#39;
+ &#39;053&#39; &#39;052&#39;]
+52 [&#39;036&#39; &#39;087&#39; &#39;014&#39; &#39;092&#39; &#39;108&#39; &#39;105&#39; &#39;106&#39; &#39;040&#39; &#39;053&#39; &#39;104&#39; &#39;011&#39; &#39;006&#39;
+ &#39;008&#39; &#39;009&#39; &#39;010&#39; &#39;020&#39; &#39;090&#39; &#39;003&#39; &#39;002&#39; &#39;015&#39; &#39;089&#39; &#39;012&#39; &#39;013&#39;]
+54 [&#39;003&#39; &#39;004&#39; &#39;002&#39; &#39;005&#39; &#39;001&#39;]
+55 [&#39;004&#39; &#39;008&#39; &#39;011&#39; &#39;001&#39; &#39;003&#39;]
+56 [&#39;001&#39; &#39;002&#39;]
+58 [&#39;032&#39; &#39;034&#39; &#39;087&#39; &#39;084&#39; &#39;060&#39; &#39;028&#39; &#39;043&#39; &#39;053&#39; &#39;055&#39; &#39;005&#39; &#39;052&#39; &#39;049&#39;
+ &#39;056&#39; &#39;013&#39; &#39;008&#39; &#39;027&#39; &#39;020&#39;]
+59 [&#39;045&#39; &#39;009&#39; &#39;036&#39; &#39;037&#39; &#39;022&#39; &#39;015&#39; &#39;065&#39; &#39;075&#39; &#39;071&#39; &#39;050&#39; &#39;033&#39; &#39;042&#39;
+ &#39;073&#39; &#39;040&#39; &#39;049&#39; &#39;026&#39; &#39;038&#39; &#39;002&#39; &#39;039&#39; &#39;046&#39; &#39;079&#39; &#39;018&#39; &#39;076&#39; &#39;035&#39;
+ &#39;058&#39; &#39;012&#39; &#39;048&#39; &#39;043&#39; &#39;025&#39; &#39;027&#39; &#39;024&#39; &#39;004&#39; &#39;074&#39; &#39;047&#39; &#39;021&#39; &#39;086&#39;
+ &#39;016&#39; &#39;041&#39; &#39;072&#39; &#39;011&#39; &#39;019&#39; &#39;053&#39; &#39;081&#39; &#39;088&#39; &#39;084&#39; &#39;096&#39; &#39;001&#39; &#39;030&#39;
+ &#39;017&#39; &#39;028&#39; &#39;029&#39; &#39;013&#39;]
+60 [&#39;021&#39; &#39;019&#39; &#39;050&#39; &#39;006&#39; &#39;024&#39; &#39;036&#39; &#39;022&#39; &#39;009&#39; &#39;008&#39; &#39;005&#39; &#39;013&#39; &#39;002&#39;
+ &#39;012&#39; &#39;061&#39; &#39;U61&#39; &#39;010&#39; &#39;014&#39; &#39;017&#39; &#39;018&#39; &#39;001&#39;]
+61 [&#39;153&#39; &#39;024&#39; &#39;020&#39; &#39;023&#39; &#39;021&#39; &#39;061&#39; &#39;131&#39; &#39;132&#39; &#39;022&#39; &#39;115&#39; &#39;136&#39; &#39;114&#39;
+ &#39;035&#39; &#39;120&#39; &#39;112&#39; &#39;110&#39; &#39;125&#39; &#39;032&#39; &#39;038&#39; &#39;154&#39; &#39;113&#39; &#39;029&#39; &#39;133&#39; &#39;144&#39;
+ &#39;041&#39; &#39;015&#39; &#39;145&#39; &#39;S41&#39; &#39;427&#39; &#39;033&#39; &#39;063&#39; &#39;054&#39; &#39;008&#39; &#39;013&#39; &#39;055&#39; &#39;134&#39;
+ &#39;075&#39; &#39;163&#39; &#39;138&#39; &#39;026&#39; &#39;060&#39; &#39;067&#39; &#39;170&#39; &#39;158&#39; &#39;016&#39; &#39;001&#39; &#39;102&#39; &#39;072&#39;
+ &#39;076&#39; &#39;066&#39; &#39;017&#39; &#39;011&#39; &#39;010&#39; &#39;037&#39;]
+62 [&#39;013&#39; &#39;030&#39; &#39;033&#39; &#39;028&#39; &#39;017&#39; &#39;051&#39; &#39;005&#39; &#39;198&#39; &#39;020&#39; &#39;003&#39; &#39;018&#39; &#39;055&#39;
+ &#39;200&#39; &#39;012&#39; &#39;040&#39; &#39;224&#39; &#39;086&#39; &#39;084&#39; &#39;011&#39; &#39;223&#39; &#39;019&#39; &#39;031&#39; &#39;050&#39; &#39;090&#39;
+ &#39;191&#39; &#39;091&#39; &#39;049&#39;]
+65 [&#39;066&#39; &#39;086&#39; &#39;021&#39; &#39;001&#39; &#39;024&#39; &#39;078&#39; &#39;038&#39; &#39;019&#39; &#39;096&#39; &#39;091&#39; &#39;123&#39; &#39;081&#39;
+ &#39;032&#39; &#39;124&#39; &#39;125&#39; &#39;003&#39; &#39;006&#39; &#39;010&#39; &#39;042&#39; &#39;008&#39; &#39;013&#39; &#39;009&#39; &#39;012&#39; &#39;020&#39;
+ &#39;022&#39; &#39;017&#39; &#39;005&#39;]
+68 [&#39;003&#39; &#39;117&#39; &#39;002&#39; &#39;001&#39;]
+71 [&#39;109&#39;]
+76 [&#39;001&#39; &#39;002&#39;]
+77 [&#39;021&#39; &#39;011&#39; &#39;004&#39; &#39;006&#39; &#39;009&#39; &#39;010&#39; &#39;007&#39;]
+78 [&#39;007&#39; &#39;003&#39; &#39;001&#39; &#39;006&#39; &#39;004&#39;]
+81 [&#39;258&#39; &#39;105&#39; &#39;248&#39; &#39;127&#39; &#39;252&#39; &#39;153&#39; &#39;109&#39; &#39;164&#39; &#39;235&#39; &#39;137&#39; &#39;148&#39; &#39;136&#39;]
+82 [&#39;008&#39;]
+84 [&#39;007&#39; &#39;003&#39; &#39;005&#39;]
+85 [&#39;001&#39;]
+86 [&#39;023&#39; &#39;004&#39; &#39;008&#39; &#39;019&#39; &#39;001&#39; &#39;007&#39;]
+88 [&#39;020&#39; &#39;021&#39; &#39;015&#39; &#39;023&#39; &#39;032&#39; &#39;013&#39; &#39;036&#39; &#39;037&#39; &#39;004&#39; &#39;005&#39;]
+89 [&#39;011&#39; &#39;050&#39; &#39;022&#39; &#39;010&#39; &#39;003&#39; &#39;021&#39; &#39;009&#39; &#39;006&#39; &#39;029&#39; &#39;007&#39; &#39;013&#39; &#39;001&#39;
+ &#39;024&#39; &#39;023&#39; &#39;005&#39; &#39;004&#39; &#39;041&#39; &#39;049&#39; &#39;008&#39; &#39;002&#39;]
+9  [&#39; 11&#39;]
+90 [&#39;006&#39;]
+91 [&#39;258&#39;]
+94 [&#39;013&#39; &#39;011&#39; &#39;024&#39; &#39;022&#39; &#39;026&#39; &#39;005&#39; &#39;020&#39; &#39;014&#39; &#39;016&#39; &#39;012&#39; &#39;021&#39; &#39;015&#39;
+ &#39;003&#39; &#39;019&#39; &#39;018&#39; &#39;023&#39; &#39;S05&#39; &#39;025&#39;]
+95 [&#39;004&#39; &#39;003&#39; &#39;008&#39; &#39;002&#39; &#39;007&#39; &#39;005&#39;]
+96 [&#39;097&#39; &#39;091&#39; &#39;102&#39; &#39;104&#39; &#39;148&#39; &#39;105&#39; &#39;103&#39; &#39;101&#39; &#39;096&#39; &#39;072&#39; &#39;109&#39; &#39;113&#39;
+ &#39;085&#39; &#39;108&#39; &#39;066&#39; &#39;071&#39; &#39;111&#39; &#39;095&#39; &#39;092&#39;]
+97 [&#39;082&#39; &#39;081&#39; &#39;068&#39; &#39;067&#39; &#39;086&#39; &#39;140&#39; &#39;065&#39; &#39;064&#39; &#39;012&#39; &#39;039&#39; &#39;034&#39; &#39;083&#39;
+ &#39;072&#39; &#39;076&#39; &#39;093&#39; &#39;070&#39; &#39;019&#39; &#39;063&#39; &#39;021&#39; &#39;085&#39; &#39;029&#39; &#39;095&#39; &#39;132&#39; &#39;020&#39;
+ &#39;136&#39; &#39;027&#39; &#39;144&#39; &#39;143&#39; &#39;142&#39; &#39;131&#39;]
+98 [&#39;145&#39; &#39;024&#39; &#39;131&#39; &#39;039&#39; &#39;142&#39; &#39;034&#39;]
+J1 [&#39;015&#39;]
+Z5 [&#39;003&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice there are ship numbers that are encoded incorrectly, as well as ship classes encoded incorrectly (non-numeric characters).  We will populate all these as “unidentifiable vessels” even though you may be able to retrieve a few entries via collocation with other entries in the intial fosdic records.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="prepare-for-merging-with-vessel-meta-archive">
+<h1>Prepare for Merging with Vessel Meta Archive<a class="headerlink" href="#prepare-for-merging-with-vessel-meta-archive" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#declare non-numeric ship and class id&#39;s as uncrecoverable meta matchable</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;VesselMeta_Availability&#39;</span><span class="p">]</span><span class="o">=</span><span class="kc">True</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">g</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="nb">float</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">shipno</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s1">&#39;VesselMeta_Availability&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="nb">float</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">shipclass</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s1">&#39;VesselMeta_Availability&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>        
+        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pdf</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;VesselMeta_Availability&#39;</span><span class="p">]]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">g</span> <span class="ow">in</span> <span class="n">pdf</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;shipclass&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">g</span><span class="o">.</span><span class="n">shipno</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 [&#39;111&#39; &#39;145&#39; &#39;265&#39;]
+ 2 [&#39;221&#39;]
+ 4 [&#39; 76&#39; &#39;394&#39; &#39;012&#39;]
+ 5 [&#39;229&#39;]
+ 6 [&#39;048&#39; &#39;012&#39; &#39;106&#39;]
+ 8 [&#39;131&#39;]
+-1 [&#39;318&#39; &#39;292&#39; &#39;015&#39;]
+0  [&#39;010&#39;]
+00 [&#39;007&#39;]
+01 [&#39;061&#39; &#39;041&#39; &#39;040&#39; &#39;034&#39; &#39;038&#39; &#39;045&#39; &#39;046&#39; &#39;042&#39; &#39;033&#39; &#39;544&#39; &#39;044&#39; &#39;060&#39;
+ &#39;056&#39; &#39;058&#39; &#39;059&#39; &#39;036&#39; &#39;035&#39; &#39;063&#39; &#39;262&#39;]
+02 [&#39;130&#39; &#39;027&#39; &#39;039&#39; &#39;072&#39; &#39;070&#39; &#39;136&#39; &#39;068&#39; &#39;071&#39; &#39;073&#39; &#39;028&#39; &#39;024&#39; &#39;029&#39;
+ &#39;038&#39; &#39;032&#39; &#39;035&#39; &#39;031&#39; &#39;069&#39;]
+03 [&#39;002&#39; &#39;001&#39;]
+06 [&#39;052&#39; &#39;042&#39; &#39;006&#39; &#39;012&#39; &#39;004&#39; &#39;013&#39; &#39;005&#39; &#39;086&#39; &#39;103&#39; &#39;040&#39; &#39;104&#39; &#39;007&#39;
+ &#39;011&#39; &#39;010&#39; &#39;066&#39; &#39;060&#39; &#39;091&#39; &#39;046&#39; &#39;047&#39; &#39;065&#39; &#39;055&#39; &#39;048&#39; &#39;080&#39; &#39;087&#39;
+ &#39;051&#39; &#39;105&#39; &#39;054&#39; &#39;008&#39; &#39;050&#39; &#39;062&#39; &#39;053&#39; &#39;056&#39; &#39;041&#39; &#39;082&#39; &#39;058&#39; &#39;095&#39;
+ &#39;063&#39; &#39;085&#39; &#39;009&#39; &#39;043&#39;]
+07 [&#39;004&#39; &#39;031&#39; &#39;006&#39; &#39;013&#39; &#39;015&#39; &#39;025&#39; &#39;002&#39; &#39;003&#39; &#39;017&#39; &#39;024&#39; &#39;021&#39; &#39;016&#39;
+ &#39;009&#39; &#39;014&#39; &#39;020&#39; &#39;011&#39; &#39;012&#39;]
+08 [&#39;029&#39; &#39;011&#39; &#39;026&#39; &#39;025&#39; &#39;034&#39; &#39;013&#39; &#39;020&#39; &#39;031&#39; &#39;016&#39;]
+09 [&#39;024&#39; &#39;026&#39; &#39;025&#39; &#39;029&#39; &#39;050&#39;]
+1  [&#39;129&#39; &#39;242&#39;]
+10 [&#39;009&#39; &#39;069&#39; &#39;011&#39; &#39;013&#39; &#39;072&#39; &#39;001&#39; &#39;031&#39; &#39;029&#39; &#39;012&#39; &#39;020&#39; &#39;023&#39; &#39;063&#39;
+ &#39;071&#39; &#39;018&#39; &#39;028&#39; &#39;096&#39; &#39;103&#39; &#39;100&#39; &#39;104&#39; &#39;068&#39; &#39;090&#39; &#39;097&#39; &#39;016&#39; &#39;-07&#39;
+ &#39;060&#39; &#39;059&#39; &#39;070&#39; &#39;085&#39; &#39;076&#39; &#39;064&#39; &#39;075&#39; &#39;099&#39; &#39;074&#39; &#39;088&#39; &#39;086&#39; &#39;058&#39;
+ &#39;098&#39; &#39;082&#39; &#39;102&#39; &#39;025&#39; &#39;067&#39; &#39;021&#39; &#39;057&#39;]
+11 [&#39;015&#39;]
+12 [&#39;210&#39; &#39;457&#39; &#39;362&#39; &#39;458&#39; &#39;454&#39; &#39;395&#39; &#39;359&#39; &#39;462&#39; &#39;396&#39; &#39;381&#39; &#39;440&#39; &#39;432&#39;
+ &#39;247&#39; &#39;248&#39; &#39;215&#39; &#39;228&#39; &#39;216&#39; &#39;211&#39; &#39;217&#39; &#39;154&#39; &#39;148&#39; &#39;149&#39; &#39;150&#39; &#39;629&#39;
+ &#39;405&#39; &#39;477&#39; &#39;873&#39; &#39;710&#39; &#39;156&#39; &#39;358&#39; &#39;394&#39; &#39;647&#39; &#39;441&#39; &#39;223&#39; &#39;361&#39; &#39;382&#39;
+ &#39;551&#39; &#39;741&#39; &#39;552&#39; &#39;494&#39; &#39;874&#39; &#39;570&#39; &#39;581&#39; &#39;220&#39; &#39;880&#39; &#39;463&#39; &#39;493&#39; &#39;798&#39;
+ &#39;476&#39; &#39;587&#39; &#39;383&#39; &#39;442&#39; &#39;571&#39; &#39;576&#39; &#39;363&#39; &#39;709&#39; &#39;569&#39; &#39;430&#39; &#39;573&#39; &#39;876&#39;
+ &#39;655&#39; &#39;588&#39; &#39;732&#39; &#39;517&#39; &#39;520&#39; &#39;666&#39; &#39;628&#39; &#39;832&#39; &#39;686&#39; &#39;706&#39; &#39;425&#39; &#39;419&#39;
+ &#39;421&#39; &#39;402&#39; &#39;574&#39; &#39;806&#39; &#39;729&#39; &#39;222&#39; &#39;654&#39; &#39;724&#39; &#39;689&#39; &#39;691&#39; &#39;641&#39; &#39;360&#39;
+ &#39;487&#39; &#39;357&#39; &#39;611&#39; &#39;495&#39; &#39;230&#39; &#39;497&#39; &#39;341&#39; &#39;878&#39; &#39;586&#39; &#39;662&#39; &#39;471&#39; &#39;742&#39;
+ &#39;518&#39; &#39;600&#39; &#39;649&#39; &#39;575&#39; &#39;679&#39; &#39;483&#39; &#39;519&#39; &#39;479&#39; &#39;221&#39; &#39;624&#39; &#39;453&#39; &#39;439&#39;
+ &#39;399&#39; &#39;356&#39; &#39;366&#39; &#39;379&#39; &#39;386&#39; &#39;388&#39; &#39;367&#39; &#39;515&#39; &#39;435&#39; &#39;365&#39; &#39;391&#39; &#39;371&#39;
+ &#39;661&#39; &#39;385&#39; &#39;368&#39; &#39;491&#39; &#39;486&#39; &#39;554&#39; &#39;433&#39; &#39;460&#39; &#39;414&#39; &#39;393&#39; &#39;398&#39; &#39;465&#39;
+ &#39;387&#39; &#39;445&#39; &#39;411&#39; &#39;434&#39; &#39;213&#39; &#39;350&#39; &#39;544&#39; &#39;066&#39; &#39;472&#39; &#39;377&#39; &#39;605&#39; &#39;659&#39;
+ &#39;598&#39; &#39;041&#39; &#39;508&#39; &#39;353&#39; &#39;470&#39; &#39;480&#39; &#39;349&#39; &#39;660&#39; &#39;670&#39; &#39;644&#39; &#39;468&#39; &#39;407&#39;
+ &#39;390&#39; &#39;481&#39; &#39;675&#39; &#39;606&#39; &#39;473&#39; &#39;580&#39; &#39;623&#39; &#39;636&#39; &#39;632&#39; &#39;246&#39; &#39;426&#39; &#39;159&#39;
+ &#39;147&#39; &#39;153&#39; &#39;157&#39; &#39;428&#39; &#39;620&#39; &#39;145&#39; &#39;144&#39; &#39;422&#39; &#39;128&#39; &#39;578&#39; &#39;427&#39; &#39;239&#39;
+ &#39;126&#39; &#39;807&#39; &#39;251&#39; &#39;151&#39; &#39;420&#39; &#39;152&#39; &#39;118&#39; &#39;158&#39; &#39;188&#39; &#39;572&#39; &#39;403&#39; &#39;461&#39;
+ &#39;626&#39; &#39;418&#39; &#39;805&#39; &#39;862&#39; &#39;455&#39; &#39;424&#39; &#39;429&#39; &#39;511&#39; &#39;550&#39; &#39;456&#39; &#39;743&#39; &#39;831&#39;
+ &#39;583&#39; &#39;610&#39; &#39;109&#39; &#39;164&#39; &#39;233&#39; &#39;563&#39; &#39;492&#39; &#39;488&#39; &#39;638&#39; &#39;602&#39; &#39;608&#39; &#39;380&#39;
+ &#39;579&#39; &#39;546&#39; &#39;658&#39; &#39;526&#39; &#39;351&#39; &#39;669&#39; &#39;792&#39; &#39;585&#39; &#39;681&#39; &#39;734&#39; &#39;355&#39; &#39;417&#39;
+ &#39;650&#39; &#39;630&#39; &#39;106&#39; &#39;510&#39; &#39;528&#39; &#39;446&#39; &#39;577&#39; &#39;631&#39; &#39;547&#39; &#39;423&#39; &#39;155&#39; &#39;160&#39;
+ &#39;637&#39; &#39;640&#39; &#39;601&#39; &#39;808&#39; &#39;756&#39; &#39;408&#39; &#39;613&#39; &#39;604&#39; &#39;187&#39; &#39;431&#39; &#39;343&#39; &#39;509&#39;
+ &#39;621&#39; &#39;437&#39; &#39;115&#39; &#39;116&#39; &#39;237&#39; &#39;137&#39; &#39;450&#39; &#39;514&#39; &#39;406&#39; &#39;113&#39; &#39;498&#39; &#39;234&#39;
+ &#39;560&#39; &#39;558&#39; &#39;562&#39; &#39;218&#39; &#39;392&#39; &#39;231&#39; &#39;545&#39; &#39;685&#39; &#39;484&#39; &#39;680&#39; &#39;668&#39; &#39;529&#39;
+ &#39;527&#39; &#39;609&#39; &#39;612&#39; &#39;634&#39; &#39;617&#39; &#39;635&#39; &#39;633&#39; &#39;489&#39; &#39;618&#39; &#39;199&#39; &#39;438&#39; &#39;615&#39;
+ &#39;627&#39; &#39;490&#39; &#39;496&#39; &#39;614&#39; &#39;625&#39; &#39;142&#39; &#39;464&#39; &#39;697&#39; &#39;603&#39; &#39;242&#39; &#39;232&#39; &#39;557&#39;
+ &#39;800&#39; &#39;607&#39; &#39;796&#39; &#39;553&#39; &#39;642&#39; &#39;372&#39; &#39;643&#39; &#39;645&#39;]
+13 [&#39;359&#39; &#39;383&#39;]
+14 [&#39;326&#39; &#39;174&#39; &#39;178&#39; &#39;135&#39; &#39;240&#39; &#39;182&#39; &#39;142&#39; &#39;139&#39; &#39;705&#39; &#39;181&#39; &#39;179&#39; &#39;101&#39;
+ &#39;016&#39; &#39;176&#39; &#39;177&#39; &#39;100&#39; &#39;175&#39; &#39;408&#39; &#39;341&#39; &#39;681&#39; &#39;797&#39; &#39;581&#39; &#39;583&#39; &#39;200&#39;
+ &#39;698&#39; &#39;795&#39; &#39;368&#39; &#39;363&#39; &#39;259&#39; &#39;683&#39; &#39;218&#39; &#39;536&#39; &#39;701&#39; &#39;231&#39; &#39;586&#39; &#39;420&#39;
+ &#39;345&#39; &#39;697&#39; &#39;349&#39; &#39;708&#39; &#39;201&#39; &#39;202&#39; &#39;203&#39; &#39;796&#39; &#39;589&#39; &#39;418&#39; &#39;331&#39; &#39;330&#39;
+ &#39;063&#39; &#39;168&#39; &#39;141&#39; &#39;343&#39; &#39;184&#39; &#39;449&#39; &#39;406&#39; &#39;510&#39; &#39;382&#39; &#39;152&#39; &#39;415&#39; &#39;304&#39;
+ &#39;372&#39; &#39;340&#39; &#39;411&#39; &#39;419&#39; &#39;438&#39; &#39;049&#39; &#39;450&#39; &#39;022&#39; &#39;261&#39; &#39;739&#39; &#39;199&#39; &#39;680&#39;
+ &#39;023&#39; &#39;041&#39; &#39;026&#39; &#39;011&#39; &#39;009&#39; &#39;017&#39; &#39;019&#39; &#39;025&#39; &#39;035&#39; &#39;032&#39; &#39;040&#39; &#39;030&#39;
+ &#39;644&#39; &#39;265&#39; &#39;034&#39; &#39;262&#39; &#39;339&#39; &#39;405&#39; &#39;213&#39; &#39;070&#39; &#39;146&#39; &#39;575&#39; &#39;190&#39; &#39;693&#39;
+ &#39;327&#39; &#39;329&#39; &#39;763&#39; &#39;398&#39; &#39;196&#39; &#39;682&#39; &#39;792&#39; &#39;322&#39; &#39;138&#39; &#39;246&#39; &#39;134&#39; &#39;015&#39;
+ &#39;039&#39; &#39;260&#39; &#39;263&#39; &#39;020&#39; &#39;634&#39; &#39;637&#39; &#39;014&#39; &#39;167&#39; &#39;366&#39; &#39;050&#39; &#39;640&#39; &#39;029&#39;
+ &#39;745&#39; &#39;166&#39; &#39;530&#39; &#39;045&#39; &#39;150&#39; &#39;148&#39; &#39;051&#39; &#39;153&#39; &#39;214&#39; &#39;799&#39; &#39;006&#39; &#39;129&#39;
+ &#39;249&#39; &#39;332&#39; &#39;147&#39; &#39;684&#39; &#39;060&#39; &#39;352&#39; &#39;047&#39; &#39;362&#39; &#39;578&#39; &#39;399&#39; &#39;335&#39; &#39;694&#39;
+ &#39;685&#39; &#39;665&#39; &#39;059&#39; &#39;334&#39; &#39;008&#39; &#39;642&#39; &#39;028&#39; &#39;053&#39; &#39;005&#39; &#39;137&#39; &#39;169&#39; &#39;253&#39;
+ &#39;252&#39; &#39;387&#39; &#39;392&#39; &#39;131&#39; &#39;102&#39; &#39;258&#39; &#39;220&#39; &#39;385&#39; &#39;325&#39; &#39;194&#39; &#39;794&#39; &#39;400&#39;
+ &#39;105&#39; &#39;242&#39; &#39;323&#39; &#39;793&#39; &#39;161&#39; &#39;197&#39; &#39;210&#39; &#39;057&#39; &#39;529&#39; &#39;065&#39; &#39;790&#39; &#39;212&#39;
+ &#39;173&#39; &#39;764&#39; &#39;054&#39; &#39;215&#39; &#39;132&#39; &#39;130&#39; &#39;251&#39; &#39;151&#39; &#39;676&#39; &#39;068&#39; &#39;317&#39; &#39;393&#39;
+ &#39;384&#39; &#39;394&#39; &#39;241&#39; &#39;191&#39; &#39;066&#39; &#39;133&#39; &#39;010&#39; &#39;171&#39; &#39;769&#39; &#39;320&#39; &#39;33 &#39; &#39;018&#39;
+ &#39;423&#39; &#39;585&#39; &#39;643&#39; &#39;696&#39; &#39;636&#39; &#39;  5&#39; &#39;535&#39; &#39;198&#39; &#39;007&#39;]
+15 [&#39;235&#39; &#39;165&#39; &#39;168&#39; &#39;477&#39; &#39;317&#39; &#39;215&#39; &#39;242&#39; &#39;229&#39; &#39;230&#39; &#39;119&#39; &#39;398&#39; &#39;394&#39;
+ &#39;118&#39; &#39;405&#39; &#39;129&#39; &#39;126&#39; &#39;207&#39; &#39;395&#39; &#39;384&#39; &#39;179&#39; &#39;138&#39; &#39;299&#39; &#39;390&#39; &#39;388&#39;
+ &#39;258&#39; &#39;183&#39; &#39;117&#39; &#39;366&#39; &#39;287&#39; &#39;116&#39; &#39;163&#39; &#39;186&#39; &#39;391&#39; &#39;339&#39; &#39;400&#39; &#39;479&#39;
+ &#39;481&#39; &#39;243&#39; &#39;241&#39; &#39;153&#39; &#39;396&#39; &#39;251&#39; &#39;476&#39; &#39;392&#39; &#39;365&#39; &#39;246&#39; &#39;393&#39; &#39;316&#39;
+ &#39;397&#39; &#39;402&#39; &#39;295&#39; &#39;381&#39; &#39;331&#39; &#39;329&#39; &#39;383&#39; &#39;361&#39; &#39;419&#39; &#39;421&#39; &#39;362&#39; &#39;332&#39;
+ &#39;313&#39; &#39;423&#39; &#39;336&#39; &#39;373&#39; &#39;422&#39; &#39;244&#39; &#39;314&#39; &#39;386&#39; &#39;315&#39; &#39;245&#39; &#39;385&#39; &#39;216&#39;
+ &#39;232&#39; &#39;408&#39; &#39;399&#39; &#39;410&#39; &#39;406&#39; &#39;271&#39; &#39;272&#39; &#39;192&#39; &#39;175&#39; &#39;208&#39; &#39;167&#39; &#39;334&#39;
+ &#39;475&#39; &#39;199&#39; &#39;276&#39; &#39;274&#39; &#39;169&#39; &#39;337&#39; &#39;409&#39; &#39;333&#39; &#39;374&#39; &#39;309&#39; &#39;187&#39; &#39;210&#39;
+ &#39;278&#39; &#39;180&#39; &#39;424&#39; &#39;171&#39; &#39;418&#39; &#39;369&#39; &#39;221&#39; &#39;387&#39; &#39;247&#39; &#39;158&#39; &#39;154&#39; &#39;236&#39;
+ &#39;145&#39; &#39;203&#39; &#39;142&#39; &#39;213&#39; &#39;480&#39; &#39;312&#39; &#39;120&#39; &#39;092&#39; &#39;340&#39; &#39;184&#39; &#39;341&#39; &#39;330&#39;
+ &#39;198&#39; &#39;262&#39; &#39;281&#39; &#39;282&#39; &#39;206&#39; &#39;182&#39; &#39;254&#39; &#39;181&#39; &#39;567&#39; &#39;264&#39; &#39;228&#39; &#39;308&#39;
+ &#39;250&#39; &#39;238&#39; &#39;284&#39; &#39;266&#39; &#39;202&#39; &#39;200&#39; &#39;178&#39; &#39;201&#39; &#39;224&#39; &#39;304&#39; &#39;220&#39; &#39;217&#39;
+ &#39;283&#39; &#39;260&#39; &#39;239&#39; &#39;306&#39; &#39;255&#39; &#39;189&#39; &#39;240&#39; &#39;218&#39; &#39;261&#39; &#39;286&#39; &#39;293&#39; &#39;225&#39;
+ &#39;214&#39; &#39;305&#39; &#39;263&#39; &#39;231&#39; &#39;234&#39; &#39;172&#39; &#39;412&#39; &#39;237&#39; &#39;268&#39; &#39;269&#39; &#39;288&#39; &#39;414&#39;
+ &#39;259&#39; &#39;223&#39; &#39;256&#39; &#39;310&#39; &#39;307&#39; &#39;311&#39; &#39;267&#39; &#39;401&#39; &#39;403&#39; &#39;146&#39; &#39;404&#39; &#39;292&#39;
+ &#39;300&#39; &#39;188&#39; &#39;280&#39; &#39;367&#39; &#39;372&#39; &#39;265&#39; &#39;212&#39; &#39;285&#39; &#39;249&#39; &#39;325&#39; &#39;194&#39; &#39;328&#39;
+ &#39;270&#39; &#39;382&#39; &#39;413&#39; &#39;389&#39; &#39;298&#39; &#39;086&#39; &#39;170&#39; &#39;454&#39; &#39;123&#39; &#39;318&#39; &#39;319&#39; &#39;326&#39;
+ &#39;327&#39; &#39;222&#39; &#39;193&#39; &#39;144&#39; &#39;185&#39; &#39;191&#39; &#39;050&#39; &#39;322&#39;]
+16 [&#39;032&#39; &#39;001&#39;]
+17 [&#39;026&#39; &#39;020&#39; &#39;001&#39; &#39;002&#39; &#39;009&#39; &#39;008&#39; &#39;017&#39;]
+18 [&#39;009&#39; &#39;012&#39; &#39;011&#39;]
+19 [&#39;003&#39;]
+20 [&#39;018&#39; &#39;015&#39; &#39;019&#39; &#39;017&#39; &#39;021&#39; &#39;020&#39; &#39;016&#39; &#39;022&#39;]
+21 [&#39;018&#39; &#39;005&#39; &#39;033&#39; &#39;009&#39; &#39;011&#39; &#39;012&#39; &#39;007&#39; &#39;008&#39; &#39;016&#39; &#39;010&#39; &#39;015&#39; &#39;017&#39;
+ &#39;004&#39; &#39;034&#39; &#39;014&#39;]
+22 [&#39;255&#39; &#39;258&#39; &#39;257&#39; &#39;076&#39; &#39;058&#39; &#39;128&#39; &#39;131&#39; &#39;217&#39; &#39;220&#39; &#39;219&#39; &#39;127&#39; &#39;031&#39;
+ &#39;043&#39; &#39;062&#39; &#39;013&#39; &#39;087&#39; &#39;025&#39; &#39;022&#39; &#39;108&#39; &#39;111&#39; &#39;110&#39; &#39;317&#39; &#39;323&#39; &#39;297&#39;
+ &#39;016&#39; &#39;056&#39; &#39;059&#39; &#39;268&#39; &#39;246&#39; &#39;060&#39; &#39;055&#39; &#39;322&#39; &#39;304&#39; &#39;109&#39; &#39;320&#39; &#39;324&#39;
+ &#39;298&#39; &#39;300&#39; &#39;154&#39; &#39;118&#39; &#39;267&#39; &#39;119&#39; &#39;002&#39; &#39;123&#39; &#39;270&#39; &#39;107&#39; &#39;136&#39; &#39;137&#39;
+ &#39;274&#39; &#39;104&#39; &#39;283&#39; &#39;305&#39; &#39;152&#39; &#39;084&#39; &#39;126&#39; &#39;102&#39; &#39;117&#39; &#39;120&#39; &#39;116&#39; &#39;105&#39;
+ &#39;153&#39; &#39;271&#39; &#39;024&#39; &#39;072&#39; &#39;075&#39; &#39;0  &#39; &#39;113&#39; &#39;079&#39; &#39;103&#39; &#39;007&#39; &#39;156&#39; &#39;083&#39;
+ &#39;021&#39; &#39;035&#39; &#39;082&#39;]
+23 [&#39;017&#39;]
+25 [&#39;238&#39;]
+26 [&#39;006&#39; &#39;004&#39;]
+27 [&#39;006&#39; &#39;008&#39; &#39;004&#39;]
+28 [&#39;018&#39; &#39;015&#39; &#39;014&#39;]
+29 [&#39;005&#39; &#39;002&#39;]
+30 [&#39;-01&#39; &#39;057&#39;]
+31 [&#39;053&#39; &#39;034&#39; &#39;024&#39; &#39;001&#39; &#39;032&#39; &#39;010&#39; &#39;012&#39; &#39;013&#39; &#39;047&#39; &#39;003&#39; &#39;005&#39; &#39;009&#39;
+ &#39;038&#39;]
+32 [&#39;050&#39; &#39;063&#39; &#39;064&#39; &#39;070&#39; &#39;052&#39; &#39;059&#39; &#39;008&#39; &#39;058&#39; &#39;065&#39; &#39;071&#39; &#39;066&#39; &#39;087&#39;
+ &#39;067&#39; &#39;089&#39; &#39;086&#39; &#39;102&#39; &#39;062&#39; &#39;101&#39; &#39;068&#39; &#39;056&#39; &#39;022&#39;]
+33 [&#39;005&#39; &#39;009&#39; &#39;008&#39; &#39;004&#39; &#39;010&#39; &#39;001&#39; &#39;012&#39;]
+34 [&#39;257&#39;]
+35 [&#39;012&#39; &#39;018&#39; &#39;028&#39; &#39;009&#39; &#39;023&#39;]
+37 [&#39;019&#39; &#39;022&#39; &#39;017&#39; &#39;028&#39; &#39;024&#39; &#39;013&#39; &#39;025&#39; &#39;021&#39; &#39;012&#39; &#39;016&#39; &#39;011&#39; &#39;010&#39;]
+38 [&#39;021&#39; &#39;009&#39; &#39;020&#39; &#39;018&#39; &#39;017&#39; &#39;008&#39; &#39;019&#39; &#39;003&#39; &#39;045&#39;]
+39 [&#39;013&#39; &#39;009&#39; &#39;004&#39; &#39;003&#39; &#39;008&#39; &#39;005&#39; &#39;006&#39; &#39;014&#39; &#39;011&#39; &#39;001&#39; &#39;010&#39; &#39;002&#39;
+ &#39;012&#39; &#39;007&#39;]
+40 [&#39;121&#39; &#39;110&#39; &#39;320&#39; &#39;460&#39; &#39;425&#39; &#39;068&#39; &#39;217&#39; &#39;182&#39; &#39;025&#39; &#39;003&#39; &#39;169&#39; &#39;168&#39;
+ &#39;172&#39; &#39;067&#39; &#39;173&#39; &#39;197&#39;]
+41 [&#39;015&#39; &#39;021&#39; &#39;004&#39; &#39;009&#39; &#39;011&#39; &#39;003&#39; &#39;019&#39; &#39;012&#39; &#39;002&#39; &#39;014&#39; &#39;016&#39; &#39;-78&#39;]
+42 [&#39;002&#39; &#39;005&#39; &#39;247&#39; &#39;003&#39; &#39;006&#39; &#39;008&#39; &#39;001&#39;]
+43 [&#39;034&#39; &#39;011&#39; &#39;042&#39; &#39;031&#39; &#39;015&#39; &#39;025&#39; &#39;030&#39; &#39;014&#39; &#39;016&#39; &#39;012&#39; &#39;010&#39; &#39;008&#39;
+ &#39;007&#39; &#39;001&#39; &#39;022&#39; &#39;013&#39; &#39;020&#39; &#39;009&#39; &#39;029&#39; &#39;021&#39; &#39;019&#39; &#39;026&#39; &#39;024&#39;]
+44 [&#39;005&#39; &#39;001&#39; &#39;004&#39;]
+45 [&#39;001&#39; &#39;004&#39; &#39;005&#39;]
+46 [&#39;030&#39; &#39;070&#39; &#39;068&#39; &#39;044&#39; &#39;032&#39; &#39;042&#39; &#39;033&#39; &#39;067&#39; &#39;046&#39; &#39;097&#39; &#39;029&#39; &#39;066&#39;
+ &#39;031&#39; &#39;012&#39;]
+47 [&#39;055&#39; &#39;048&#39; &#39;062&#39; &#39;061&#39; &#39;053&#39; &#39;056&#39;]
+48 [&#39;004&#39; &#39;005&#39; &#39;008&#39; &#39;007&#39; &#39;002&#39; &#39;020&#39;]
+49 [&#39;001&#39; &#39;003&#39;]
+50 [&#39;001&#39; &#39;011&#39; &#39;013&#39; &#39;017&#39; &#39;006&#39; &#39;005&#39; &#39;009&#39; &#39;010&#39;]
+51 [&#39;013&#39; &#39;023&#39; &#39;136&#39; &#39;077&#39; &#39;121&#39; &#39;024&#39; &#39;018&#39; &#39;129&#39; &#39;207&#39; &#39;123&#39; &#39;133&#39; &#39;124&#39;
+ &#39;113&#39; &#39;170&#39; &#39;118&#39; &#39;119&#39; &#39;025&#39; &#39;027&#39; &#39;080&#39; &#39;111&#39; &#39;100&#39; &#39;020&#39; &#39;072&#39; &#39;042&#39;
+ &#39;101&#39; &#39;090&#39; &#39;103&#39; &#39;097&#39; &#39;071&#39; &#39;096&#39; &#39;095&#39; &#39;099&#39; &#39;014&#39; &#39;102&#39; &#39;016&#39; &#39;106&#39;
+ &#39;110&#39; &#39;161&#39; &#39;162&#39; &#39;139&#39; &#39;125&#39; &#39;048&#39; &#39;047&#39; &#39;017&#39; &#39;112&#39; &#39;015&#39; &#39;140&#39; &#39;138&#39;
+ &#39;126&#39; &#39;051&#39; &#39;022&#39; &#39;049&#39; &#39;105&#39; &#39;029&#39; &#39;046&#39; &#39;094&#39; &#39;079&#39; &#39;108&#39; &#39;074&#39; &#39;073&#39;
+ &#39;053&#39; &#39;052&#39;]
+52 [&#39;036&#39; &#39;087&#39; &#39;014&#39; &#39;092&#39; &#39;108&#39; &#39;105&#39; &#39;106&#39; &#39;040&#39; &#39;053&#39; &#39;104&#39; &#39;011&#39; &#39;006&#39;
+ &#39;008&#39; &#39;009&#39; &#39;010&#39; &#39;020&#39; &#39;090&#39; &#39;003&#39; &#39;002&#39; &#39;015&#39; &#39;089&#39; &#39;012&#39; &#39;013&#39;]
+54 [&#39;003&#39; &#39;004&#39; &#39;002&#39; &#39;005&#39; &#39;001&#39;]
+55 [&#39;004&#39; &#39;008&#39; &#39;011&#39; &#39;001&#39; &#39;003&#39;]
+56 [&#39;001&#39; &#39;002&#39;]
+58 [&#39;032&#39; &#39;034&#39; &#39;087&#39; &#39;084&#39; &#39;060&#39; &#39;028&#39; &#39;043&#39; &#39;053&#39; &#39;055&#39; &#39;005&#39; &#39;052&#39; &#39;049&#39;
+ &#39;056&#39; &#39;013&#39; &#39;008&#39; &#39;027&#39; &#39;020&#39;]
+59 [&#39;045&#39; &#39;009&#39; &#39;036&#39; &#39;037&#39; &#39;022&#39; &#39;015&#39; &#39;065&#39; &#39;075&#39; &#39;071&#39; &#39;050&#39; &#39;033&#39; &#39;042&#39;
+ &#39;073&#39; &#39;040&#39; &#39;049&#39; &#39;026&#39; &#39;038&#39; &#39;002&#39; &#39;039&#39; &#39;046&#39; &#39;079&#39; &#39;018&#39; &#39;076&#39; &#39;035&#39;
+ &#39;058&#39; &#39;012&#39; &#39;048&#39; &#39;043&#39; &#39;025&#39; &#39;027&#39; &#39;024&#39; &#39;004&#39; &#39;074&#39; &#39;047&#39; &#39;021&#39; &#39;086&#39;
+ &#39;016&#39; &#39;041&#39; &#39;072&#39; &#39;011&#39; &#39;019&#39; &#39;053&#39; &#39;081&#39; &#39;088&#39; &#39;084&#39; &#39;096&#39; &#39;001&#39; &#39;030&#39;
+ &#39;017&#39; &#39;028&#39; &#39;029&#39; &#39;013&#39;]
+60 [&#39;021&#39; &#39;019&#39; &#39;050&#39; &#39;006&#39; &#39;024&#39; &#39;036&#39; &#39;022&#39; &#39;009&#39; &#39;008&#39; &#39;005&#39; &#39;013&#39; &#39;002&#39;
+ &#39;012&#39; &#39;061&#39; &#39;010&#39; &#39;014&#39; &#39;017&#39; &#39;018&#39; &#39;001&#39;]
+61 [&#39;153&#39; &#39;024&#39; &#39;020&#39; &#39;023&#39; &#39;021&#39; &#39;061&#39; &#39;131&#39; &#39;132&#39; &#39;022&#39; &#39;115&#39; &#39;136&#39; &#39;114&#39;
+ &#39;035&#39; &#39;120&#39; &#39;112&#39; &#39;110&#39; &#39;125&#39; &#39;032&#39; &#39;038&#39; &#39;154&#39; &#39;113&#39; &#39;029&#39; &#39;133&#39; &#39;144&#39;
+ &#39;041&#39; &#39;015&#39; &#39;145&#39; &#39;427&#39; &#39;033&#39; &#39;063&#39; &#39;054&#39; &#39;008&#39; &#39;013&#39; &#39;055&#39; &#39;134&#39; &#39;075&#39;
+ &#39;163&#39; &#39;138&#39; &#39;026&#39; &#39;060&#39; &#39;067&#39; &#39;170&#39; &#39;158&#39; &#39;016&#39; &#39;001&#39; &#39;102&#39; &#39;072&#39; &#39;076&#39;
+ &#39;066&#39; &#39;017&#39; &#39;011&#39; &#39;010&#39; &#39;037&#39;]
+62 [&#39;013&#39; &#39;030&#39; &#39;033&#39; &#39;028&#39; &#39;017&#39; &#39;051&#39; &#39;005&#39; &#39;198&#39; &#39;020&#39; &#39;003&#39; &#39;018&#39; &#39;055&#39;
+ &#39;200&#39; &#39;012&#39; &#39;040&#39; &#39;224&#39; &#39;086&#39; &#39;084&#39; &#39;011&#39; &#39;223&#39; &#39;019&#39; &#39;031&#39; &#39;050&#39; &#39;090&#39;
+ &#39;191&#39; &#39;091&#39; &#39;049&#39;]
+65 [&#39;066&#39; &#39;086&#39; &#39;021&#39; &#39;001&#39; &#39;024&#39; &#39;078&#39; &#39;038&#39; &#39;019&#39; &#39;096&#39; &#39;091&#39; &#39;123&#39; &#39;081&#39;
+ &#39;032&#39; &#39;124&#39; &#39;125&#39; &#39;003&#39; &#39;006&#39; &#39;010&#39; &#39;042&#39; &#39;008&#39; &#39;013&#39; &#39;009&#39; &#39;012&#39; &#39;020&#39;
+ &#39;022&#39; &#39;017&#39; &#39;005&#39;]
+68 [&#39;003&#39; &#39;117&#39; &#39;002&#39; &#39;001&#39;]
+71 [&#39;109&#39;]
+76 [&#39;001&#39; &#39;002&#39;]
+77 [&#39;021&#39; &#39;011&#39; &#39;004&#39; &#39;006&#39; &#39;009&#39; &#39;010&#39; &#39;007&#39;]
+78 [&#39;007&#39; &#39;003&#39; &#39;001&#39; &#39;006&#39; &#39;004&#39;]
+81 [&#39;258&#39; &#39;105&#39; &#39;248&#39; &#39;127&#39; &#39;252&#39; &#39;153&#39; &#39;109&#39; &#39;164&#39; &#39;235&#39; &#39;137&#39; &#39;148&#39; &#39;136&#39;]
+82 [&#39;008&#39;]
+84 [&#39;007&#39; &#39;003&#39; &#39;005&#39;]
+85 [&#39;001&#39;]
+86 [&#39;023&#39; &#39;004&#39; &#39;008&#39; &#39;019&#39; &#39;001&#39; &#39;007&#39;]
+88 [&#39;020&#39; &#39;021&#39; &#39;015&#39; &#39;023&#39; &#39;032&#39; &#39;013&#39; &#39;036&#39; &#39;037&#39; &#39;004&#39; &#39;005&#39;]
+89 [&#39;011&#39; &#39;050&#39; &#39;022&#39; &#39;010&#39; &#39;003&#39; &#39;021&#39; &#39;009&#39; &#39;006&#39; &#39;029&#39; &#39;007&#39; &#39;013&#39; &#39;001&#39;
+ &#39;024&#39; &#39;023&#39; &#39;005&#39; &#39;004&#39; &#39;041&#39; &#39;049&#39; &#39;008&#39; &#39;002&#39;]
+9  [&#39; 11&#39;]
+90 [&#39;006&#39;]
+91 [&#39;258&#39;]
+94 [&#39;013&#39; &#39;011&#39; &#39;024&#39; &#39;022&#39; &#39;026&#39; &#39;005&#39; &#39;020&#39; &#39;014&#39; &#39;016&#39; &#39;012&#39; &#39;021&#39; &#39;015&#39;
+ &#39;003&#39; &#39;019&#39; &#39;018&#39; &#39;023&#39; &#39;025&#39;]
+95 [&#39;004&#39; &#39;003&#39; &#39;008&#39; &#39;002&#39; &#39;007&#39; &#39;005&#39;]
+96 [&#39;097&#39; &#39;091&#39; &#39;102&#39; &#39;104&#39; &#39;148&#39; &#39;105&#39; &#39;103&#39; &#39;101&#39; &#39;096&#39; &#39;072&#39; &#39;109&#39; &#39;113&#39;
+ &#39;085&#39; &#39;108&#39; &#39;066&#39; &#39;071&#39; &#39;111&#39; &#39;095&#39; &#39;092&#39;]
+97 [&#39;082&#39; &#39;081&#39; &#39;068&#39; &#39;067&#39; &#39;086&#39; &#39;140&#39; &#39;065&#39; &#39;064&#39; &#39;012&#39; &#39;039&#39; &#39;034&#39; &#39;083&#39;
+ &#39;072&#39; &#39;076&#39; &#39;093&#39; &#39;070&#39; &#39;019&#39; &#39;063&#39; &#39;021&#39; &#39;085&#39; &#39;029&#39; &#39;095&#39; &#39;132&#39; &#39;020&#39;
+ &#39;136&#39; &#39;027&#39; &#39;144&#39; &#39;143&#39; &#39;142&#39; &#39;131&#39;]
+98 [&#39;145&#39; &#39;024&#39; &#39;131&#39; &#39;039&#39; &#39;142&#39; &#39;034&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">g</span> <span class="ow">in</span> <span class="n">pdf</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;shipclass&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">g</span><span class="o">.</span><span class="n">shipno</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="o">&lt;=</span><span class="mi">5</span><span class="p">:</span>
+        <span class="n">pdf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">g</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="s1">&#39;VesselMeta_Availability&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/bell/miniconda3/envs/py38/lib/python3.8/site-packages/pandas/core/indexing.py:1817: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  self._setitem_single_column(loc, value, pi)
+</pre></div>
+</div>
+</div>
+</div>
+<p>This brings us to 637853 samples which is ~1k samples less than the entire dataset when dropping non-numeric entries.  We will try to match these with known vessels from the Deck 195 MetaData reconcstruction project.</p>
+<p>There may be other ID’s that should be ommited (e.g. -1, or ‘0 ‘), and a few that need to be explored (e.g. is ‘1’,‘01’,’1 ’ all the same or are they different?).  Sample counts that are very low will throw these out regardless.</p>
+<p>Vessel Class ID’s assumed in error or not worth exploring due to low counts<br />
+<strong>ClassID / Counts:</strong><br />
+1 3<br />
+2 1<br />
+4 3<br />
+5 1<br />
+6 3<br />
+8 1<br />
+0  1<br />
+00 1<br />
+1  2<br />
+71 1<br />
+9 1</p>
+<p>This brings us to 637834 entries to try to match to known vessels</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Load excel metadata dictionary to merge with remaining sample data</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-py38-py"
+        },
+        kernelOptions: {
+            kernelName: "conda-env-py38-py",
+            path: "./content/code_gallery/MetaData_Rediscovery_notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-py38-py'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="2_Summary.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Summary</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="4_ICOADS_GeoViews_Explore.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Plot all identified Ship Class ID’s and color code by SST</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By EcoFOCI<br/>
+        
+          <div class="extra_footer">
+            <a href=https://www.ecofoci.noaa.gov> ecofoci.noaa.gov </a> &nbsp <a href="mailto:pmel.ecofoci@noaa.gov">Contact Us</a> <br> Ecosystems-Fisheries/Oceanography Coordinated Investigations <br> 7200 Sandpoint Way NE <br>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
