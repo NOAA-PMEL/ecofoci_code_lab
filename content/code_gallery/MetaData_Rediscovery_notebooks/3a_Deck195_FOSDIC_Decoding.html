@@ -52,7 +52,7 @@
     <link rel="shortcut icon" href="../../../_static/FOCI_logo.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Plot all identified Ship Class ID’s and color code by SST" href="ICOADS_GeoViews_Explore.html" />
+    <link rel="next" title="Exploring Deck 195 Prefix’s Vessel ID:01" href="ICOADS_GeoViews_pre01.html" />
     <link rel="prev" title="Summary" href="2_Summary.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -182,16 +182,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="ICOADS_GeoViews_Explore.html">
-     Plot all identified Ship Class ID’s and color code by SST
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ICOADS_GeoViews_pre00.html">
-     Exploring Deck 195 Prefix’s Vessel ID:00
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="ICOADS_GeoViews_pre01.html">
      Exploring Deck 195 Prefix’s Vessel ID:01
     </a>
@@ -204,16 +194,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="ICOADS_GeoViews_pre03.html">
      Exploring Deck 195 Prefix’s Vessel ID:03
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ICOADS_GeoViews_pre04.html">
-     Exploring Deck 195 Prefix’s Vessel ID:04
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ICOADS_GeoViews_pre05.html">
-     Exploring Deck 195 Prefix’s Vessel ID:05
     </a>
    </li>
    <li class="toctree-l2">
@@ -239,11 +219,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="ICOADS_GeoViews_pre10.html">
      Exploring Deck 195 Prefix’s Vessel ID:10
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ICOADS_GeoViews_pre11.html">
-     Exploring Deck 195 Prefix’s Vessel ID:11
     </a>
    </li>
    <li class="toctree-l2">
@@ -783,6 +758,7 @@
 <li><p>Final entry will enclude the complete FOSDIC record entry for future reference</p></li>
 <li><p>Location, date/time will also be converted to geocoordinates.</p></li>
 <li><p>The only QC that will happen other than conversion checks, is to remove empty entries</p></li>
+<li><p>formatting (decimals and integers) should remain close to initial values if possible, however, replacing invalid data with NaN (pythonic) is a float operation… the raw character string is made available for the purposes of addressing this type of conversion challenge.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -808,7 +784,7 @@
 
 <span class="k">def</span> <span class="nf">wind_dir</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
     <span class="k">except</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 
@@ -885,7 +861,7 @@
                     <span class="s1">&#39;lon_coded&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="mi">16</span><span class="p">:</span><span class="mi">19</span><span class="p">],</span>
                     <span class="s1">&#39;ship_speed_kts&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="mi">19</span><span class="p">:</span><span class="mi">21</span><span class="p">],</span> <span class="c1">#knots</span>
                     <span class="s1">&#39;ship_course_deg&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="mi">21</span><span class="p">:</span><span class="mi">23</span><span class="p">],</span> <span class="c1">#degrees</span>
-                    <span class="s1">&#39;wind_dir_deg&#39;</span><span class="p">:</span><span class="n">wind_dir</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">23</span><span class="p">:</span><span class="mi">25</span><span class="p">]),</span> <span class="c1">#*10 as its cut to nearest ten degrees</span>
+                    <span class="s1">&#39;wind_dir_deg&#39;</span><span class="p">:</span><span class="n">wind_dir</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">23</span><span class="p">:</span><span class="mi">25</span><span class="p">]),</span> <span class="c1">#*10 as its cut to nearest ten degrees - and make integer, not float</span>
                     <span class="s1">&#39;wind_speed_kts&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="mi">25</span><span class="p">:</span><span class="mi">27</span><span class="p">],</span> <span class="c1">#knots</span>
                     <span class="s1">&#39;sealevelpressure_inHg&#39;</span><span class="p">:</span><span class="n">slp</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">27</span><span class="p">:</span><span class="mi">31</span><span class="p">]),</span> <span class="c1">#in</span>
                     <span class="s1">&#39;drybulb_temperature_degF&#39;</span><span class="p">:</span><span class="n">airtemp</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">31</span><span class="p">:</span><span class="mi">34</span><span class="p">]),</span> <span class="c1">#degF</span>
@@ -1451,16 +1427,6 @@ Z5 [&#39;003&#39;]
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/bell/miniconda3/envs/py38/lib/python3.8/site-packages/pandas/core/indexing.py:1817: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  self._setitem_single_column(loc, value, pi)
-</pre></div>
-</div>
-</div>
 </div>
 <p>This brings us to 637853 samples which is ~1k samples less than the entire dataset when dropping non-numeric entries.  We will try to match these with known vessels from the Deck 195 MetaData reconcstruction project.</p>
 <p>There may be other ID’s that should be ommited (e.g. -1, or ‘0 ‘), and a few that need to be explored (e.g. is ‘1’,‘01’,’1 ’ all the same or are they different?).  Sample counts that are very low will throw these out regardless.</p>
@@ -1478,13 +1444,6 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 71 1<br />
 9 1</p>
 <p>This brings us to 637834 entries to try to match to known vessels</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Load excel metadata dictionary to merge with remaining sample data</span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -1519,10 +1478,10 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
             <p class="prev-next-title">Summary</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="ICOADS_GeoViews_Explore.html" title="next page">
+    <a class='right-next' id="next-link" href="ICOADS_GeoViews_pre01.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Plot all identified Ship Class ID’s and color code by SST</p>
+        <p class="prev-next-title">Exploring Deck 195 Prefix’s Vessel ID:01</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
