@@ -1,0 +1,783 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oculus Glider Notebooks &#8212; EcoSystems Fisheries-Oceanograpy Coordinated Investigations (EcoFOCI)</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/FOCI_logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="EcoFOCI evaluation/application of Glider Tools for post processing" href="oculus_glider_notebooks/EcoFOCI_GliderTools_Readme.html" />
+    <link rel="prev" title="EcoFOCIpy" href="ecofocipy.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/FOCI_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">EcoSystems Fisheries-Oceanograpy Coordinated Investigations (EcoFOCI)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Code Gallery
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="data_access.html">
+   Data Access
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_access_notebooks/2022-01-06-CrossSound_RetrieveAndProcess.html">
+     Cross Sound ADCP Data Retrieval (a convenient tutorial)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="data_analysis_and_visualization.html">
+   Data Analysis And Visualization
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="data_management.html">
+   Data Management
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ecofocipy.html">
+   EcoFOCIpy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   Oculus Glider Notebooks
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="oculus_glider_notebooks/EcoFOCI_GliderTools_Readme.html">
+     EcoFOCI evaluation/application of Glider Tools for post processing
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Other Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="MetaData_Rediscovery.html">
+   MetaData Rediscovery
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/1_Table_Of_Contents.html">
+     Table of Contents
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/2_Summary.html">
+     Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/3a_Deck195_FOSDIC_Decoding.html">
+     FOSDIC Deck 195 Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre01.html">
+     Exploring Deck 195 Prefix’s Vessel ID:01
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre02.html">
+     Exploring Deck 195 Prefix’s Vessel ID:02
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre03.html">
+     Exploring Deck 195 Prefix’s Vessel ID:03
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre06.html">
+     Exploring Deck 195 Prefix’s Vessel ID:06
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre07.html">
+     Exploring Deck 195 Prefix’s Vessel ID:07
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre08.html">
+     Exploring Deck 195 Prefix’s Vessel ID:08
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre09.html">
+     Exploring Deck 195 Prefix’s Vessel ID:09
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre10.html">
+     Exploring Deck 195 Prefix’s Vessel ID:10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre12.html">
+     Exploring Deck 195 Prefix’s Vessel ID:12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre13.html">
+     Exploring Deck 195 Prefix’s Vessel ID:13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre14.html">
+     Exploring Deck 195 Prefix’s Vessel ID:14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre15.html">
+     Exploring Deck 195 Prefix’s Vessel ID:15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre16.html">
+     Exploring Deck 195 Prefix’s Vessel ID:16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre17.html">
+     Exploring Deck 195 Prefix’s Vessel ID:17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre18.html">
+     Exploring Deck 195 Prefix’s Vessel ID:18
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre19.html">
+     Exploring Deck 195 Prefix’s Vessel ID:19
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre20.html">
+     Exploring Deck 195 Prefix’s Vessel ID:20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre21.html">
+     Exploring Deck 195 Prefix’s Vessel ID:21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre22.html">
+     Exploring Deck 195 Prefix’s Vessel ID:22
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre23.html">
+     Exploring Deck 195 Prefix’s Vessel ID:23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre25.html">
+     Exploring Deck 195 Prefix’s Vessel ID:25
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre26.html">
+     Exploring Deck 195 Prefix’s Vessel ID:26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre27.html">
+     Exploring Deck 195 Prefix’s Vessel ID:27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre28.html">
+     Exploring Deck 195 Prefix’s Vessel ID:28
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre29.html">
+     Exploring Deck 195 Prefix’s Vessel ID:29
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre30.html">
+     Exploring Deck 195 Prefix’s Vessel ID:30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre31.html">
+     Exploring Deck 195 Prefix’s Vessel ID:31
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre32.html">
+     Exploring Deck 195 Prefix’s Vessel ID:32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre33.html">
+     Exploring Deck 195 Prefix’s Vessel ID:33
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre34.html">
+     Exploring Deck 195 Prefix’s Vessel ID:34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre35.html">
+     Exploring Deck 195 Prefix’s Vessel ID:35
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre37.html">
+     Exploring Deck 195 Prefix’s Vessel ID:37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre38.html">
+     Exploring Deck 195 Prefix’s Vessel ID:38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre39.html">
+     Exploring Deck 195 Prefix’s Vessel ID:39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre40.html">
+     Exploring Deck 195 Prefix’s Vessel ID:40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre41.html">
+     Exploring Deck 195 Prefix’s Vessel ID:41
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre42.html">
+     Exploring Deck 195 Prefix’s Vessel ID:42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre43.html">
+     Exploring Deck 195 Prefix’s Vessel ID:43
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre44.html">
+     Exploring Deck 195 Prefix’s Vessel ID:44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre45.html">
+     Exploring Deck 195 Prefix’s Vessel ID:45
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre46.html">
+     Exploring Deck 195 Prefix’s Vessel ID:46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre47.html">
+     Exploring Deck 195 Prefix’s Vessel ID:47
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre48.html">
+     Exploring Deck 195 Prefix’s Vessel ID:48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre49.html">
+     Exploring Deck 195 Prefix’s Vessel ID:49
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre50.html">
+     Exploring Deck 195 Prefix’s Vessel ID:50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre51.html">
+     Exploring Deck 195 Prefix’s Vessel ID:51
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre52.html">
+     Exploring Deck 195 Prefix’s Vessel ID:52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre54.html">
+     Exploring Deck 195 Prefix’s Vessel ID:54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre55.html">
+     Exploring Deck 195 Prefix’s Vessel ID:55
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre56.html">
+     Exploring Deck 195 Prefix’s Vessel ID:56
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre58.html">
+     Exploring Deck 195 Prefix’s Vessel ID:58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre59.html">
+     Exploring Deck 195 Prefix’s Vessel ID:59
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre60.html">
+     Exploring Deck 195 Prefix’s Vessel ID:60
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre61.html">
+     Exploring Deck 195 Prefix’s Vessel ID:61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre62.html">
+     Exploring Deck 195 Prefix’s Vessel ID:62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre65.html">
+     Exploring Deck 195 Prefix’s Vessel ID:71
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre68.html">
+     Exploring Deck 195 Prefix’s Vessel ID:68
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre71.html">
+     Exploring Deck 195 Prefix’s Vessel ID:71
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre76.html">
+     Exploring Deck 195 Prefix’s Vessel ID:82
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre77.html">
+     Exploring Deck 195 Prefix’s Vessel ID:77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre78.html">
+     Exploring Deck 195 Prefix’s Vessel ID:78
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre81.html">
+     Exploring Deck 195 Prefix’s Vessel ID:81
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre82.html">
+     Exploring Deck 195 Prefix’s Vessel ID:82
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre84.html">
+     Exploring Deck 195 Prefix’s Vessel ID:84
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre85.html">
+     Exploring Deck 195 Prefix’s Vessel ID:85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre86.html">
+     Exploring Deck 195 Prefix’s Vessel ID:86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre88.html">
+     Exploring Deck 195 Prefix’s Vessel ID:88
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre89.html">
+     Exploring Deck 195 Prefix’s Vessel ID:89
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre90.html">
+     Exploring Deck 195 Prefix’s Vessel ID:90
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre91.html">
+     Exploring Deck 195 Prefix’s Vessel ID:91
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre94.html">
+     Exploring Deck 195 Prefix’s Vessel ID:94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre95.html">
+     Exploring Deck 195 Prefix’s Vessel ID:95
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre96.html">
+     Exploring Deck 195 Prefix’s Vessel ID:96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre97.html">
+     Exploring Deck 195 Prefix’s Vessel ID:97
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre98.html">
+     Exploring Deck 195 Prefix’s Vessel ID:98
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Other Resources - Outside of EcoFOCI
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://ioos.github.io/ioos_code_lab">
+   IOOS Examples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://help.aodn.org.au/aodn-data-tools/user-code-library/">
+   Opening netCDF files - hints from AODN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="http://unidata.github.io/notebook-gallery/">
+   Unidata Jupyter Notebook Gallery
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="http://iobis.org/tutorial/">
+   Extracting and Enriching OBIS data with R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/USGS-R">
+   USGS-R Examples
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contact Us
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../contact_us.html">
+   Contact Us
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a href="https://www.ecofoci.noaa.gov">EcoFOCI</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/code_gallery/oculus_glider.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/shaunwbell/ecofoci_code_lab"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/shaunwbell/ecofoci_code_lab/issues/new?title=Issue%20on%20page%20%2Fcontent/code_gallery/oculus_glider.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="oculus-glider-notebooks">
+<h1>Oculus Glider Notebooks<a class="headerlink" href="#oculus-glider-notebooks" title="Permalink to this headline">¶</a></h1>
+<p>This chapter will contain all the notebooks pertaining explicitly to the Oculus Coastal Glider project.  It leverages erddap and community glider tools and addresses some of the FOCI challenges of the Glider data.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/code_gallery"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="ecofocipy.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">EcoFOCIpy</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="oculus_glider_notebooks/EcoFOCI_GliderTools_Readme.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">EcoFOCI evaluation/application of Glider Tools for post processing</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By EcoFOCI<br/>
+        
+          <div class="extra_footer">
+            <a href=https://www.ecofoci.noaa.gov> ecofoci.noaa.gov </a> &nbsp <a href="mailto:pmel.ecofoci@noaa.gov">Contact Us</a> <br> Ecosystems-Fisheries/Oceanography Coordinated Investigations <br> 7200 Sandpoint Way NE <br>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
