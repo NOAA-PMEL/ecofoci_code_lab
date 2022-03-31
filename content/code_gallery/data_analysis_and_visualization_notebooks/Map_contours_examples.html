@@ -1,0 +1,1390 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Two ways to use bathymetric datasets to generate bathymetry contours in a plot &#8212; EcoSystems Fisheries-Oceanograpy Coordinated Investigations (EcoFOCI)</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../../_static/FOCI_logo.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Data Management" href="../data_management.html" />
+    <link rel="prev" title="Gridded Data Station Subsetting on closest model point" href="FindNearestGriddedData.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/FOCI_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">EcoSystems Fisheries-Oceanograpy Coordinated Investigations (EcoFOCI)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Code Gallery
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../data_access.html">
+   Data Access
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data_access_notebooks/2022-01-06-CrossSound_RetrieveAndProcess.html">
+     Cross Sound ADCP Data Retrieval (a convenient tutorial)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../data_analysis_and_visualization.html">
+   Data Analysis And Visualization
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="FindNearestGriddedData.html">
+     Gridded Data Station Subsetting on closest model point
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Two ways to use bathymetric datasets to generate bathymetry contours in a plot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../data_management.html">
+   Data Management
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ecofocipy.html">
+   EcoFOCIpy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../oculus_glider.html">
+   Oculus Glider Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oculus_glider_notebooks/EcoFOCI_GliderTools_Readme.html">
+     EcoFOCI evaluation/application of Glider Tools for post processing
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Other Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../MetaData_Rediscovery.html">
+   MetaData Rediscovery
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/1_Table_Of_Contents.html">
+     Table of Contents
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/2_Summary.html">
+     Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/3a_Deck195_FOSDIC_Decoding.html">
+     FOSDIC Deck 195 Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre01.html">
+     Exploring Deck 195 Prefix’s Vessel ID:01
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre02.html">
+     Exploring Deck 195 Prefix’s Vessel ID:02
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre03.html">
+     Exploring Deck 195 Prefix’s Vessel ID:03
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre06.html">
+     Exploring Deck 195 Prefix’s Vessel ID:06
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre07.html">
+     Exploring Deck 195 Prefix’s Vessel ID:07
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre08.html">
+     Exploring Deck 195 Prefix’s Vessel ID:08
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre09.html">
+     Exploring Deck 195 Prefix’s Vessel ID:09
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre10.html">
+     Exploring Deck 195 Prefix’s Vessel ID:10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre12.html">
+     Exploring Deck 195 Prefix’s Vessel ID:12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre13.html">
+     Exploring Deck 195 Prefix’s Vessel ID:13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre14.html">
+     Exploring Deck 195 Prefix’s Vessel ID:14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre15.html">
+     Exploring Deck 195 Prefix’s Vessel ID:15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre16.html">
+     Exploring Deck 195 Prefix’s Vessel ID:16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre17.html">
+     Exploring Deck 195 Prefix’s Vessel ID:17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre18.html">
+     Exploring Deck 195 Prefix’s Vessel ID:18
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre19.html">
+     Exploring Deck 195 Prefix’s Vessel ID:19
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre20.html">
+     Exploring Deck 195 Prefix’s Vessel ID:20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre21.html">
+     Exploring Deck 195 Prefix’s Vessel ID:21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre22.html">
+     Exploring Deck 195 Prefix’s Vessel ID:22
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre23.html">
+     Exploring Deck 195 Prefix’s Vessel ID:23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre25.html">
+     Exploring Deck 195 Prefix’s Vessel ID:25
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre26.html">
+     Exploring Deck 195 Prefix’s Vessel ID:26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre27.html">
+     Exploring Deck 195 Prefix’s Vessel ID:27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre28.html">
+     Exploring Deck 195 Prefix’s Vessel ID:28
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre29.html">
+     Exploring Deck 195 Prefix’s Vessel ID:29
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre30.html">
+     Exploring Deck 195 Prefix’s Vessel ID:30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre31.html">
+     Exploring Deck 195 Prefix’s Vessel ID:31
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre32.html">
+     Exploring Deck 195 Prefix’s Vessel ID:32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre33.html">
+     Exploring Deck 195 Prefix’s Vessel ID:33
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre34.html">
+     Exploring Deck 195 Prefix’s Vessel ID:34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre35.html">
+     Exploring Deck 195 Prefix’s Vessel ID:35
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre37.html">
+     Exploring Deck 195 Prefix’s Vessel ID:37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre38.html">
+     Exploring Deck 195 Prefix’s Vessel ID:38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre39.html">
+     Exploring Deck 195 Prefix’s Vessel ID:39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre40.html">
+     Exploring Deck 195 Prefix’s Vessel ID:40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre41.html">
+     Exploring Deck 195 Prefix’s Vessel ID:41
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre42.html">
+     Exploring Deck 195 Prefix’s Vessel ID:42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre43.html">
+     Exploring Deck 195 Prefix’s Vessel ID:43
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre44.html">
+     Exploring Deck 195 Prefix’s Vessel ID:44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre45.html">
+     Exploring Deck 195 Prefix’s Vessel ID:45
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre46.html">
+     Exploring Deck 195 Prefix’s Vessel ID:46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre47.html">
+     Exploring Deck 195 Prefix’s Vessel ID:47
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre48.html">
+     Exploring Deck 195 Prefix’s Vessel ID:48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre49.html">
+     Exploring Deck 195 Prefix’s Vessel ID:49
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre50.html">
+     Exploring Deck 195 Prefix’s Vessel ID:50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre51.html">
+     Exploring Deck 195 Prefix’s Vessel ID:51
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre52.html">
+     Exploring Deck 195 Prefix’s Vessel ID:52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre54.html">
+     Exploring Deck 195 Prefix’s Vessel ID:54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre55.html">
+     Exploring Deck 195 Prefix’s Vessel ID:55
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre56.html">
+     Exploring Deck 195 Prefix’s Vessel ID:56
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre58.html">
+     Exploring Deck 195 Prefix’s Vessel ID:58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre59.html">
+     Exploring Deck 195 Prefix’s Vessel ID:59
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre60.html">
+     Exploring Deck 195 Prefix’s Vessel ID:60
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre61.html">
+     Exploring Deck 195 Prefix’s Vessel ID:61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre62.html">
+     Exploring Deck 195 Prefix’s Vessel ID:62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre65.html">
+     Exploring Deck 195 Prefix’s Vessel ID:71
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre68.html">
+     Exploring Deck 195 Prefix’s Vessel ID:68
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre71.html">
+     Exploring Deck 195 Prefix’s Vessel ID:71
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre76.html">
+     Exploring Deck 195 Prefix’s Vessel ID:82
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre77.html">
+     Exploring Deck 195 Prefix’s Vessel ID:77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre78.html">
+     Exploring Deck 195 Prefix’s Vessel ID:78
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre81.html">
+     Exploring Deck 195 Prefix’s Vessel ID:81
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre82.html">
+     Exploring Deck 195 Prefix’s Vessel ID:82
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre84.html">
+     Exploring Deck 195 Prefix’s Vessel ID:84
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre85.html">
+     Exploring Deck 195 Prefix’s Vessel ID:85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre86.html">
+     Exploring Deck 195 Prefix’s Vessel ID:86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre88.html">
+     Exploring Deck 195 Prefix’s Vessel ID:88
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre89.html">
+     Exploring Deck 195 Prefix’s Vessel ID:89
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre90.html">
+     Exploring Deck 195 Prefix’s Vessel ID:90
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre91.html">
+     Exploring Deck 195 Prefix’s Vessel ID:91
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre94.html">
+     Exploring Deck 195 Prefix’s Vessel ID:94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre95.html">
+     Exploring Deck 195 Prefix’s Vessel ID:95
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre96.html">
+     Exploring Deck 195 Prefix’s Vessel ID:96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre97.html">
+     Exploring Deck 195 Prefix’s Vessel ID:97
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre98.html">
+     Exploring Deck 195 Prefix’s Vessel ID:98
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Other Resources - Outside of EcoFOCI
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://ioos.github.io/ioos_code_lab">
+   IOOS Examples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://help.aodn.org.au/aodn-data-tools/user-code-library/">
+   Opening netCDF files - hints from AODN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="http://unidata.github.io/notebook-gallery/">
+   Unidata Jupyter Notebook Gallery
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="http://iobis.org/tutorial/">
+   Extracting and Enriching OBIS data with R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/USGS-R">
+   USGS-R Examples
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contact Us
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../contact_us.html">
+   Contact Us
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a href="https://www.ecofoci.noaa.gov">EcoFOCI</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/code_gallery/data_analysis_and_visualization_notebooks/Map_contours_examples.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/shaunwbell/ecofoci_code_lab"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/shaunwbell/ecofoci_code_lab/issues/new?title=Issue%20on%20page%20%2Fcontent/code_gallery/data_analysis_and_visualization_notebooks/Map_contours_examples.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/shaunwbell/ecofoci_code_lab/main?urlpath=lab/tree/jupyterbook/content/code_gallery/data_analysis_and_visualization_notebooks/Map_contours_examples.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/shaunwbell/ecofoci_code_lab/blob/main/jupyterbook/content/code_gallery/data_analysis_and_visualization_notebooks/Map_contours_examples.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cartopy-matplotlib-erddap-xarray">
+   Cartopy + Matplotlib + erddap/xarray
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gmt">
+   GMT
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="two-ways-to-use-bathymetric-datasets-to-generate-bathymetry-contours-in-a-plot">
+<h1>Two ways to use bathymetric datasets to generate bathymetry contours in a plot<a class="headerlink" href="#two-ways-to-use-bathymetric-datasets-to-generate-bathymetry-contours-in-a-plot" title="Permalink to this headline">¶</a></h1>
+<p>Two types of bathymetric representations are useful with our datasets for visualization:</p>
+<ul class="simple">
+<li><p>shaded bathymetry data (instead of an image or a solid color for water)</p></li>
+<li><p>contours at regular or irregular intervals</p></li>
+</ul>
+<p><em>Plotting Packages</em> that make this convenient</p>
+<ul class="simple">
+<li><p>Cartopy and Matplotlib</p></li>
+<li><p>GMT</p></li>
+</ul>
+<p><em>Data Sources</em></p>
+<ul class="simple">
+<li><p>examples rely on erddap or builtin datasets</p></li>
+<li><p>easy to extend to other erddap hosted bathymetry, or netcdf files just by changing source data in the xarray calls</p></li>
+</ul>
+<div class="section" id="cartopy-matplotlib-erddap-xarray">
+<h2>Cartopy + Matplotlib + erddap/xarray<a class="headerlink" href="#cartopy-matplotlib-erddap-xarray" title="Permalink to this headline">¶</a></h2>
+<p>The following example relys on cartopy+matplotlib</p>
+<p>Using Matplotlib (a very common plotting library) and cartopy to create plots.  If you are familiar with matplotlib syntax and arguments, this is a small learning curve.  Plots can be tweaked and the package dependencies are usually pretty stable.</p>
+<p>The data is hosted on an erddap server, no special API is needed to download a gridded dataset via opendap protocal</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xa</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+<span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="nn">cfeature</span>
+<span class="kn">from</span> <span class="nn">cartopy.mpl.ticker</span> <span class="kn">import</span> <span class="n">LongitudeFormatter</span><span class="p">,</span> <span class="n">LatitudeFormatter</span>
+
+<span class="kn">import</span> <span class="nn">cmocean</span> <span class="c1">#ocean colormaps</span>
+
+<span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">170</span><span class="p">,</span> <span class="o">-</span><span class="mi">155</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">63</span><span class="p">]</span>
+
+<span class="n">erddap_grid</span> <span class="o">=</span> <span class="n">xa</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;https://coastwatch.pfeg.noaa.gov/erddap/griddap/usgsCeSS111&#39;</span><span class="p">)</span>
+
+<span class="c1">#given your extent of interst, subset the data to make the contouring quicker... no need to do this globally if you only want the Bering Sea</span>
+<span class="n">erddap_grid_sub</span> <span class="o">=</span> <span class="n">erddap_grid</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">extent</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">extent</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span><span class="n">longitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">extent</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">extent</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">erddap_grid_sub</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
+Dimensions:    (latitude: 1431, longitude: 900)
+Coordinates:
+  * latitude   (latitude) float32 63.0 62.99 62.98 62.98 ... 50.02 50.01 50.0
+  * longitude  (longitude) float32 -170.0 -170.0 -170.0 ... -155.0 -155.0 -155.0
+Data variables:
+    topo       (latitude, longitude) float32 ...
+Attributes: (12/26)
+    cdm_data_type:              Grid
+    Conventions:                COARDS, CF-1.6, ACDD-1.3
+    creator_email:              jjbecker@ucsd.edu, dsandwell@ucsd.edu
+    Easternmost_Easting:        179.9917
+    geospatial_lat_max:         80.738
+    geospatial_lat_min:         -80.738
+    ...                         ...
+    sourceUrl:                  https://geoport.whoi.edu/thredds/dodsC/bathy/...
+    Southernmost_Northing:      -80.738
+    standard_name_vocabulary:   CF Standard Name Table v70
+    summary:                    Global seafloor topography from satellite alt...
+    title:                      Topography, Smith &amp; Sandwell v11.1, 1/60-degree
+    Westernmost_Easting:        -179.9917</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-f1da7efd-054f-402c-ab9a-a9c9289166be' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-f1da7efd-054f-402c-ab9a-a9c9289166be' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>latitude</span>: 1431</li><li><span class='xr-has-index'>longitude</span>: 900</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-1bc12d6f-3322-4259-9384-fcab173701c7' class='xr-section-summary-in' type='checkbox'  checked><label for='section-1bc12d6f-3322-4259-9384-fcab173701c7' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>latitude</span></div><div class='xr-var-dims'>(latitude)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>63.0 62.99 62.98 ... 50.01 50.0</div><input id='attrs-eec450ae-11e1-4933-a7e8-3ece096066a9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-eec450ae-11e1-4933-a7e8-3ece096066a9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1a1863d4-db10-4a59-8a02-39a8c0e12350' class='xr-var-data-in' type='checkbox'><label for='data-1a1863d4-db10-4a59-8a02-39a8c0e12350' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>_CoordinateAxisType :</span></dt><dd>Lat</dd><dt><span>actual_range :</span></dt><dd>[-80.738  80.738]</dd><dt><span>axis :</span></dt><dd>Y</dd><dt><span>ioos_category :</span></dt><dd>Location</dd><dt><span>long_name :</span></dt><dd>Latitude</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd></dl></div><div class='xr-var-data'><pre>array([62.99883 , 62.99126 , 62.983692, ..., 50.023853, 50.01314 , 50.00243 ],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>longitude</span></div><div class='xr-var-dims'>(longitude)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>-170.0 -170.0 ... -155.0 -155.0</div><input id='attrs-c64ceacd-62d5-4bb4-87cb-c78ad7b11fe3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c64ceacd-62d5-4bb4-87cb-c78ad7b11fe3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4750246e-e512-444d-b1a1-20657c420ec5' class='xr-var-data-in' type='checkbox'><label for='data-4750246e-e512-444d-b1a1-20657c420ec5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>_CoordinateAxisType :</span></dt><dd>Lon</dd><dt><span>actual_range :</span></dt><dd>[-179.9917  179.9917]</dd><dt><span>axis :</span></dt><dd>X</dd><dt><span>ioos_category :</span></dt><dd>Location</dd><dt><span>long_name :</span></dt><dd>Longitude</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div><div class='xr-var-data'><pre>array([-169.99167, -169.975  , -169.95833, ..., -155.04167, -155.025  ,
+       -155.00833], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-a11d7afa-5683-4a07-af7f-8bd83021f019' class='xr-section-summary-in' type='checkbox'  checked><label for='section-a11d7afa-5683-4a07-af7f-8bd83021f019' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>topo</span></div><div class='xr-var-dims'>(latitude, longitude)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-43719a96-6105-40a8-9ee2-9f2be2eced99' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-43719a96-6105-40a8-9ee2-9f2be2eced99' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e5e00a6b-ae83-44d6-bf30-e7ffbd9fdcd7' class='xr-var-data-in' type='checkbox'><label for='data-e5e00a6b-ae83-44d6-bf30-e7ffbd9fdcd7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>colorBarMaximum :</span></dt><dd>8000.0</dd><dt><span>colorBarMinimum :</span></dt><dd>-8000.0</dd><dt><span>colorBarPalette :</span></dt><dd>Topography</dd><dt><span>ioos_category :</span></dt><dd>Location</dd><dt><span>long_name :</span></dt><dd>Topography</dd><dt><span>standard_name :</span></dt><dd>altitude</dd><dt><span>units :</span></dt><dd>meters</dd></dl></div><div class='xr-var-data'><pre>[1287900 values with dtype=float32]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-90ba89f2-cc55-4651-ab16-e7436b198589' class='xr-section-summary-in' type='checkbox'  ><label for='section-90ba89f2-cc55-4651-ab16-e7436b198589' class='xr-section-summary' >Attributes: <span>(26)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>cdm_data_type :</span></dt><dd>Grid</dd><dt><span>Conventions :</span></dt><dd>COARDS, CF-1.6, ACDD-1.3</dd><dt><span>creator_email :</span></dt><dd>jjbecker@ucsd.edu, dsandwell@ucsd.edu</dd><dt><span>Easternmost_Easting :</span></dt><dd>179.9917</dd><dt><span>geospatial_lat_max :</span></dt><dd>80.738</dd><dt><span>geospatial_lat_min :</span></dt><dd>-80.738</dd><dt><span>geospatial_lat_units :</span></dt><dd>degrees_north</dd><dt><span>geospatial_lon_max :</span></dt><dd>179.9917</dd><dt><span>geospatial_lon_min :</span></dt><dd>-179.9917</dd><dt><span>geospatial_lon_resolution :</span></dt><dd>0.016666669753229318</dd><dt><span>geospatial_lon_units :</span></dt><dd>degrees_east</dd><dt><span>history :</span></dt><dd>28-Apr-2008: Converted to NetCDF using gdal_translate from FWTOOLS, then rearranged from 0:360 to -180:180 using Matlab (Rich Signell: rsignell@usgs.gov)
+2022-03-31T20:58:54Z https://geoport.whoi.edu/thredds/dodsC/bathy/smith_sandwell_v11
+2022-03-31T20:58:54Z http://coastwatch.pfeg.noaa.gov/erddap/griddap/usgsCeSS111.das</dd><dt><span>infoUrl :</span></dt><dd>https://topex.ucsd.edu/marine_topo/mar_topo.html</dd><dt><span>institution :</span></dt><dd>UCSD</dd><dt><span>keywords :</span></dt><dd>altitude, arc, atmosphere, Earth Science &gt; Oceans &gt; Bathymetry/Seafloor Topography &gt; Bathymetry, global, height, scripps, second, srtm30+, station, topography, version</dd><dt><span>keywords_vocabulary :</span></dt><dd>GCMD Science Keywords</dd><dt><span>license :</span></dt><dd>David T. Sandwell, Walter H. F. Smith, and Joseph J. Becker Copyright 2008. The Regents of the University of California. All Rights Reserved. Permission to copy, modify and distribute any part of this gridded bathymetry at 30 second resolution for educational, research and non-profit purposes, without fee, and without a written agreement is hereby granted, provided that the above copyright notice, this paragraph and the following three paragraphs appear in all copies. Those desiring to incorporate this global bathymetry into commercial products or use for commercial purposes should contact the Technology Transfer and Intellectual Property Services, University of California, San Diego, 9500 Gilman Drive, Mail Code 0910, La Jolla, CA 92093-0910, Ph: (858) 534-5815, FAX: (858) 534-7345, E-MAIL:invent@ucsd.edu. IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS, ARISING OUT OF THE USE OF THIS global bathymetry, EVEN IF THE UNIVERSITY OF CALIFORNIA HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. THE global bathymetry PROVIDED HEREIN IS ON AN &quot;AS IS&quot; BASIS, AND THE UNIVERSITY OF CALIFORNIA HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS. THE UNIVERSITY OF CALIFORNIA MAKES NO REPRESENTATIONS AND EXTENDS NO WARRANTIES OF ANY KIND, EITHER IMPLIED OR EXPRESS, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, OR THAT THE USE OF THE global bathymetry WILL NOT INFRINGE ANY PATENT, TRADEMARK OR OTHER RIGHTS.</dd><dt><span>naming_authority :</span></dt><dd>gov.noaa.pfeg.coastwatch</dd><dt><span>Northernmost_Northing :</span></dt><dd>80.738</dd><dt><span>references :</span></dt><dd>Smith, W. H. F. and D. Sandwell, Global seafloor topography from satellite altimetry and ship depth soundings, Science, 277, p.1956-1962, 1997.</dd><dt><span>sourceUrl :</span></dt><dd>https://geoport.whoi.edu/thredds/dodsC/bathy/smith_sandwell_v11</dd><dt><span>Southernmost_Northing :</span></dt><dd>-80.738</dd><dt><span>standard_name_vocabulary :</span></dt><dd>CF Standard Name Table v70</dd><dt><span>summary :</span></dt><dd>Global seafloor topography from satellite altimetry and ship depth soundings.</dd><dt><span>title :</span></dt><dd>Topography, Smith &amp; Sandwell v11.1, 1/60-degree</dd><dt><span>Westernmost_Easting :</span></dt><dd>-179.9917</dd></dl></div></li></ul></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_map</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span>
+                           <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">projection</span> <span class="o">==</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">():</span>
+        <span class="n">gl</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">gl</span><span class="o">.</span><span class="n">xlabels_top</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">ylabels_right</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">gl</span><span class="o">.</span><span class="n">xformatter</span> <span class="o">=</span> <span class="n">LONGITUDE_FORMATTER</span>
+        <span class="n">gl</span><span class="o">.</span><span class="n">yformatter</span> <span class="o">=</span> <span class="n">LATITUDE_FORMATTER</span>
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#some basic map projection manipulation and transformation is involved here</span>
+<span class="c1"># datasets can be large and take time to render so don&#39;t go to crazy</span>
+
+<span class="n">with_topo</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">LambertConformal</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=-</span><span class="mf">160.0</span><span class="p">)</span>
+<span class="n">transformation</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()</span>
+
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">make_map</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">with_topo</span><span class="p">:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">erddap_grid_sub</span><span class="o">.</span><span class="n">longitude</span><span class="p">,</span> <span class="n">erddap_grid_sub</span><span class="o">.</span><span class="n">latitude</span><span class="p">,</span> 
+                <span class="n">erddap_grid_sub</span><span class="o">.</span><span class="n">topo</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmocean</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">,</span>
+                <span class="n">vmin</span><span class="o">=-</span><span class="mi">3000</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+                <span class="n">transform</span><span class="o">=</span><span class="n">transformation</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">NaturalEarthFeature</span><span class="p">(</span><span class="s1">&#39;physical&#39;</span><span class="p">,</span><span class="s1">&#39;coastline&#39;</span><span class="p">,</span><span class="s1">&#39;10m&#39;</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">extent</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Map_contours_examples_5_0.png" src="../../../_images/Map_contours_examples_5_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#some basic map projection manipulation and transformation is involved here</span>
+<span class="c1"># datasets can be large and take time to render so don&#39;t go to crazy</span>
+
+<span class="n">with_topo</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">LambertConformal</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=-</span><span class="mf">160.0</span><span class="p">)</span>
+<span class="n">transformation</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()</span>
+
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">make_map</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">with_topo</span><span class="p">:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">erddap_grid_sub</span><span class="o">.</span><span class="n">longitude</span><span class="p">,</span> <span class="n">erddap_grid_sub</span><span class="o">.</span><span class="n">latitude</span><span class="p">,</span> 
+                <span class="n">erddap_grid_sub</span><span class="o">.</span><span class="n">topo</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmocean</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray_r</span><span class="p">,</span>
+                <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1500</span><span class="p">,</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span><span class="o">-</span><span class="mi">750</span><span class="p">,</span><span class="o">-</span><span class="mi">500</span><span class="p">,</span><span class="o">-</span><span class="mi">250</span><span class="p">,</span><span class="o">-</span><span class="mi">150</span><span class="p">,</span><span class="o">-</span><span class="mi">70</span><span class="p">],</span>
+                <span class="n">transform</span><span class="o">=</span><span class="n">transformation</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">NaturalEarthFeature</span><span class="p">(</span><span class="s1">&#39;physical&#39;</span><span class="p">,</span><span class="s1">&#39;coastline&#39;</span><span class="p">,</span><span class="s1">&#39;10m&#39;</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">extent</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Map_contours_examples_6_0.png" src="../../../_images/Map_contours_examples_6_0.png" />
+</div>
+</div>
+<p><strong>Other Tasks that can easily be done</strong></p>
+<ul class="simple">
+<li><p>contour fill the ocean or change colors</p></li>
+<li><p>add labels to contours</p></li>
+<li><p>use coarser datasets for smoother contours</p></li>
+</ul>
+</div>
+<div class="section" id="gmt">
+<h2>GMT<a class="headerlink" href="#gmt" title="Permalink to this headline">¶</a></h2>
+<p>The following example is using GMT (an actively developed pythonic port of GMT 6) with installation instructions available at <a class="reference external" href="https://www.pygmt.org/latest/">https://www.pygmt.org/latest/</a>.</p>
+<p>Personally, there is a lot of strengths to using this well developed package, not limited to the creation of very professional looking plots.- but it can occasionally be hard to install / keep up to date / follow along with examples and sometimes you have to “port” examples or details from pure GMT syntax to pyGMT syntax with little more than the pure GMT references.</p>
+<p>I recomend using an environment manager (like whats built in to Conda) to manage pygmt and its dependancies</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygmt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">load_earth_relief</span><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="s2">&quot;01m&quot;</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="n">extent</span><span class="p">)</span> <span class="c1">#datasets here can be found in the documentation... many are SRTM derived at high res and will be downloaded to start</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="c1">#fixed interval grids with a secondary color for a isobath of interest</span>
+<span class="c1"># in this case countour 0,100,200...1500 in black and 70m in red and don&#39;t label anything</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">grdcontour</span><span class="p">(</span><span class="n">annotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">interval</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+               <span class="n">grid</span><span class="o">=</span><span class="n">grid</span><span class="p">,</span>
+               <span class="n">limit</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1500</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+               <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;L-165/35/33/45/12c&quot;</span><span class="p">,</span>
+               <span class="n">frame</span><span class="o">=</span><span class="kc">True</span><span class="p">,)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">grdcontour</span><span class="p">(</span><span class="n">annotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">interval</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span>
+               <span class="n">grid</span><span class="o">=</span><span class="n">grid</span><span class="p">,</span>
+               <span class="n">limit</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+               <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;L-165/35/33/45/12c&quot;</span><span class="p">,</span>
+               <span class="n">pen</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+               <span class="n">frame</span><span class="o">=</span><span class="kc">True</span><span class="p">,)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/Map_contours_examples_11_0.png" src="../../../_images/Map_contours_examples_11_0.png" />
+</div>
+</div>
+<p><strong>Other Tasks that can easily be done</strong></p>
+<ul class="simple">
+<li><p>fill in land or contour fill the ocean</p></li>
+<li><p>add labels to contours</p></li>
+<li><p>irregular contours</p></li>
+<li><p>usage of other gridded datasets including those from netcdf files (not just the builtin datasets)</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-pygmt-py"
+        },
+        kernelOptions: {
+            kernelName: "conda-env-pygmt-py",
+            path: "./content/code_gallery/data_analysis_and_visualization_notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-pygmt-py'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="FindNearestGriddedData.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Gridded Data Station Subsetting on closest model point</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../data_management.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data Management</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By EcoFOCI<br/>
+        
+          <div class="extra_footer">
+            <a href=https://www.ecofoci.noaa.gov> ecofoci.noaa.gov </a> &nbsp <a href="mailto:pmel.ecofoci@noaa.gov">Contact Us</a> <br> Ecosystems-Fisheries/Oceanography Coordinated Investigations <br> 7200 Sandpoint Way NE <br>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
