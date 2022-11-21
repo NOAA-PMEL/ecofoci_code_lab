@@ -1,0 +1,1471 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoFOCIpy ADCP QC - 20BSP-14A &#8212; EcoSystems Fisheries-Oceanograpy Coordinated Investigations (EcoFOCI)</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../../_static/FOCI_logo.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Oculus Glider Notebooks" href="../oculus_glider.html" />
+    <link rel="prev" title="Using EcoFOCIpy to process raw field data" href="EcoFOCIpy_20bsp14a_adcp.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/FOCI_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">EcoSystems Fisheries-Oceanograpy Coordinated Investigations (EcoFOCI)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Code Gallery
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../data_access.html">
+   Data Access
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data_access_notebooks/2022-01-06-CrossSound_RetrieveAndProcess.html">
+     Cross Sound ADCP Data Retrieval (a convenient tutorial)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../data_analysis_and_visualization.html">
+   Data Analysis And Visualization
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data_analysis_and_visualization_notebooks/FindNearestGriddedData.html">
+     Gridded Data Station Subsetting on closest model point
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data_analysis_and_visualization_notebooks/Map_contours_examples.html">
+     Two ways to use bathymetric datasets to generate bathymetry contours in a plot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../data_management.html">
+   Data Management
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../ecofocipy.html">
+   EcoFOCIpy
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="EcoFOCIpy_20bsp14a_adcp.html">
+     Using EcoFOCIpy to process raw field data
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     EcoFOCIpy ADCP QC - 20BSP-14A
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../oculus_glider.html">
+   Oculus Glider Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oculus_glider_notebooks/EcoFOCI_GliderTools_Readme.html">
+     EcoFOCI evaluation/application of Glider Tools for post processing
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Other Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../MetaData_Rediscovery.html">
+   MetaData Rediscovery
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/1_Table_Of_Contents.html">
+     Table of Contents
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/2_Summary.html">
+     Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/3a_Deck195_FOSDIC_Decoding.html">
+     FOSDIC Deck 195 Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_Explore.html">
+     Plot all identified Ship Class ID’s and color code by SST
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre01.html">
+     Exploring Deck 195 Prefix’s Vessel ID:01
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre02.html">
+     Exploring Deck 195 Prefix’s Vessel ID:02
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre03.html">
+     Exploring Deck 195 Prefix’s Vessel ID:03
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre06.html">
+     Exploring Deck 195 Prefix’s Vessel ID:06
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre07.html">
+     Exploring Deck 195 Prefix’s Vessel ID:07
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre08.html">
+     Exploring Deck 195 Prefix’s Vessel ID:08
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre09.html">
+     Exploring Deck 195 Prefix’s Vessel ID:09
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre10.html">
+     Exploring Deck 195 Prefix’s Vessel ID:10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre12.html">
+     Exploring Deck 195 Prefix’s Vessel ID:12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre13.html">
+     Exploring Deck 195 Prefix’s Vessel ID:13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre14.html">
+     Exploring Deck 195 Prefix’s Vessel ID:14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre15.html">
+     Exploring Deck 195 Prefix’s Vessel ID:15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre16.html">
+     Exploring Deck 195 Prefix’s Vessel ID:16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre17.html">
+     Exploring Deck 195 Prefix’s Vessel ID:17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre18.html">
+     Exploring Deck 195 Prefix’s Vessel ID:18
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre19.html">
+     Exploring Deck 195 Prefix’s Vessel ID:19
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre20.html">
+     Exploring Deck 195 Prefix’s Vessel ID:20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre21.html">
+     Exploring Deck 195 Prefix’s Vessel ID:21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre22.html">
+     Exploring Deck 195 Prefix’s Vessel ID:22
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre23.html">
+     Exploring Deck 195 Prefix’s Vessel ID:23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre25.html">
+     Exploring Deck 195 Prefix’s Vessel ID:25
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre26.html">
+     Exploring Deck 195 Prefix’s Vessel ID:26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre27.html">
+     Exploring Deck 195 Prefix’s Vessel ID:27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre28.html">
+     Exploring Deck 195 Prefix’s Vessel ID:28
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre29.html">
+     Exploring Deck 195 Prefix’s Vessel ID:29
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre30.html">
+     Exploring Deck 195 Prefix’s Vessel ID:30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre31.html">
+     Exploring Deck 195 Prefix’s Vessel ID:31
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre32.html">
+     Exploring Deck 195 Prefix’s Vessel ID:32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre33.html">
+     Exploring Deck 195 Prefix’s Vessel ID:33
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre34.html">
+     Exploring Deck 195 Prefix’s Vessel ID:34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre35.html">
+     Exploring Deck 195 Prefix’s Vessel ID:35
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre37.html">
+     Exploring Deck 195 Prefix’s Vessel ID:37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre38.html">
+     Exploring Deck 195 Prefix’s Vessel ID:38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre39.html">
+     Exploring Deck 195 Prefix’s Vessel ID:39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre40.html">
+     Exploring Deck 195 Prefix’s Vessel ID:40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre41.html">
+     Exploring Deck 195 Prefix’s Vessel ID:41
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre42.html">
+     Exploring Deck 195 Prefix’s Vessel ID:42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre43.html">
+     Exploring Deck 195 Prefix’s Vessel ID:43
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre44.html">
+     Exploring Deck 195 Prefix’s Vessel ID:44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre45.html">
+     Exploring Deck 195 Prefix’s Vessel ID:45
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre46.html">
+     Exploring Deck 195 Prefix’s Vessel ID:46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre47.html">
+     Exploring Deck 195 Prefix’s Vessel ID:47
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre48.html">
+     Exploring Deck 195 Prefix’s Vessel ID:48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre49.html">
+     Exploring Deck 195 Prefix’s Vessel ID:49
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre50.html">
+     Exploring Deck 195 Prefix’s Vessel ID:50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre51.html">
+     Exploring Deck 195 Prefix’s Vessel ID:51
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre52.html">
+     Exploring Deck 195 Prefix’s Vessel ID:52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre54.html">
+     Exploring Deck 195 Prefix’s Vessel ID:54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre55.html">
+     Exploring Deck 195 Prefix’s Vessel ID:55
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre56.html">
+     Exploring Deck 195 Prefix’s Vessel ID:56
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre58.html">
+     Exploring Deck 195 Prefix’s Vessel ID:58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre59.html">
+     Exploring Deck 195 Prefix’s Vessel ID:59
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre60.html">
+     Exploring Deck 195 Prefix’s Vessel ID:60
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre61.html">
+     Exploring Deck 195 Prefix’s Vessel ID:61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre62.html">
+     Exploring Deck 195 Prefix’s Vessel ID:62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre65.html">
+     Exploring Deck 195 Prefix’s Vessel ID:71
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre68.html">
+     Exploring Deck 195 Prefix’s Vessel ID:68
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre71.html">
+     Exploring Deck 195 Prefix’s Vessel ID:71
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre76.html">
+     Exploring Deck 195 Prefix’s Vessel ID:82
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre77.html">
+     Exploring Deck 195 Prefix’s Vessel ID:77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre78.html">
+     Exploring Deck 195 Prefix’s Vessel ID:78
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre81.html">
+     Exploring Deck 195 Prefix’s Vessel ID:81
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre82.html">
+     Exploring Deck 195 Prefix’s Vessel ID:82
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre84.html">
+     Exploring Deck 195 Prefix’s Vessel ID:84
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre85.html">
+     Exploring Deck 195 Prefix’s Vessel ID:85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre86.html">
+     Exploring Deck 195 Prefix’s Vessel ID:86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre88.html">
+     Exploring Deck 195 Prefix’s Vessel ID:88
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre89.html">
+     Exploring Deck 195 Prefix’s Vessel ID:89
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre90.html">
+     Exploring Deck 195 Prefix’s Vessel ID:90
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre91.html">
+     Exploring Deck 195 Prefix’s Vessel ID:91
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre94.html">
+     Exploring Deck 195 Prefix’s Vessel ID:94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre95.html">
+     Exploring Deck 195 Prefix’s Vessel ID:95
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre96.html">
+     Exploring Deck 195 Prefix’s Vessel ID:96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre97.html">
+     Exploring Deck 195 Prefix’s Vessel ID:97
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre98.html">
+     Exploring Deck 195 Prefix’s Vessel ID:98
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Other Resources - Outside of EcoFOCI
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://ioos.github.io/ioos_code_lab">
+   IOOS Examples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://help.aodn.org.au/aodn-data-tools/user-code-library/">
+   Opening netCDF files - hints from AODN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="http://unidata.github.io/notebook-gallery/">
+   Unidata Jupyter Notebook Gallery
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="http://iobis.org/tutorial/">
+   Extracting and Enriching OBIS data with R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/USGS-R">
+   USGS-R Examples
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contact Us
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../contact_us.html">
+   Contact Us
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a href="https://www.ecofoci.noaa.gov">EcoFOCI</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/code_gallery/ecofocipy_notebooks/EcoFOCIpy_2D_20bsp14a_QC.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/shaunwbell/ecofoci_code_lab"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/shaunwbell/ecofoci_code_lab/issues/new?title=Issue%20on%20page%20%2Fcontent/code_gallery/ecofocipy_notebooks/EcoFOCIpy_2D_20bsp14a_QC.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/shaunwbell/ecofoci_code_lab/main?urlpath=lab/tree/jupyterbook/content/code_gallery/ecofocipy_notebooks/EcoFOCIpy_2D_20bsp14a_QC.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/shaunwbell/ecofoci_code_lab/blob/main/jupyterbook/content/code_gallery/ecofocipy_notebooks/EcoFOCIpy_2D_20bsp14a_QC.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trim-above-surface-negative-values">
+   Trim above surface (negative values)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interpolate-over-singleton-missing-gaps-linearly">
+   Interpolate over singleton missing gaps linearly
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="ecofocipy-adcp-qc-20bsp-14a">
+<h1>EcoFOCIpy ADCP QC - 20BSP-14A<a class="headerlink" href="#ecofocipy-adcp-qc-20bsp-14a" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>mostly remove &gt;100 cm/s flows in u/v</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xa</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_in</span> <span class="o">=</span> <span class="s1">&#39;20bsp14a_0031m.nc&#39;</span>
+<span class="n">xdf</span> <span class="o">=</span> <span class="n">xa</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="n">file_in</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xdf</span> <span class="o">=</span><span class="n">xdf</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">xdf</span><span class="o">.</span><span class="n">u_curr_comp</span> <span class="o">&lt;=</span><span class="mi">100</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">xdf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body[data-theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-index-name div,
+.xr-index-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2,
+.xr-no-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
+Dimensions:          (latitude: 1, longitude: 1, time: 34591, depth: 20)
+Coordinates:
+  * time             (time) datetime64[ns] 2020-09-18T08:00:00 ... 2022-09-08...
+  * depth            (depth) float64 -10.0 -8.0 -6.0 -4.0 ... 24.0 26.0 28.0
+  * latitude         (latitude) float64 64.0
+  * longitude        (longitude) float64 -167.9
+Data variables:
+    u_curr_comp      (latitude, longitude, time, depth) float64 -6.515 ... 0....
+    v_curr_comp      (latitude, longitude, time, depth) float64 -13.85 ... 15.09
+    w_curr_comp      (latitude, longitude, time, depth) float64 8.9 7.1 ... -0.1
+    w_curr_comp_err  (latitude, longitude, time, depth) float64 -3.6 0.0 ... 0.4
+    agc1             (latitude, longitude, time, depth) float64 68.0 ... 80.0
+    agc2             (latitude, longitude, time, depth) float64 76.0 ... 76.0
+    agc3             (latitude, longitude, time, depth) float64 72.0 ... 86.0
+    agc4             (latitude, longitude, time, depth) float64 70.0 ... 69.0
+Attributes: (12/13)
+    Latitude_DegMMddW:                      64 00.156 N
+    Longitude_DegMMddN:                     167 56.043 W
+    MooringID:                              20BSP-14A
+    platform_deployment_date:               2020-09-18T07:37:00Z
+    platform_deployment_cruise_name:        DY2012
+    platform_recovery_date:                 2022-09-08T23:00:00Z
+    ...                                     ...
+    platform_deployment_recovery_comments:  
+    WaterDepth:                             38.1
+    date_created:                           2022-11-21T09:47:13Z
+    date_modified:                          
+    QC_indicator:                           unknown
+    history:                                Trimmed to deployment.</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-53aeccec-8073-4b3b-a629-4b5dd3d36c2f' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-53aeccec-8073-4b3b-a629-4b5dd3d36c2f' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>latitude</span>: 1</li><li><span class='xr-has-index'>longitude</span>: 1</li><li><span class='xr-has-index'>time</span>: 34591</li><li><span class='xr-has-index'>depth</span>: 20</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-ac052baf-88b0-44f2-a653-cee5ac0489e1' class='xr-section-summary-in' type='checkbox'  checked><label for='section-ac052baf-88b0-44f2-a653-cee5ac0489e1' class='xr-section-summary' >Coordinates: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2020-09-18T08:00:00 ... 2022-09-...</div><input id='attrs-72ea364a-a30e-455f-b20b-7b26f7c894ce' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-72ea364a-a30e-455f-b20b-7b26f7c894ce' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ac5473e5-bbef-429d-a6b9-b2f85b28b186' class='xr-var-data-in' type='checkbox'><label for='data-ac5473e5-bbef-429d-a6b9-b2f85b28b186' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2020-09-18T08:00:00.000000000&#x27;, &#x27;2020-09-18T08:30:00.000000000&#x27;,
+       &#x27;2020-09-18T09:00:00.000000000&#x27;, ..., &#x27;2022-09-08T22:00:00.000000000&#x27;,
+       &#x27;2022-09-08T22:30:00.000000000&#x27;, &#x27;2022-09-08T23:00:00.000000000&#x27;],
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>depth</span></div><div class='xr-var-dims'>(depth)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-10.0 -8.0 -6.0 ... 24.0 26.0 28.0</div><input id='attrs-236eedf8-ec7f-4fc6-93ba-fee16e90be41' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-236eedf8-ec7f-4fc6-93ba-fee16e90be41' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-049a3238-4e0b-4bfc-9c91-f1057777f1b3' class='xr-var-data-in' type='checkbox'><label for='data-049a3238-4e0b-4bfc-9c91-f1057777f1b3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>epic_key :</span></dt><dd>D_3</dd><dt><span>generic_name :</span></dt><dd>depth</dd><dt><span>units :</span></dt><dd>meter</dd><dt><span>long_name :</span></dt><dd>depth below surface (meters)</dd><dt><span>standard_name :</span></dt><dd>depth</dd><dt><span>positive :</span></dt><dd>down</dd></dl></div><div class='xr-var-data'><pre>array([-10.,  -8.,  -6.,  -4.,  -2.,  -0.,   2.,   4.,   6.,   8.,  10.,  12.,
+        14.,  16.,  18.,  20.,  22.,  24.,  26.,  28.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>latitude</span></div><div class='xr-var-dims'>(latitude)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>64.0</div><input id='attrs-f747e27c-c994-4a44-9cff-a671c25d7cad' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f747e27c-c994-4a44-9cff-a671c25d7cad' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-bbbaab54-d48e-4d3d-bd93-a43de9be9063' class='xr-var-data-in' type='checkbox'><label for='data-bbbaab54-d48e-4d3d-bd93-a43de9be9063' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>epic_key :</span></dt><dd>LON_501</dd><dt><span>name :</span></dt><dd>latitude</dd><dt><span>generic_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>long_name :</span></dt><dd>latitude</dd><dt><span>standard_name :</span></dt><dd>latitude</dd></dl></div><div class='xr-var-data'><pre>array([64.0026])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>longitude</span></div><div class='xr-var-dims'>(longitude)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-167.9</div><input id='attrs-7366501c-7af8-4767-935e-ad6d91e3df95' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7366501c-7af8-4767-935e-ad6d91e3df95' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a440d6d9-2ddc-4863-801a-96d9506704bc' class='xr-var-data-in' type='checkbox'><label for='data-a440d6d9-2ddc-4863-801a-96d9506704bc' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>epic_key :</span></dt><dd>LAT_500</dd><dt><span>name :</span></dt><dd>longitude</dd><dt><span>generic_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>long_name :</span></dt><dd>longitude</dd><dt><span>standard_name :</span></dt><dd>longitude</dd></dl></div><div class='xr-var-data'><pre>array([-167.93405])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-e24b1b67-462e-41d3-b39d-ad5ca3369391' class='xr-section-summary-in' type='checkbox'  checked><label for='section-e24b1b67-462e-41d3-b39d-ad5ca3369391' class='xr-section-summary' >Data variables: <span>(8)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>u_curr_comp</span></div><div class='xr-var-dims'>(latitude, longitude, time, depth)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-6.515 -12.27 ... 0.5911 0.3259</div><input id='attrs-510a67ec-8dfe-4f85-b1b7-8677d1f5f811' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-510a67ec-8dfe-4f85-b1b7-8677d1f5f811' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-46fdb7ba-91b1-4a9a-b565-db852aba2d83' class='xr-var-data-in' type='checkbox'><label for='data-46fdb7ba-91b1-4a9a-b565-db852aba2d83' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>generic_name :</span></dt><dd>u_curr_comp</dd><dt><span>epic_key :</span></dt><dd>u_1205</dd><dt><span>units :</span></dt><dd>cm s-1</dd><dt><span>long_name :</span></dt><dd>Zonal Current (Eastward) cm/s</dd><dt><span>standard_name :</span></dt><dd>eastward_sea_water_velocity</dd></dl></div><div class='xr-var-data'><pre>array([[[[ -6.51539976, -12.27097898,   2.78746351, ...,  18.58069945,
+           17.39438428,  16.95250986],
+         [  8.91352581,  10.52413444,  37.87926701, ...,  19.13221822,
+           19.20450893,  19.5903529 ],
+         [ 10.331203  , -16.81628341,  -7.49759064, ...,  22.36794426,
+           22.17787907,  22.7671917 ],
+         ...,
+         [         nan,          nan,          nan, ...,   0.52888931,
+            0.1593056 ,   1.16368571],
+         [         nan,          nan,          nan, ...,   1.27377029,
+            1.25509348,   0.7648785 ],
+         [         nan,          nan,          nan, ...,   0.18127944,
+            0.59107357,   0.32586087]]]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>v_curr_comp</span></div><div class='xr-var-dims'>(latitude, longitude, time, depth)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-13.85 -34.77 ... 15.56 15.09</div><input id='attrs-832250c8-c865-4cc6-8c15-bc03cf8bbe83' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-832250c8-c865-4cc6-8c15-bc03cf8bbe83' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c374ca28-1764-432f-a9c1-fb715b4ad121' class='xr-var-data-in' type='checkbox'><label for='data-c374ca28-1764-432f-a9c1-fb715b4ad121' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>generic_name :</span></dt><dd>v_curr_comp</dd><dt><span>epic_key :</span></dt><dd>v_1206</dd><dt><span>units :</span></dt><dd>cm s-1</dd><dt><span>long_name :</span></dt><dd>Meridional Current (Northward) cm/s</dd><dt><span>standard_name :</span></dt><dd>northward_sea_water_velocity</dd></dl></div><div class='xr-var-data'><pre>array([[[[-13.85169903, -34.76899589, -74.14263313, ..., -14.82422369,
+          -13.1501101 , -12.68670207],
+         [ 45.01143252,  30.0606486 ,  39.07545433, ..., -16.71520942,
+          -16.92680822, -15.56624788],
+         [-16.13028966, -13.16482481, -30.06636218, ..., -14.42827327,
+          -13.59528154, -12.96861527],
+         ...,
+         [         nan,          nan,          nan, ...,  10.62498358,
+           10.87679281,  10.84185573],
+         [         nan,          nan,          nan, ...,  13.14790893,
+           13.75589838,  13.11582864],
+         [         nan,          nan,          nan, ...,  15.51570616,
+           15.56118993,  15.09250856]]]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>w_curr_comp</span></div><div class='xr-var-dims'>(latitude, longitude, time, depth)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>8.9 7.1 4.2 4.3 ... -0.2 -0.2 -0.1</div><input id='attrs-13efa130-db1d-488d-b9b5-a91c90d9db73' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-13efa130-db1d-488d-b9b5-a91c90d9db73' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-93bb1888-cc84-4863-b011-952e0227f115' class='xr-var-data-in' type='checkbox'><label for='data-93bb1888-cc84-4863-b011-952e0227f115' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>generic_name :</span></dt><dd>w_curr_comp</dd><dt><span>epic_key :</span></dt><dd>w_1204</dd><dt><span>units :</span></dt><dd>cm s-1</dd><dt><span>long_name :</span></dt><dd>Vertical Current (Upward) cm/s</dd><dt><span>standard_name :</span></dt><dd>upward_sea_water_velocity</dd></dl></div><div class='xr-var-data'><pre>array([[[[ 8.9,  7.1,  4.2, ...,  0.7,  0.6,  0.6],
+         [18.9,  5.3, 10.7, ..., -0.5, -0.5, -0.5],
+         [ 0.2,  1.2, -7.1, ..., -0.5, -0.2, -0.5],
+         ...,
+         [ nan,  nan,  nan, ...,  0.3,  0.1,  0.1],
+         [ nan,  nan,  nan, ...,  0.1,  0. , -0.1],
+         [ nan,  nan,  nan, ..., -0.2, -0.2, -0.1]]]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>w_curr_comp_err</span></div><div class='xr-var-dims'>(latitude, longitude, time, depth)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-3.6 0.0 36.4 ... -0.4 -0.1 0.4</div><input id='attrs-00920317-89a7-4792-93e1-e6c1f4b6fb41' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-00920317-89a7-4792-93e1-e6c1f4b6fb41' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7926b9ff-d8e4-4683-b110-052614888d15' class='xr-var-data-in' type='checkbox'><label for='data-7926b9ff-d8e4-4683-b110-052614888d15' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>generic_name :</span></dt><dd>w_curr_comp_err</dd><dt><span>epic_key :</span></dt><dd>Werr_1201</dd><dt><span>units :</span></dt><dd>cm s-1</dd><dt><span>long_name :</span></dt><dd>Vertical Current Error (Upward) cm/s</dd><dt><span>standard_name :</span></dt><dd>upward_sea_water_velocity_error</dd></dl></div><div class='xr-var-data'><pre>array([[[[ -3.6,   0. ,  36.4, ...,   0.2,  -0.2,   0.4],
+         [-18.6, -17.5,   6.4, ...,   1.4,   0. ,  -0.6],
+         [-13.1,  -6.2, -13. , ...,   0.2,   0.1,   0.2],
+         ...,
+         [  nan,   nan,   nan, ...,  -0.4,  -0.6,   0.3],
+         [  nan,   nan,   nan, ...,   0. ,   0.4,   0. ],
+         [  nan,   nan,   nan, ...,  -0.4,  -0.1,   0.4]]]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>agc1</span></div><div class='xr-var-dims'>(latitude, longitude, time, depth)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>68.0 78.0 91.0 ... 63.0 71.0 80.0</div><input id='attrs-ee5a0ac2-f2e7-422c-acfc-efcdf31dbfe8' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ee5a0ac2-f2e7-422c-acfc-efcdf31dbfe8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f01c78ff-d31e-4bbb-8c45-46c4e0443d21' class='xr-var-data-in' type='checkbox'><label for='data-f01c78ff-d31e-4bbb-8c45-46c4e0443d21' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>adcp_beam_echo_intensity</dd><dt><span>generic_name :</span></dt><dd>agc1</dd><dt><span>epic_key :</span></dt><dd>AGC1_1221</dd><dt><span>units :</span></dt><dd>counts</dd><dt><span>longname :</span></dt><dd>Echo Intensity (AGC) Beam 1</dd></dl></div><div class='xr-var-data'><pre>array([[[[ 68.,  78.,  91., ..., 168., 167., 160.],
+         [ 65.,  73.,  85., ..., 163., 160., 158.],
+         [ 63.,  70.,  81., ..., 151., 154., 157.],
+         ...,
+         [ nan,  nan,  nan, ...,  62.,  71.,  80.],
+         [ nan,  nan,  nan, ...,  63.,  71.,  80.],
+         [ nan,  nan,  nan, ...,  63.,  71.,  80.]]]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>agc2</span></div><div class='xr-var-dims'>(latitude, longitude, time, depth)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>76.0 86.0 98.0 ... 62.0 68.0 76.0</div><input id='attrs-8b67f855-125b-435d-9c52-f09f381e3b9d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8b67f855-125b-435d-9c52-f09f381e3b9d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fed67abe-393e-4815-8aad-cb3690960494' class='xr-var-data-in' type='checkbox'><label for='data-fed67abe-393e-4815-8aad-cb3690960494' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>adcp_beam_echo_intensity</dd><dt><span>generic_name :</span></dt><dd>agc2</dd><dt><span>epic_key :</span></dt><dd>AGC2_1222</dd><dt><span>units :</span></dt><dd>counts</dd><dt><span>longname :</span></dt><dd>Echo Intensity (AGC) Beam 2</dd></dl></div><div class='xr-var-data'><pre>array([[[[ 76.,  86.,  98., ..., 177., 177., 169.],
+         [ 73.,  83.,  97., ..., 171., 169., 167.],
+         [ 71.,  81.,  95., ..., 160., 164., 165.],
+         ...,
+         [ nan,  nan,  nan, ...,  62.,  69.,  78.],
+         [ nan,  nan,  nan, ...,  62.,  69.,  78.],
+         [ nan,  nan,  nan, ...,  62.,  68.,  76.]]]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>agc3</span></div><div class='xr-var-dims'>(latitude, longitude, time, depth)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>72.0 81.0 92.0 ... 69.0 80.0 86.0</div><input id='attrs-d9e2d3e6-414d-426e-acb1-c7749ad2d485' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d9e2d3e6-414d-426e-acb1-c7749ad2d485' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4fe1d4d0-5b4a-4722-93e8-9359c5880bfb' class='xr-var-data-in' type='checkbox'><label for='data-4fe1d4d0-5b4a-4722-93e8-9359c5880bfb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>adcp_beam_echo_intensity</dd><dt><span>generic_name :</span></dt><dd>agc3</dd><dt><span>epic_key :</span></dt><dd>AGC3_1223</dd><dt><span>units :</span></dt><dd>counts</dd><dt><span>longname :</span></dt><dd>Echo Intensity (AGC) Beam 3</dd></dl></div><div class='xr-var-data'><pre>array([[[[ 72.,  81.,  92., ..., 169., 169., 161.],
+         [ 70.,  78.,  90., ..., 165., 164., 160.],
+         [ 66.,  75.,  87., ..., 155., 158., 159.],
+         ...,
+         [ nan,  nan,  nan, ...,  68.,  78.,  86.],
+         [ nan,  nan,  nan, ...,  69.,  79.,  87.],
+         [ nan,  nan,  nan, ...,  69.,  80.,  86.]]]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>agc4</span></div><div class='xr-var-dims'>(latitude, longitude, time, depth)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>70.0 79.0 90.0 ... 56.0 62.0 69.0</div><input id='attrs-dca9e95e-0690-452d-a256-847ff2c21370' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-dca9e95e-0690-452d-a256-847ff2c21370' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-990f6cc3-6c9d-4609-ad36-20867d553b83' class='xr-var-data-in' type='checkbox'><label for='data-990f6cc3-6c9d-4609-ad36-20867d553b83' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>adcp_beam_echo_intensity</dd><dt><span>generic_name :</span></dt><dd>agc4</dd><dt><span>epic_key :</span></dt><dd>AGC4_1224</dd><dt><span>units :</span></dt><dd>counts</dd><dt><span>longname :</span></dt><dd>Echo Intensity (AGC) Beam 4</dd></dl></div><div class='xr-var-data'><pre>array([[[[ 70.,  79.,  90., ..., 167., 167., 161.],
+         [ 68.,  77.,  90., ..., 163., 161., 159.],
+         [ 67.,  76.,  91., ..., 152., 156., 158.],
+         ...,
+         [ nan,  nan,  nan, ...,  56.,  62.,  70.],
+         [ nan,  nan,  nan, ...,  56.,  62.,  70.],
+         [ nan,  nan,  nan, ...,  56.,  62.,  69.]]]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-912370c3-1539-4095-91fa-aff701fe1f74' class='xr-section-summary-in' type='checkbox'  ><label for='section-912370c3-1539-4095-91fa-aff701fe1f74' class='xr-section-summary' >Indexes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-8cf635b0-72eb-4a68-8aa8-5df68cb2f66d' class='xr-index-data-in' type='checkbox'/><label for='index-8cf635b0-72eb-4a68-8aa8-5df68cb2f66d' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;2020-09-18 08:00:00&#x27;, &#x27;2020-09-18 08:30:00&#x27;,
+               &#x27;2020-09-18 09:00:00&#x27;, &#x27;2020-09-18 09:30:00&#x27;,
+               &#x27;2020-09-18 10:00:00&#x27;, &#x27;2020-09-18 10:30:00&#x27;,
+               &#x27;2020-09-18 11:00:00&#x27;, &#x27;2020-09-18 11:30:00&#x27;,
+               &#x27;2020-09-18 12:00:00&#x27;, &#x27;2020-09-18 12:30:00&#x27;,
+               ...
+               &#x27;2022-09-08 18:30:00&#x27;, &#x27;2022-09-08 19:00:00&#x27;,
+               &#x27;2022-09-08 19:30:00&#x27;, &#x27;2022-09-08 20:00:00&#x27;,
+               &#x27;2022-09-08 20:30:00&#x27;, &#x27;2022-09-08 21:00:00&#x27;,
+               &#x27;2022-09-08 21:30:00&#x27;, &#x27;2022-09-08 22:00:00&#x27;,
+               &#x27;2022-09-08 22:30:00&#x27;, &#x27;2022-09-08 23:00:00&#x27;],
+              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;time&#x27;, length=34591, freq=None))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>depth</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-9424f63a-fbc5-4e0e-9b38-574a20921333' class='xr-index-data-in' type='checkbox'/><label for='index-9424f63a-fbc5-4e0e-9b38-574a20921333' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Float64Index([-10.0,  -8.0,  -6.0,  -4.0,  -2.0,  -0.0,   2.0,   4.0,   6.0,
+                8.0,  10.0,  12.0,  14.0,  16.0,  18.0,  20.0,  22.0,  24.0,
+               26.0,  28.0],
+             dtype=&#x27;float64&#x27;, name=&#x27;depth&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>latitude</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-51a14ac8-7fed-45db-9eed-fa1a7e5f6d93' class='xr-index-data-in' type='checkbox'/><label for='index-51a14ac8-7fed-45db-9eed-fa1a7e5f6d93' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Float64Index([64.0026], dtype=&#x27;float64&#x27;, name=&#x27;latitude&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>longitude</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-35367571-0c84-4f71-9ea6-566cb37124ef' class='xr-index-data-in' type='checkbox'/><label for='index-35367571-0c84-4f71-9ea6-566cb37124ef' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Float64Index([-167.93405], dtype=&#x27;float64&#x27;, name=&#x27;longitude&#x27;))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-b5e0372a-5b34-49d4-b32b-f395a586c06e' class='xr-section-summary-in' type='checkbox'  ><label for='section-b5e0372a-5b34-49d4-b32b-f395a586c06e' class='xr-section-summary' >Attributes: <span>(13)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Latitude_DegMMddW :</span></dt><dd>64 00.156 N</dd><dt><span>Longitude_DegMMddN :</span></dt><dd>167 56.043 W</dd><dt><span>MooringID :</span></dt><dd>20BSP-14A</dd><dt><span>platform_deployment_date :</span></dt><dd>2020-09-18T07:37:00Z</dd><dt><span>platform_deployment_cruise_name :</span></dt><dd>DY2012</dd><dt><span>platform_recovery_date :</span></dt><dd>2022-09-08T23:00:00Z</dd><dt><span>platform_recovery_cruise_name :</span></dt><dd>AQ2201</dd><dt><span>platform_deployment_recovery_comments :</span></dt><dd></dd><dt><span>WaterDepth :</span></dt><dd>38.1</dd><dt><span>date_created :</span></dt><dd>2022-11-21T09:47:13Z</dd><dt><span>date_modified :</span></dt><dd></dd><dt><span>QC_indicator :</span></dt><dd>unknown</dd><dt><span>history :</span></dt><dd>Trimmed to deployment.</dd></dl></div></li></ul></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># xdf[&#39;history&#39;] = xdf.history + &#39;QC of high u/v values&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#optional plotting</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">xdf</span><span class="p">[</span><span class="s1">&#39;agc1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">yincrease</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">xdf</span><span class="p">[</span><span class="s1">&#39;agc2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">yincrease</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">xdf</span><span class="p">[</span><span class="s1">&#39;agc3&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">yincrease</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">xdf</span><span class="p">[</span><span class="s1">&#39;agc4&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">yincrease</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">xdf</span><span class="p">[</span><span class="s1">&#39;u_curr_comp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">yincrease</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">xdf</span><span class="p">[</span><span class="s1">&#39;v_curr_comp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">yincrease</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">xdf</span><span class="p">[</span><span class="s1">&#39;w_curr_comp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">yincrease</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">xdf</span><span class="p">[</span><span class="s1">&#39;w_curr_comp_err&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">yincrease</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/EcoFOCIpy_2D_20bsp14a_QC_5_0.png" src="../../../_images/EcoFOCIpy_2D_20bsp14a_QC_5_0.png" />
+<img alt="../../../_images/EcoFOCIpy_2D_20bsp14a_QC_5_1.png" src="../../../_images/EcoFOCIpy_2D_20bsp14a_QC_5_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xdf</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;history&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">xdf</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;history&#39;</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;  removed U,V &gt;100cm/s&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="trim-above-surface-negative-values">
+<h2>Trim above surface (negative values)<a class="headerlink" href="#trim-above-surface-negative-values" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ixdf</span> <span class="o">=</span> <span class="n">xdf</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">xdf</span><span class="o">.</span><span class="n">depth</span> <span class="o">&gt;=-</span><span class="mf">0.</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;depth&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ixdf</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;history&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ixdf</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;history&#39;</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;  trimmed above surface&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ixdf</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="n">file_in</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.nc&#39;</span><span class="p">,</span><span class="s1">&#39;.trimmed.nc&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xdf</span> <span class="o">=</span> <span class="n">xa</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="n">file_in</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.nc&#39;</span><span class="p">,</span><span class="s1">&#39;.trimmed.nc&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ixdf</span> <span class="o">=</span> <span class="n">xdf</span><span class="o">.</span><span class="n">interpolate_na</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span><span class="n">max_gap</span><span class="o">=</span><span class="s1">&#39;2H&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ixdf</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;history&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ixdf</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;history&#39;</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;  linearly interpolated 1hour gaps&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="interpolate-over-singleton-missing-gaps-linearly">
+<h2>Interpolate over singleton missing gaps linearly<a class="headerlink" href="#interpolate-over-singleton-missing-gaps-linearly" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">ixdf</span><span class="p">[</span><span class="s1">&#39;agc1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">yincrease</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ixdf</span><span class="p">[</span><span class="s1">&#39;agc2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">yincrease</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ixdf</span><span class="p">[</span><span class="s1">&#39;agc3&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">yincrease</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ixdf</span><span class="p">[</span><span class="s1">&#39;agc4&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">yincrease</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">ixdf</span><span class="p">[</span><span class="s1">&#39;u_curr_comp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">yincrease</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ixdf</span><span class="p">[</span><span class="s1">&#39;v_curr_comp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">yincrease</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ixdf</span><span class="p">[</span><span class="s1">&#39;w_curr_comp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">yincrease</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ixdf</span><span class="p">[</span><span class="s1">&#39;w_curr_comp_err&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">yincrease</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/EcoFOCIpy_2D_20bsp14a_QC_15_0.png" src="../../../_images/EcoFOCIpy_2D_20bsp14a_QC_15_0.png" />
+<img alt="../../../_images/EcoFOCIpy_2D_20bsp14a_QC_15_1.png" src="../../../_images/EcoFOCIpy_2D_20bsp14a_QC_15_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ixdf</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="n">file_in</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.nc&#39;</span><span class="p">,</span><span class="s1">&#39;.filtered.nc&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-py38-py"
+        },
+        kernelOptions: {
+            kernelName: "conda-env-py38-py",
+            path: "./content/code_gallery/ecofocipy_notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-py38-py'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="EcoFOCIpy_20bsp14a_adcp.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Using EcoFOCIpy to process raw field data</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../oculus_glider.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Oculus Glider Notebooks</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By EcoFOCI<br/>
+        
+          <div class="extra_footer">
+            <a href=https://www.ecofoci.noaa.gov> ecofoci.noaa.gov </a> &nbsp <a href="mailto:pmel.ecofoci@noaa.gov">Contact Us</a> <br> Ecosystems-Fisheries/Oceanography Coordinated Investigations <br> 7200 Sandpoint Way NE <br>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
