@@ -1,0 +1,3329 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using EcoFOCIpy to process raw field data &#8212; EcoSystems Fisheries-Oceanograpy Coordinated Investigations (EcoFOCI)</title>
+    
+  <link href="../../../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../../../../_static/FOCI_logo.png"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="Using EcoFOCIpy to process raw field data" href="EcoFOCIpy_19ckp2a_adcp.html" />
+    <link rel="prev" title="EcoFOCIpy RCM vs ADCP" href="19ckp2a_Compare_ADCPandRCM.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../../../_static/FOCI_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">EcoSystems Fisheries-Oceanograpy Coordinated Investigations (EcoFOCI)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Code Gallery
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../data_access.html">
+   Data Access
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../data_access_notebooks/2022-01-06-CrossSound_RetrieveAndProcess.html">
+     Cross Sound ADCP Data Retrieval (a convenient tutorial)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../data_analysis_and_visualization.html">
+   Data Analysis And Visualization
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../data_analysis_and_visualization_notebooks/FindNearestGriddedData.html">
+     Gridded Data Station Subsetting on closest model point
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../data_analysis_and_visualization_notebooks/Map_contours_examples.html">
+     Two ways to use bathymetric datasets to generate bathymetry contours in a plot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../data_management.html">
+   Data Management
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../ecofocipy.html">
+   EcoFOCIpy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../ecofocipy_notebooks/EcoFOCIpy_20bsp14a_adcp.html">
+     Using EcoFOCIpy to process raw field data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../ecofocipy_notebooks/EcoFOCIpy_2D_20bsp14a_QC.html">
+     EcoFOCIpy ADCP QC - 20BSP-14A
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../oculus_glider.html">
+   Oculus Glider Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../oculus_glider_notebooks/EcoFOCI_GliderTools_Readme.html">
+     EcoFOCI evaluation/application of Glider Tools for post processing
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Field Data History
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../2013/index.html">
+   EcoFOCI FieldData Processing 2013 - Moorings
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../2013/13bs5a/index.html">
+     EcoFOCI FieldData Processing 2013 - 13BS-5A
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2013/13bs5a/EcoFOCIpy_1d_filter_13bs5a.html">
+       EcoFOCIpy_1d_filter_13bs5a
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../2014/index.html">
+   EcoFOCI FieldData Processing 2014 - Moorings
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../2014/14bs2c/index.html">
+     EcoFOCI FieldData Processing 2014 - 14BS-2C
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2014/14bs2c/EcoFOCIpy_1d_filter_14bs2c.html">
+       EcoFOCIpy_1d_filter_14bs2c
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../2014/14bs5a/index.html">
+     EcoFOCI FieldData Processing 2014 - 14BS-5A
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2014/14bs5a/EcoFOCIpy_1d_filter_14bs5a.html">
+       EcoFOCIpy_1d_filter_14bs5a
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   EcoFOCI FieldData Processing 2019 - Moorings
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../19aubs11/index.html">
+     EcoFOCI FieldData Processing 2019 - MML 19aubs11
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19aubs11/EcoFOCIpy_19aubs11_s56_04737.html">
+       EcoFOCIpy_19aubs11_s56_04737
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../19bs2c/index.html">
+     EcoFOCI FieldData Processing 2019 - 19BS-2C
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs2c/19BS2C_Summary.html">
+       19BS2C_Summary
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs2c/EcoFOCIpy_19bs2c_flsb_1838.html">
+       EcoFOCIpy_19bs2c_flsb_1838
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs2c/EcoFOCIpy_19bs2c_flsb_2693.html">
+       EcoFOCIpy_19bs2c_flsb_2693
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs2c/EcoFOCIpy_19bs2c_flsb_3048.html">
+       EcoFOCIpy_19bs2c_flsb_3048
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs2c/EcoFOCIpy_19bs2c_s37_1807.html">
+       EcoFOCIpy_19bs2c_s37_1807
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs2c/EcoFOCIpy_19bs2c_s37_2328.html">
+       EcoFOCIpy_19bs2c_s37_2328
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs2c/EcoFOCIpy_19bs2c_s37_3762.html">
+       EcoFOCIpy_19bs2c_s37_3762
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs2c/EcoFOCIpy_19bs2c_s39_0809.html">
+       EcoFOCIpy_19bs2c_s39_0809
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs2c/EcoFOCIpy_19bs2c_s39_1574.html">
+       EcoFOCIpy_19bs2c_s39_1574
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs2c/EcoFOCIpy_19bs2c_s39_1773.html">
+       EcoFOCIpy_19bs2c_s39_1773
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs2c/EcoFOCIpy_19bs2c_s39_1777.html">
+       EcoFOCIpy_19bs2c_s39_1777
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs2c/EcoFOCIpy_19bs2c_s39_3759.html">
+       EcoFOCIpy_19bs2c_s39_3759
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs2c/EcoFOCIpy_19bs2c_s39_3760.html">
+       EcoFOCIpy_19bs2c_s39_3760
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs2c/EcoFOCIpy_19bs2c_s56_02453.html">
+       EcoFOCIpy_19bs2c_s56_02453
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs2c/EcoFOCIpy_19bs2c_s56_04739.html">
+       EcoFOCIpy_19bs2c_s56_04739
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../19bs5a/index.html">
+     EcoFOCI FieldData Processing 2019 - 19BS-5A
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs5a/19BS5A_Summary.html">
+       19BS5A_Summary
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs5a/EcoFOCIpy_19bs5a_flsb_1795.html">
+       EcoFOCIpy_19bs5a_flsb_1795
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs5a/EcoFOCIpy_19bs5a_s37_1850.html">
+       EcoFOCIpy_19bs5a_s37_1850
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs5a/EcoFOCIpy_19bs5a_s37_1851.html">
+       EcoFOCIpy_19bs5a_s37_1851
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs5a/EcoFOCIpy_19bs5a_s37_1860.html">
+       EcoFOCIpy_19bs5a_s37_1860
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs5a/EcoFOCIpy_19bs5a_s39_0564.html">
+       EcoFOCIpy_19bs5a_s39_0564
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs5a/EcoFOCIpy_19bs5a_s39_0566.html">
+       EcoFOCIpy_19bs5a_s39_0566
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs5a/EcoFOCIpy_19bs5a_s39_0992.html">
+       EcoFOCIpy_19bs5a_s39_0992
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs5a/EcoFOCIpy_19bs5a_s39_1623.html">
+       EcoFOCIpy_19bs5a_s39_1623
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs5a/EcoFOCIpy_19bs5a_s39_1624.html">
+       EcoFOCIpy_19bs5a_s39_1624
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs5a/EcoFOCIpy_19bs5a_s39_3775.html">
+       EcoFOCIpy_19bs5a_s39_3775
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs5a/EcoFOCIpy_19bs5a_s39_5473.html">
+       EcoFOCIpy_19bs5a_s39_5473
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs5a/EcoFOCIpy_19bs5a_sbe16_1815.html">
+       EcoFOCIpy_19bs5a_sbe16_1815
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs5a/EcoFOCIpy_19bs5a_sbe16_1815_QC.html">
+       EcoFOCIpy_19bs5a_sbe16_1815_QC
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs5a/EcoFOCIpy_19bs5a_sbe16_4287.html">
+       EcoFOCIpy_19bs5a_sbe16_4287
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs5a/EcoFOCIpy_19bs5a_sbe16_7297.html">
+       EcoFOCIpy_19bs5a_sbe16_7297
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs5a/EcoFOCIpy_19bs5a_sbe16_7297_QC.html">
+       EcoFOCIpy_19bs5a_sbe16_7297_QC
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs5a/EcoFOCIpy_1d_filter_19bs5a.html">
+       EcoFOCIpy_1d_filter_19bs5a
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../19bs8a/index.html">
+     EcoFOCI FieldData Processing 2019 - 19BS-8A
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <label for="toctree-checkbox-15">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs8a/19BS8A_Summary.html">
+       19BS8A_Summary
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs8a/EcoFOCIpy_19bs8a_flsb_3073.html">
+       EcoFOCIpy_19bs8a_flsb_3073
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs8a/EcoFOCIpy_19bs8a_mt_4050.html">
+       EcoFOCIpy_19bs8a_mt_4050
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs8a/EcoFOCIpy_19bs8a_s37_2318.html">
+       EcoFOCIpy_19bs8a_s37_2318
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs8a/EcoFOCIpy_19bs8a_s37_2323.html">
+       EcoFOCIpy_19bs8a_s37_2323
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs8a/EcoFOCIpy_19bs8a_s39_0818.html">
+       EcoFOCIpy_19bs8a_s39_0818
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs8a/EcoFOCIpy_19bs8a_s39_0987.html">
+       EcoFOCIpy_19bs8a_s39_0987
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs8a/EcoFOCIpy_19bs8a_s39_1422.html">
+       EcoFOCIpy_19bs8a_s39_1422
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs8a/EcoFOCIpy_19bs8a_s39_1603.html">
+       EcoFOCIpy_19bs8a_s39_1603
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs8a/EcoFOCIpy_19bs8a_s39_1638.html">
+       EcoFOCIpy_19bs8a_s39_1638
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs8a/EcoFOCIpy_19bs8a_s39_3501.html">
+       EcoFOCIpy_19bs8a_s39_3501
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs8a/EcoFOCIpy_19bs8a_s39_5286.html">
+       EcoFOCIpy_19bs8a_s39_5286
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs8a/EcoFOCIpy_19bs8a_s39_5288.html">
+       EcoFOCIpy_19bs8a_s39_5288
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs8a/EcoFOCIpy_19bs8a_sbe16_4139.html">
+       EcoFOCIpy_19bs8a_sbe16_4139
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs8a/EcoFOCIpy_1d_filter_19bs8a.html">
+       EcoFOCIpy_1d_filter_19bs8a
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs8a/EcoFOCIpy_sbe16_UAF_19bs8a.html">
+       EcoFOCIpy_sbe16_UAF_19bs8a
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bs8a/EcoFOCIpy_sbe16_UAF_19bs8a_QC.html">
+       EcoFOCIpy_sbe16_UAF_19bs8a_QC
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../19bsm2a/index.html">
+     EcoFOCI FieldData Processing 2019 - 19BSM-2A
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <label for="toctree-checkbox-16">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bsm2a/19BSM2A_MTR_Summary.html">
+       19BSM2A_MTR_Summary
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bsm2a/EcoFOCIpy_19bsm2a_sg_1822.html">
+       EcoFOCIpy_19bsm2a_sg_1822
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bsm2a/EcoFOCIpy_1d_filter_19bsm2a.html">
+       EcoFOCIpy_1d_filter_19bsm2a
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bsm2a/EcoFOCIpy_sbe16_UAF.html">
+       EcoFOCIpy_sbe16_UAF
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bsm2a/EcoFOCIpy_sbe16_UAF_QC.html">
+       EcoFOCIpy_sbe16_UAF_QC
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../19bsp11a/index.html">
+     EcoFOCI FieldData Processing 2019 - 19BSP-11A
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bsp11a/EcoFOCIpy_19bsp11a_adcp.html">
+       EcoFOCIpy_19bsp11a_adcp
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bsp11a/EcoFOCIpy_19bsp11a_s37_1865.html">
+       EcoFOCIpy_19bsp11a_s37_1865
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bsp11a/EcoFOCIpy_2D_19bsp11a_QC.html">
+       EcoFOCIpy_2D_19bsp11a_QC
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bsp11a/EcoFOCIpy_2D_filter_19bsp11a.html">
+       EcoFOCIpy_2D_filter_19bsp11a
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../19bsp12a/index.html">
+     EcoFOCI FieldData Processing 2019 - 19BSP-12A
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bsp12a/EcoFOCIpy_19bsp12a_adcp.html">
+       EcoFOCIpy_19bsp12a_adcp
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bsp12a/EcoFOCIpy_19bsp12a_s37_2322.html">
+       EcoFOCIpy_19bsp12a_s37_2322
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bsp12a/EcoFOCIpy_2D_19bsp12a_QC.html">
+       EcoFOCIpy_2D_19bsp12a_QC
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bsp12a/EcoFOCIpy_2D_filter_19bsp12a.html">
+       EcoFOCIpy_2D_filter_19bsp12a
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../19bsp2a/index.html">
+     EcoFOCI FieldData Processing 2019 - 19BSP-2A
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bsp2a/EcoFOCIpy_19bsp2a_adcp.html">
+       EcoFOCIpy_19bsp2a_adcp
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bsp2a/EcoFOCIpy_2D_19bsp2a_QC.html">
+       EcoFOCIpy_2D_19bsp2a_QC
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../19bsp4a/index.html">
+     EcoFOCI FieldData Processing 2019 - 19BSP-4A
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bsp4a/EcoFOCIpy_19bsp4a_adcp.html">
+       EcoFOCIpy_19bsp4a_adcp
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bsp4a/EcoFOCIpy_2D_19bsp4a_QC.html">
+       EcoFOCIpy_2D_19bsp4a_QC
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../19bsp5a/index.html">
+     EcoFOCI FieldData Processing 2019 - 19BSP-5A
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+    <label for="toctree-checkbox-21">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bsp5a/EcoFOCIpy_19bsp5a_adcp.html">
+       EcoFOCIpy_19bsp5a_adcp
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bsp5a/EcoFOCIpy_2D_19bsp5a_QC.html">
+       EcoFOCIpy_2D_19bsp5a_QC
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../19bsp8a/index.html">
+     EcoFOCI FieldData Processing 2019 - 19BSP-8A
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+    <label for="toctree-checkbox-22">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bsp8a/EcoFOCIpy_19bsp8a_adcp.html">
+       EcoFOCIpy_19bsp8a_adcp
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bsp8a/EcoFOCIpy_2D_19bsp8a_QC.html">
+       EcoFOCIpy_2D_19bsp8a_QC
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19bsp8a/EcoFOCIpy_2D_filter_19bsp8a.html">
+       EcoFOCIpy_2D_filter_19bsp8a
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../19ckp12a/index.html">
+     EcoFOCI FieldData Processing 2019 - 19CKP-12A
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp12a/19ckp12a_Compare_ADCPandRCM.html">
+       19ckp12a_Compare_ADCPandRCM
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp12a/EcoFOCIpy_19ckp12a_adcp.html">
+       EcoFOCIpy_19ckp12a_adcp
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp12a/EcoFOCIpy_19ckp12a_rcm.html">
+       EcoFOCIpy_19ckp12a_rcm
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp12a/EcoFOCIpy_19ckp12a_rcm_QC.html">
+       EcoFOCIpy_19ckp12a_rcm_QC
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp12a/EcoFOCIpy_19ckp12a_s37_1852.html">
+       EcoFOCIpy_19ckp12a_s37_1852
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp12a/EcoFOCIpy_2D_19ckp12a_QC.html">
+       EcoFOCIpy_2D_19ckp12a_QC
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../19ckp1a/index.html">
+     EcoFOCI FieldData Processing 2019 - 19CKP-1A
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp1a/19CKP1A_MTR_Summary.html">
+       19CKP1A_MTR_Summary
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp1a/19CKP1A_Summary.html">
+       19CKP1A_Summary
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp1a/EcoFOCIpy_19ckp1a_adcp.html">
+       EcoFOCIpy_19ckp1a_adcp
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp1a/EcoFOCIpy_19ckp1a_bbfl2w_1418.html">
+       EcoFOCIpy_19ckp1a_bbfl2w_1418
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp1a/EcoFOCIpy_19ckp1a_mt_4031.html">
+       EcoFOCIpy_19ckp1a_mt_4031
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp1a/EcoFOCIpy_19ckp1a_mt_4032.html">
+       EcoFOCIpy_19ckp1a_mt_4032
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp1a/EcoFOCIpy_19ckp1a_s37_2357.html">
+       EcoFOCIpy_19ckp1a_s37_2357
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp1a/EcoFOCIpy_19ckp1a_sbe16_50217.html">
+       EcoFOCIpy_19ckp1a_sbe16_50217
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp1a/EcoFOCIpy_19ckp1a_sg_1981.html">
+       EcoFOCIpy_19ckp1a_sg_1981
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp1a/EcoFOCIpy_1d_filter_19ckp1a.html">
+       EcoFOCIpy_1d_filter_19ckp1a
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp1a/EcoFOCIpy_2D_19ckp1a_QC.html">
+       EcoFOCIpy_2D_19ckp1a_QC
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp1a/EcoFOCIpy_2D_filter_19ckp1a.html">
+       EcoFOCIpy_2D_filter_19ckp1a
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="index.html">
+     EcoFOCI FieldData Processing 2019 - 19CKP-2A
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+    <label for="toctree-checkbox-25">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="19ckp2a_Compare_ADCPandRCM.html">
+       19ckp2a_Compare_ADCPandRCM
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       EcoFOCIpy_19ckp2a_BBFL2WB_1755
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="EcoFOCIpy_19ckp2a_adcp.html">
+       EcoFOCIpy_19ckp2a_adcp
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="EcoFOCIpy_19ckp2a_rcm.html">
+       EcoFOCIpy_19ckp2a_rcm
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="EcoFOCIpy_19ckp2a_s37_3979.html">
+       EcoFOCIpy_19ckp2a_s37_3979
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="EcoFOCIpy_19ckp2a_sbe16_6629.html">
+       EcoFOCIpy_19ckp2a_sbe16_6629
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="EcoFOCIpy_19ckp2a_sbe16_6629_QC.html">
+       EcoFOCIpy_19ckp2a_sbe16_6629_QC
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="EcoFOCIpy_19ckp2a_sbe37_3979_QC.html">
+       EcoFOCIpy_19ckp2a_sbe37_3979_QC
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="EcoFOCIpy_1d_filter_19ckp2a.html">
+       EcoFOCIpy_1d_filter_19ckp2a
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="EcoFOCIpy_2D_19ckp2a_QC.html">
+       EcoFOCIpy_2D_19ckp2a_QC
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="EcoFOCIpy_2D_filter_19ckp2a.html">
+       EcoFOCIpy_2D_filter_19ckp2a
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../19ckp3a/index.html">
+     EcoFOCI FieldData Processing 2019 - 19CKP-3A
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp3a/EcoFOCIpy_19ckp3a_adcp.html">
+       EcoFOCIpy_19ckp3a_adcp
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp3a/EcoFOCIpy_19ckp3a_flntus_2164.html">
+       EcoFOCIpy_19ckp3a_flntus_2164
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp3a/EcoFOCIpy_19ckp3a_s37_3767.html">
+       EcoFOCIpy_19ckp3a_s37_3767
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp3a/EcoFOCIpy_19ckp3a_sbe16_7020.html">
+       EcoFOCIpy_19ckp3a_sbe16_7020
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp3a/EcoFOCIpy_19ckp3a_sg_1733.html">
+       EcoFOCIpy_19ckp3a_sg_1733
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp3a/EcoFOCIpy_2D_19ckp3a_QC.html">
+       EcoFOCIpy_2D_19ckp3a_QC
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../19ckp4a/index.html">
+     EcoFOCI FieldData Processing 2019 - 19CKP-4A
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+    <label for="toctree-checkbox-27">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp4a/EcoFOCIpy_19ckp4a_adcp.html">
+       EcoFOCIpy_19ckp4a_adcp
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp4a/EcoFOCIpy_2D_19ckp4a_QC.html">
+       EcoFOCIpy_2D_19ckp4a_QC
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../19ckp5a/index.html">
+     EcoFOCI FieldData Processing 2019 - 19CKP-5A
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+    <label for="toctree-checkbox-28">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp5a/EcoFOCIpy_19ckp5a_adcp.html">
+       EcoFOCIpy_19ckp5a_adcp
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp5a/EcoFOCIpy_19ckp5a_s37_3768.html">
+       EcoFOCIpy_19ckp5a_s37_3768
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp5a/EcoFOCIpy_19ckp5a_sbe16_4426.html">
+       EcoFOCIpy_19ckp5a_sbe16_4426
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../19ckp5a/EcoFOCIpy_2D_19ckp5a_QC.html">
+       EcoFOCIpy_2D_19ckp5a_QC
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../fisheries/index.html">
+     EcoFOCI FieldData Processing 2019 - Fisheries
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+    <label for="toctree-checkbox-29">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../fisheries/19BSP12A_Summary.html">
+       19BSP12A_Summary
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../fisheries/EcoFOCIpy_19bsp10a_s37_2355.html">
+       EcoFOCIpy_19bsp10a_s37_2355
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../fisheries/EcoFOCIpy_19bsp11a_adcp.html">
+       EcoFOCIpy_19bsp11a_adcp
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../fisheries/EcoFOCIpy_19bsp11a_s37_1865.html">
+       EcoFOCIpy_19bsp11a_s37_1865
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../fisheries/EcoFOCIpy_19bsp12a_adcp.html">
+       EcoFOCIpy_19bsp12a_adcp
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../fisheries/EcoFOCIpy_19bsp12a_s37_2332.html">
+       EcoFOCIpy_19bsp12a_s37_2332
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Other Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../MetaData_Rediscovery.html">
+   MetaData Rediscovery
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+  <label for="toctree-checkbox-30">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/1_Table_Of_Contents.html">
+     Table of Contents
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/2_Summary.html">
+     Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/3a_Deck195_FOSDIC_Decoding.html">
+     FOSDIC Deck 195 Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_Explore.html">
+     Plot all identified Ship Class ID’s and color code by SST
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre01.html">
+     Exploring Deck 195 Prefix’s Vessel ID:01
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre02.html">
+     Exploring Deck 195 Prefix’s Vessel ID:02
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre03.html">
+     Exploring Deck 195 Prefix’s Vessel ID:03
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre06.html">
+     Exploring Deck 195 Prefix’s Vessel ID:06
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre07.html">
+     Exploring Deck 195 Prefix’s Vessel ID:07
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre08.html">
+     Exploring Deck 195 Prefix’s Vessel ID:08
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre09.html">
+     Exploring Deck 195 Prefix’s Vessel ID:09
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre10.html">
+     Exploring Deck 195 Prefix’s Vessel ID:10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre12.html">
+     Exploring Deck 195 Prefix’s Vessel ID:12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre13.html">
+     Exploring Deck 195 Prefix’s Vessel ID:13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre14.html">
+     Exploring Deck 195 Prefix’s Vessel ID:14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre15.html">
+     Exploring Deck 195 Prefix’s Vessel ID:15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre16.html">
+     Exploring Deck 195 Prefix’s Vessel ID:16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre17.html">
+     Exploring Deck 195 Prefix’s Vessel ID:17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre18.html">
+     Exploring Deck 195 Prefix’s Vessel ID:18
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre19.html">
+     Exploring Deck 195 Prefix’s Vessel ID:19
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre20.html">
+     Exploring Deck 195 Prefix’s Vessel ID:20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre21.html">
+     Exploring Deck 195 Prefix’s Vessel ID:21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre22.html">
+     Exploring Deck 195 Prefix’s Vessel ID:22
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre23.html">
+     Exploring Deck 195 Prefix’s Vessel ID:23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre25.html">
+     Exploring Deck 195 Prefix’s Vessel ID:25
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre26.html">
+     Exploring Deck 195 Prefix’s Vessel ID:26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre27.html">
+     Exploring Deck 195 Prefix’s Vessel ID:27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre28.html">
+     Exploring Deck 195 Prefix’s Vessel ID:28
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre29.html">
+     Exploring Deck 195 Prefix’s Vessel ID:29
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre30.html">
+     Exploring Deck 195 Prefix’s Vessel ID:30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre31.html">
+     Exploring Deck 195 Prefix’s Vessel ID:31
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre32.html">
+     Exploring Deck 195 Prefix’s Vessel ID:32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre33.html">
+     Exploring Deck 195 Prefix’s Vessel ID:33
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre34.html">
+     Exploring Deck 195 Prefix’s Vessel ID:34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre35.html">
+     Exploring Deck 195 Prefix’s Vessel ID:35
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre37.html">
+     Exploring Deck 195 Prefix’s Vessel ID:37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre38.html">
+     Exploring Deck 195 Prefix’s Vessel ID:38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre39.html">
+     Exploring Deck 195 Prefix’s Vessel ID:39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre40.html">
+     Exploring Deck 195 Prefix’s Vessel ID:40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre41.html">
+     Exploring Deck 195 Prefix’s Vessel ID:41
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre42.html">
+     Exploring Deck 195 Prefix’s Vessel ID:42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre43.html">
+     Exploring Deck 195 Prefix’s Vessel ID:43
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre44.html">
+     Exploring Deck 195 Prefix’s Vessel ID:44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre45.html">
+     Exploring Deck 195 Prefix’s Vessel ID:45
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre46.html">
+     Exploring Deck 195 Prefix’s Vessel ID:46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre47.html">
+     Exploring Deck 195 Prefix’s Vessel ID:47
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre48.html">
+     Exploring Deck 195 Prefix’s Vessel ID:48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre49.html">
+     Exploring Deck 195 Prefix’s Vessel ID:49
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre50.html">
+     Exploring Deck 195 Prefix’s Vessel ID:50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre51.html">
+     Exploring Deck 195 Prefix’s Vessel ID:51
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre52.html">
+     Exploring Deck 195 Prefix’s Vessel ID:52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre54.html">
+     Exploring Deck 195 Prefix’s Vessel ID:54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre55.html">
+     Exploring Deck 195 Prefix’s Vessel ID:55
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre56.html">
+     Exploring Deck 195 Prefix’s Vessel ID:56
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre58.html">
+     Exploring Deck 195 Prefix’s Vessel ID:58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre59.html">
+     Exploring Deck 195 Prefix’s Vessel ID:59
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre60.html">
+     Exploring Deck 195 Prefix’s Vessel ID:60
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre61.html">
+     Exploring Deck 195 Prefix’s Vessel ID:61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre62.html">
+     Exploring Deck 195 Prefix’s Vessel ID:62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre65.html">
+     Exploring Deck 195 Prefix’s Vessel ID:71
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre68.html">
+     Exploring Deck 195 Prefix’s Vessel ID:68
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre71.html">
+     Exploring Deck 195 Prefix’s Vessel ID:71
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre76.html">
+     Exploring Deck 195 Prefix’s Vessel ID:82
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre77.html">
+     Exploring Deck 195 Prefix’s Vessel ID:77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre78.html">
+     Exploring Deck 195 Prefix’s Vessel ID:78
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre81.html">
+     Exploring Deck 195 Prefix’s Vessel ID:81
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre82.html">
+     Exploring Deck 195 Prefix’s Vessel ID:82
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre84.html">
+     Exploring Deck 195 Prefix’s Vessel ID:84
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre85.html">
+     Exploring Deck 195 Prefix’s Vessel ID:85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre86.html">
+     Exploring Deck 195 Prefix’s Vessel ID:86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre88.html">
+     Exploring Deck 195 Prefix’s Vessel ID:88
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre89.html">
+     Exploring Deck 195 Prefix’s Vessel ID:89
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre90.html">
+     Exploring Deck 195 Prefix’s Vessel ID:90
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre91.html">
+     Exploring Deck 195 Prefix’s Vessel ID:91
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre94.html">
+     Exploring Deck 195 Prefix’s Vessel ID:94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre95.html">
+     Exploring Deck 195 Prefix’s Vessel ID:95
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre96.html">
+     Exploring Deck 195 Prefix’s Vessel ID:96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre97.html">
+     Exploring Deck 195 Prefix’s Vessel ID:97
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre98.html">
+     Exploring Deck 195 Prefix’s Vessel ID:98
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Other Resources - Outside of EcoFOCI
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://ioos.github.io/ioos_code_lab">
+   IOOS Examples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://help.aodn.org.au/aodn-data-tools/user-code-library/">
+   Opening netCDF files - hints from AODN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="http://unidata.github.io/notebook-gallery/">
+   Unidata Jupyter Notebook Gallery
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="http://iobis.org/tutorial/">
+   Extracting and Enriching OBIS data with R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/USGS-R">
+   USGS-R Examples
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contact Us
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../contact_us.html">
+   Contact Us
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a href="https://www.ecofoci.noaa.gov">EcoFOCI</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../../../_sources/content/code_gallery/ecofoci_fielddata_history/2019/19ckp2a/EcoFOCIpy_19ckp2a_BBFL2WB_1755.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/shaunwbell/ecofoci_code_lab"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/shaunwbell/ecofoci_code_lab/issues/new?title=Issue%20on%20page%20%2Fcontent/code_gallery/ecofoci_fielddata_history/2019/19ckp2a/EcoFOCIpy_19ckp2a_BBFL2WB_1755.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/shaunwbell/ecofoci_code_lab/main?urlpath=lab/tree/jupyterbook/content/code_gallery/ecofoci_fielddata_history/2019/19ckp2a/EcoFOCIpy_19ckp2a_BBFL2WB_1755.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/shaunwbell/ecofoci_code_lab/blob/main/jupyterbook/content/code_gallery/ecofoci_fielddata_history/2019/19ckp2a/EcoFOCIpy_19ckp2a_BBFL2WB_1755.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../../../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mooring-timeseries-data">
+   Mooring / Timeseries Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-below-is-for-ecofluorometer-with-a-single-channel-eco-flsb-but-the-workflow-is-similar-for-all-instruments">
+   Example below is for EcoFluorometer with a single channel (Eco FLSB) but the workflow is similar for all instruments.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-processing-first-step">
+   Simple Processing - first step
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#engr2sci-calibration-unique-to-wetlabs-instruments">
+     Engr2Sci Calibration (unique to wetlabs instruments)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-properties">
+   Time properties
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#special-note-for-wetlabs-times">
+     Special note for Wetlabs times
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-deployment-meta-information">
+   Add Deployment meta information
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-instrument-meta-information">
+   Add Instrument meta information
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#save-cf-netcdf-files">
+   Save CF Netcdf files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   Next Steps
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compare-against-ctds">
+     Compare against CTD’s
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#qc-notes-from-plots">
+     QC Notes from plots
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="using-ecofocipy-to-process-raw-field-data">
+<h1>Using EcoFOCIpy to process raw field data<a class="headerlink" href="#using-ecofocipy-to-process-raw-field-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="mooring-timeseries-data">
+<h2>Mooring / Timeseries Data<a class="headerlink" href="#mooring-timeseries-data" title="Permalink to this headline">¶</a></h2>
+<p>Basic workflow for each instrument grouping is <em>(initial archive level)</em>:</p>
+<ul class="simple">
+<li><p>Parse data from raw files into pandas dataframe</p></li>
+<li><p>output initial files (pandas-&gt;csv) <strong>ERDDAP NRT</strong> when no meta data is added</p></li>
+</ul>
+<p>Convert to xarray dataframe for all following work *(working or final data level):</p>
+<ul class="simple">
+<li><p>Add metadata from instrument yaml files and/or header info</p></li>
+<li><p>ingest metadata from deployment/recovery records or cast logs</p></li>
+<li><p>process data beyond simple file translate</p></li>
+<li><p>apply any calibrations or corrections</p>
+<ul>
+<li><p>field corrections</p></li>
+<li><p>offsets</p></li>
+<li><p>instrument compensations</p></li>
+<li><p>some QC were available… this would be old-school simple bounds mostly</p></li>
+</ul>
+</li>
+<li><p>adjust time bounds and sample frequency (xarray dataframe)</p></li>
+<li><p>save as CF netcdf via xarray: so many of the steps above are optional</p>
+<ul>
+<li><p><strong>ERDDAP NRT</strong> if no corrections, offsets or time bounds are applied but some meta data is</p></li>
+<li><p><strong>Working and awaiting QC</strong> has no ERDDAP representation and is a holding spot</p></li>
+<li><p><strong>ERDDAP Final</strong> fully calibrated, qc’d and populated with meta information</p></li>
+<li><p><strong>ERDDAP Final</strong> is pulled from final_data_cf , <strong>ERDDAP NRT</strong> is pulled from initial_archive</p></li>
+</ul>
+</li>
+</ul>
+<p>Plot for preview and QC</p>
+<ul class="simple">
+<li><p>preview images (indiv and/or collectively)</p></li>
+<li><p>overlay cast data on timeseries (as field check)</p></li>
+<li><p>manual qc process</p></li>
+<li><p>automated qc process ML/AI</p></li>
+</ul>
+<p>Further refinenments for ERDDAP hosting:</p>
+</div>
+<div class="section" id="example-below-is-for-ecofluorometer-with-a-single-channel-eco-flsb-but-the-workflow-is-similar-for-all-instruments">
+<h2>Example below is for EcoFluorometer with a single channel (Eco FLSB) but the workflow is similar for all instruments.<a class="headerlink" href="#example-below-is-for-ecofluorometer-with-a-single-channel-eco-flsb-but-the-workflow-is-similar-for-all-instruments" title="Permalink to this headline">¶</a></h2>
+<p>Future processing of this instrument can be a simplified (no markdown) process which can be archived so that the procedure can be traced or updated</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">yaml</span>
+
+<span class="kn">import</span> <span class="nn">ecofocipy.io.wetlabs_parser</span> <span class="k">as</span> <span class="nn">wetlabs_parser</span> <span class="c1">#&lt;- instrument specific</span>
+<span class="kn">import</span> <span class="nn">ecofocipy.io.ncCFsave</span> <span class="k">as</span> <span class="nn">ncCFsave</span>
+<span class="kn">import</span> <span class="nn">ecofocipy.metaconfig.load_config</span> <span class="k">as</span> <span class="nn">load_config</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The sample_data_dir should be included in the github package but may not be included in the pip install of the package</p>
+</div>
+<div class="section" id="simple-processing-first-step">
+<h2>Simple Processing - first step<a class="headerlink" href="#simple-processing-first-step" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_data_dir</span> <span class="o">=</span> <span class="s1">&#39;/Users/bell/Programs/EcoFOCIpy/&#39;</span>
+<span class="n">user_data_dir</span> <span class="o">=</span> <span class="s1">&#39;/Users/bell/ecoraid/2019/Moorings/19ckp2a/&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">###############################################################</span>
+<span class="c1"># edit to point to {instrument sepcific} raw datafile </span>
+<span class="n">datafile</span> <span class="o">=</span> <span class="n">user_data_dir</span><span class="o">+</span><span class="s1">&#39;raw/eco_fluor/19ckp2a_bbfl2wb_1755.redownload.txt&#39;</span>
+<span class="n">instrument</span> <span class="o">=</span> <span class="s1">&#39;Eco-Fluorometer BBFL2WB 1755&#39;</span>
+<span class="n">mooring_meta_file</span> <span class="o">=</span> <span class="n">user_data_dir</span><span class="o">+</span><span class="s1">&#39;logs/19CKP-2A.yaml&#39;</span>
+<span class="n">inst_meta_file</span> <span class="o">=</span> <span class="n">sample_data_dir</span><span class="o">+</span><span class="s1">&#39;staticdata/instr_metaconfig/ecofluor.yaml&#39;</span>
+<span class="n">institution_meta_file</span> <span class="o">=</span> <span class="n">sample_data_dir</span><span class="o">+</span><span class="s1">&#39;staticdata/institutional_meta_example.yaml&#39;</span> <span class="c1">#include uaf?</span>
+<span class="n">inst_shortname</span> <span class="o">=</span> <span class="s1">&#39;eco&#39;</span>
+<span class="c1">###############################################################</span>
+
+<span class="n">offset_seconds</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="mi">60</span> <span class="o">+</span> <span class="mi">32</span> <span class="c1">#in seconds</span>
+
+<span class="c1">#init and load data</span>
+<span class="n">ecoflsb</span> <span class="o">=</span> <span class="n">wetlabs_parser</span><span class="o">.</span><span class="n">wetlabs</span><span class="p">()</span>
+<span class="p">(</span><span class="n">ecoflsb_data</span><span class="p">,</span><span class="n">ecoflsb_header</span><span class="p">)</span> <span class="o">=</span> <span class="n">ecoflsb</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">datafile</span><span class="p">,</span>
+                                                    <span class="n">return_header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                                    <span class="n">datetime_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ecoflsb_header</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Ser BBFL2WB-1755\n&#39;,
+ &#39;Ver Triplet5.33\n&#39;,
+ &#39;Ave 18\n&#39;,
+ &#39;Pkt 10\n&#39;,
+ &#39;M1d 50\n&#39;,
+ &#39;M2d 47\n&#39;,
+ &#39;M3d 49\n&#39;,
+ &#39;M1s 4.870E-02\n&#39;,
+ &#39;M2s 1.820E-02\n&#39;,
+ &#39;M3s 9.070E-02\n&#39;,
+ &#39;Seq 0\n&#39;,
+ &#39;Rat 19200\n&#39;,
+ &#39;Set 0\n&#39;,
+ &#39;Rec 0\n&#39;,
+ &#39;Man 0\n&#39;,
+ &#39;Int !01:00:00\n&#39;,
+ &#39;Dat 12/14/20\n&#39;,
+ &#39;Clk 18:38:12\n&#39;,
+ &#39;Mst 01:00:00\n&#39;,
+ &#39;Mem 4095\n&#39;,
+ &#39;111$get77220 records to read\n&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ecoflsb_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>700</th>
+      <th>695</th>
+      <th>460</th>
+      <th>TempCount</th>
+    </tr>
+    <tr>
+      <th>date_time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2019-06-28 23:27:21</th>
+      <td>4130</td>
+      <td>491</td>
+      <td>4130</td>
+      <td>541</td>
+    </tr>
+    <tr>
+      <th>2019-08-19 01:00:02</th>
+      <td>97</td>
+      <td>85</td>
+      <td>81</td>
+      <td>577</td>
+    </tr>
+    <tr>
+      <th>2019-08-19 01:00:04</th>
+      <td>99</td>
+      <td>69</td>
+      <td>78</td>
+      <td>576</td>
+    </tr>
+    <tr>
+      <th>2019-08-19 01:00:05</th>
+      <td>92</td>
+      <td>69</td>
+      <td>78</td>
+      <td>576</td>
+    </tr>
+    <tr>
+      <th>2019-08-19 01:00:06</th>
+      <td>93</td>
+      <td>71</td>
+      <td>79</td>
+      <td>576</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2020-07-04 17:00:08</th>
+      <td>85</td>
+      <td>98</td>
+      <td>81</td>
+      <td>578</td>
+    </tr>
+    <tr>
+      <th>2020-07-04 17:00:09</th>
+      <td>85</td>
+      <td>80</td>
+      <td>80</td>
+      <td>578</td>
+    </tr>
+    <tr>
+      <th>2020-07-04 17:00:10</th>
+      <td>90</td>
+      <td>94</td>
+      <td>81</td>
+      <td>578</td>
+    </tr>
+    <tr>
+      <th>2020-07-04 17:00:12</th>
+      <td>90</td>
+      <td>92</td>
+      <td>80</td>
+      <td>578</td>
+    </tr>
+    <tr>
+      <th>2020-07-04 17:00:13</th>
+      <td>98</td>
+      <td>82</td>
+      <td>81</td>
+      <td>578</td>
+    </tr>
+  </tbody>
+</table>
+<p>76971 rows × 4 columns</p>
+</div></div></div>
+</div>
+<div class="section" id="engr2sci-calibration-unique-to-wetlabs-instruments">
+<h3>Engr2Sci Calibration (unique to wetlabs instruments)<a class="headerlink" href="#engr2sci-calibration-unique-to-wetlabs-instruments" title="Permalink to this headline">¶</a></h3>
+<p>Must apply the known cal factors from the lab to the raw data to get science data.  These are linear transformations of the form <code class="docutils literal notranslate"><span class="pre">y=mx+b</span></code>, so a slope (m) and offset (b) should be provided.  Each channel has its own cal factor.  Currently there is no routine to read these from a database or file, so you need to input them into the object method.</p>
+<p>Change the name of each channel below to be that of the column label (wavelenght), and change the ‘outname’ to be the netcdf CF compliant variable name (in the instrument yaml files)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cal_coef</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;695&#39;</span><span class="p">:{</span><span class="s1">&#39;scaleFactor&#39;</span><span class="p">:</span><span class="mf">0.0487</span><span class="p">,</span><span class="s1">&#39;darkCounts&#39;</span><span class="p">:</span><span class="mf">50.0</span><span class="p">,</span><span class="s1">&#39;outname&#39;</span><span class="p">:</span><span class="s1">&#39;chlor_fluorescence&#39;</span><span class="p">},</span>
+            <span class="s1">&#39;700&#39;</span><span class="p">:{</span><span class="s1">&#39;scaleFactor&#39;</span><span class="p">:</span><span class="mf">0.0182</span><span class="p">,</span><span class="s1">&#39;darkCounts&#39;</span><span class="p">:</span><span class="mi">47</span><span class="p">,</span><span class="s1">&#39;outname&#39;</span><span class="p">:</span><span class="s1">&#39;turbidity&#39;</span><span class="p">},</span>
+            <span class="s1">&#39;460&#39;</span><span class="p">:{</span><span class="s1">&#39;scaleFactor&#39;</span><span class="p">:</span><span class="mf">0.0907</span><span class="p">,</span><span class="s1">&#39;darkCounts&#39;</span><span class="p">:</span><span class="mi">49</span><span class="p">,</span><span class="s1">&#39;outname&#39;</span><span class="p">:</span><span class="s1">&#39;cdom&#39;</span><span class="p">}</span>            
+            <span class="p">}</span>
+
+<span class="n">ecoflsb</span><span class="o">.</span><span class="n">engr2sci</span><span class="p">(</span><span class="n">cal_coef</span><span class="o">=</span><span class="n">cal_coef</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>700</th>
+      <th>695</th>
+      <th>460</th>
+      <th>TempCount</th>
+      <th>chlor_fluorescence</th>
+      <th>turbidity</th>
+      <th>cdom</th>
+    </tr>
+    <tr>
+      <th>date_time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2019-06-28 23:27:21</th>
+      <td>4130</td>
+      <td>491</td>
+      <td>4130</td>
+      <td>541</td>
+      <td>21.4767</td>
+      <td>74.3106</td>
+      <td>370.1467</td>
+    </tr>
+    <tr>
+      <th>2019-08-19 01:00:02</th>
+      <td>97</td>
+      <td>85</td>
+      <td>81</td>
+      <td>577</td>
+      <td>1.7045</td>
+      <td>0.9100</td>
+      <td>2.9024</td>
+    </tr>
+    <tr>
+      <th>2019-08-19 01:00:04</th>
+      <td>99</td>
+      <td>69</td>
+      <td>78</td>
+      <td>576</td>
+      <td>0.9253</td>
+      <td>0.9464</td>
+      <td>2.6303</td>
+    </tr>
+    <tr>
+      <th>2019-08-19 01:00:05</th>
+      <td>92</td>
+      <td>69</td>
+      <td>78</td>
+      <td>576</td>
+      <td>0.9253</td>
+      <td>0.8190</td>
+      <td>2.6303</td>
+    </tr>
+    <tr>
+      <th>2019-08-19 01:00:06</th>
+      <td>93</td>
+      <td>71</td>
+      <td>79</td>
+      <td>576</td>
+      <td>1.0227</td>
+      <td>0.8372</td>
+      <td>2.7210</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2020-07-04 17:00:08</th>
+      <td>85</td>
+      <td>98</td>
+      <td>81</td>
+      <td>578</td>
+      <td>2.3376</td>
+      <td>0.6916</td>
+      <td>2.9024</td>
+    </tr>
+    <tr>
+      <th>2020-07-04 17:00:09</th>
+      <td>85</td>
+      <td>80</td>
+      <td>80</td>
+      <td>578</td>
+      <td>1.4610</td>
+      <td>0.6916</td>
+      <td>2.8117</td>
+    </tr>
+    <tr>
+      <th>2020-07-04 17:00:10</th>
+      <td>90</td>
+      <td>94</td>
+      <td>81</td>
+      <td>578</td>
+      <td>2.1428</td>
+      <td>0.7826</td>
+      <td>2.9024</td>
+    </tr>
+    <tr>
+      <th>2020-07-04 17:00:12</th>
+      <td>90</td>
+      <td>92</td>
+      <td>80</td>
+      <td>578</td>
+      <td>2.0454</td>
+      <td>0.7826</td>
+      <td>2.8117</td>
+    </tr>
+    <tr>
+      <th>2020-07-04 17:00:13</th>
+      <td>98</td>
+      <td>82</td>
+      <td>81</td>
+      <td>578</td>
+      <td>1.5584</td>
+      <td>0.9282</td>
+      <td>2.9024</td>
+    </tr>
+  </tbody>
+</table>
+<p>76971 rows × 7 columns</p>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="time-properties">
+<h2>Time properties<a class="headerlink" href="#time-properties" title="Permalink to this headline">¶</a></h2>
+<p>Its unusual that our clocks drift to the point of concern for our instruments (if an instrument is off by 3 minutes but only sampling hourly… regridding that data will result in minimal changes).  However, there are a few time oriented modifications that may need to be made.</p>
+<p>The can be classified into two categories:</p>
+<ul class="simple">
+<li><p>interpolate: these change the parameter values in accordance with the time edits</p>
+<ul>
+<li><p>linear interpolation is most common</p></li>
+<li><p>averaging of data and rebinning/resampling is also common (this needs to have the “time lable” thought out…)</p></li>
+<li><p>decimating is less common but does not impact the max/min values</p></li>
+</ul>
+</li>
+<li><p>shift: these do not alter the measurements, just the timestamps they are associated with</p>
+<ul>
+<li><p>the round function will work well to correct small time errors/drifts <strong>common</strong></p></li>
+<li><p>dropping extra precision on time (if you want hourly measurements, just remove all minute/second info… could cause large errors if rounding would have been more appropriate)</p></li>
+</ul>
+</li>
+</ul>
+<p>It is very easy to use pandas interplation and resample methods on the dataframe as is.  A few steps are suggested below:</p>
+<ul class="simple">
+<li><p>parse out on-deck (predeployment and recovery) data.  This can be done via pandas or xarray but requires the mooring metadata to have been read in.  See future steps below.</p></li>
+<li><p>even if the sample frequency is set to the desired measurement frequency, it would be good to perform a quick regridding as an assurance task</p></li>
+<li><p>FOCI data is usualy 1min, 10min, 1hr - and the 1min data is a fairly new (sbe56) data stream</p>
+<ul>
+<li><p>subsampling high frequency data to lower frequency is easy via df.resample().mean() but it will label the new datapoint per default instructions.  The default is to label it with the left boundary of the bin.</p></li>
+<li><p>you may want to take the median instead of the mean for noisy data (fluorometer) , occasionally decimating may be more appropriate if you want to downsize the dataset size but not smear features</p></li>
+<li><p>shifting times can be a bit more involved.  There are two primary ways to do it, interpolate or shift (round)</p>
+<ul>
+<li><p>to interpolate, you will need to upsample your data to a higher frequency which will generate missing values, then interpolate (with a maximum gap size), then decimate.  This always has the artifact of smoothing data and decreasing the min/max values. <strong>common on microcats and other 10min datasets</strong></p></li>
+<li><p>shifting usually just involves droping extra time “digits”, if you want hourly, you could just drop the trailing minutes assuming you are just off the hour (8:05 -&gt; 8:00) or you can round to the nearest time unit but niether of these changes the data value, just the time associated with it. <strong>common on seacats and other hourly datasets</strong></p></li>
+<li><p>you may also be able to <em>shift</em> using the pandas datetime round function and specifing the desired frequency.</p></li>
+</ul>
+</li>
+<li><p>I suggest if no change is needed… df.index.round(freq=<em>‘your native sample freq’</em>)</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="special-note-for-wetlabs-times">
+<h3>Special note for Wetlabs times<a class="headerlink" href="#special-note-for-wetlabs-times" title="Permalink to this headline">¶</a></h3>
+<p>Historically these instruments have drifted significantly.  (usually to be slow) We keep track of the shift in seconds. and we do burst measurements with them.  How you want to tackle this is gonna be dependent on each instrument.  Goal is to stick to simple timeseries analysis via pandas though (as opposed to determining when the groups of each burst are sampled)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ecoflsb_data</span> <span class="o">=</span> <span class="n">ecoflsb</span><span class="o">.</span><span class="n">time_correction</span><span class="p">(</span><span class="n">offset</span><span class="o">=</span><span class="n">offset_seconds</span><span class="p">)</span> <span class="c1">#positive to catch up with GPS time - linear correction may need to be applied... this is an offset shift at the moment </span>
+<span class="n">ecoflsb_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>700</th>
+      <th>695</th>
+      <th>460</th>
+      <th>TempCount</th>
+      <th>chlor_fluorescence</th>
+      <th>turbidity</th>
+      <th>cdom</th>
+    </tr>
+    <tr>
+      <th>date_time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2019-06-28 23:37:53</th>
+      <td>4130</td>
+      <td>491</td>
+      <td>4130</td>
+      <td>541</td>
+      <td>21.4767</td>
+      <td>74.3106</td>
+      <td>370.1467</td>
+    </tr>
+    <tr>
+      <th>2019-08-19 01:10:34</th>
+      <td>97</td>
+      <td>85</td>
+      <td>81</td>
+      <td>577</td>
+      <td>1.7045</td>
+      <td>0.9100</td>
+      <td>2.9024</td>
+    </tr>
+    <tr>
+      <th>2019-08-19 01:10:36</th>
+      <td>99</td>
+      <td>69</td>
+      <td>78</td>
+      <td>576</td>
+      <td>0.9253</td>
+      <td>0.9464</td>
+      <td>2.6303</td>
+    </tr>
+    <tr>
+      <th>2019-08-19 01:10:37</th>
+      <td>92</td>
+      <td>69</td>
+      <td>78</td>
+      <td>576</td>
+      <td>0.9253</td>
+      <td>0.8190</td>
+      <td>2.6303</td>
+    </tr>
+    <tr>
+      <th>2019-08-19 01:10:38</th>
+      <td>93</td>
+      <td>71</td>
+      <td>79</td>
+      <td>576</td>
+      <td>1.0227</td>
+      <td>0.8372</td>
+      <td>2.7210</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2020-07-04 17:10:40</th>
+      <td>85</td>
+      <td>98</td>
+      <td>81</td>
+      <td>578</td>
+      <td>2.3376</td>
+      <td>0.6916</td>
+      <td>2.9024</td>
+    </tr>
+    <tr>
+      <th>2020-07-04 17:10:41</th>
+      <td>85</td>
+      <td>80</td>
+      <td>80</td>
+      <td>578</td>
+      <td>1.4610</td>
+      <td>0.6916</td>
+      <td>2.8117</td>
+    </tr>
+    <tr>
+      <th>2020-07-04 17:10:42</th>
+      <td>90</td>
+      <td>94</td>
+      <td>81</td>
+      <td>578</td>
+      <td>2.1428</td>
+      <td>0.7826</td>
+      <td>2.9024</td>
+    </tr>
+    <tr>
+      <th>2020-07-04 17:10:44</th>
+      <td>90</td>
+      <td>92</td>
+      <td>80</td>
+      <td>578</td>
+      <td>2.0454</td>
+      <td>0.7826</td>
+      <td>2.8117</td>
+    </tr>
+    <tr>
+      <th>2020-07-04 17:10:45</th>
+      <td>98</td>
+      <td>82</td>
+      <td>81</td>
+      <td>578</td>
+      <td>1.5584</td>
+      <td>0.9282</td>
+      <td>2.9024</td>
+    </tr>
+  </tbody>
+</table>
+<p>76971 rows × 7 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#the smaller you resample, the closer to the &quot;minute&quot; you will be, data is taken over 10seconds every hour</span>
+<span class="c1"># so by resampling over a two minute period, you should get a single data point of relevance and linearly interpolated values in all other 2min bins</span>
+<span class="c1"># tehn you can determin if you round or interpolate or truncate</span>
+
+<span class="c1"># offset here is 2min... lets just decimate by choosing the hourly data (which has been somewhat linearly interpolated already)</span>
+
+<span class="n">ecoflsb_data</span> <span class="o">=</span> <span class="n">ecoflsb_data</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;2T&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">median</span><span class="p">()</span><span class="o">.</span><span class="n">interpolate</span><span class="p">()</span>
+<span class="n">ecoflsb_data</span><span class="o">=</span><span class="n">ecoflsb_data</span><span class="p">[</span><span class="n">ecoflsb_data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">minute</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">ecoflsb_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>700</th>
+      <th>695</th>
+      <th>460</th>
+      <th>TempCount</th>
+      <th>chlor_fluorescence</th>
+      <th>turbidity</th>
+      <th>cdom</th>
+    </tr>
+    <tr>
+      <th>date_time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2019-06-29 00:00:00</th>
+      <td>4128.683058</td>
+      <td>490.863247</td>
+      <td>4128.677673</td>
+      <td>541.011423</td>
+      <td>21.470040</td>
+      <td>74.286632</td>
+      <td>370.026765</td>
+    </tr>
+    <tr>
+      <th>2019-06-29 01:00:00</th>
+      <td>4125.390704</td>
+      <td>490.521364</td>
+      <td>4125.371855</td>
+      <td>541.039982</td>
+      <td>21.453390</td>
+      <td>74.226711</td>
+      <td>369.726927</td>
+    </tr>
+    <tr>
+      <th>2019-06-29 02:00:00</th>
+      <td>4122.098349</td>
+      <td>490.179482</td>
+      <td>4122.066037</td>
+      <td>541.068540</td>
+      <td>21.436741</td>
+      <td>74.166790</td>
+      <td>369.427090</td>
+    </tr>
+    <tr>
+      <th>2019-06-29 03:00:00</th>
+      <td>4118.805995</td>
+      <td>489.837599</td>
+      <td>4118.760220</td>
+      <td>541.097098</td>
+      <td>21.420091</td>
+      <td>74.106869</td>
+      <td>369.127252</td>
+    </tr>
+    <tr>
+      <th>2019-06-29 04:00:00</th>
+      <td>4115.513640</td>
+      <td>489.495716</td>
+      <td>4115.454402</td>
+      <td>541.125656</td>
+      <td>21.403441</td>
+      <td>74.046948</td>
+      <td>368.827414</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2020-07-04 13:00:00</th>
+      <td>91.333333</td>
+      <td>91.750000</td>
+      <td>80.916667</td>
+      <td>578.500000</td>
+      <td>2.033225</td>
+      <td>0.806867</td>
+      <td>2.894842</td>
+    </tr>
+    <tr>
+      <th>2020-07-04 14:00:00</th>
+      <td>89.833333</td>
+      <td>90.000000</td>
+      <td>81.000000</td>
+      <td>578.500000</td>
+      <td>1.948000</td>
+      <td>0.779567</td>
+      <td>2.902400</td>
+    </tr>
+    <tr>
+      <th>2020-07-04 15:00:00</th>
+      <td>90.750000</td>
+      <td>89.916667</td>
+      <td>81.000000</td>
+      <td>578.083333</td>
+      <td>1.943942</td>
+      <td>0.796250</td>
+      <td>2.902400</td>
+    </tr>
+    <tr>
+      <th>2020-07-04 16:00:00</th>
+      <td>90.583333</td>
+      <td>90.000000</td>
+      <td>81.000000</td>
+      <td>578.416667</td>
+      <td>1.948000</td>
+      <td>0.793217</td>
+      <td>2.902400</td>
+    </tr>
+    <tr>
+      <th>2020-07-04 17:00:00</th>
+      <td>90.083333</td>
+      <td>91.250000</td>
+      <td>81.000000</td>
+      <td>578.500000</td>
+      <td>2.008875</td>
+      <td>0.784117</td>
+      <td>2.902400</td>
+    </tr>
+  </tbody>
+</table>
+<p>8922 rows × 7 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ecoflsb_data</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;date_time&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../../../../_images/EcoFOCIpy_19ckp2a_BBFL2WB_1755_15_1.png" src="../../../../../_images/EcoFOCIpy_19ckp2a_BBFL2WB_1755_15_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="add-deployment-meta-information">
+<h2>Add Deployment meta information<a class="headerlink" href="#add-deployment-meta-information" title="Permalink to this headline">¶</a></h2>
+<p>Two methods are available (if comming from python2 world - ordereddict was important… in py38 a dictionary is inherently ordered)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#just a dictionary of dictionaries - simple</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">mooring_meta_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">mooring_config</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">full_load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mooring_config</span><span class="p">[</span><span class="s1">&#39;Instrumentation&#39;</span><span class="p">][</span><span class="n">instrument</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;InstType&#39;: &#39;Eco-Fluorometer BBFL2WB&#39;,
+ &#39;SerialNo&#39;: &#39;1755&#39;,
+ &#39;DesignedDepth&#39;: 39.5,
+ &#39;ActualDepth&#39;: 39.0,
+ &#39;PreDeploymentNotes&#39;: &#39;Li Batts&#39;,
+ &#39;PostDeploymentNotes&#39;: &#39;Unit 7 hours up - may be set in PST not UTC (error appears to be in verifying download time... predeployment verifies that starttime was set right)&#39;,
+ &#39;Deployed&#39;: &#39;y&#39;,
+ &#39;Recovered&#39;: &#39;y&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="add-instrument-meta-information">
+<h2>Add Instrument meta information<a class="headerlink" href="#add-instrument-meta-information" title="Permalink to this headline">¶</a></h2>
+<p>Time, depth, lat, lon should be added regardless (always our coordinates) but for a mooring site its going to be a (1,1,1,t) dataset
+The variables of interest should be read from the data file and matched to a key for naming.  That key is in the inst_config file seen below and should represent common conversion names in the raw data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#just a dictionary of dictionaries - simple</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">institution_meta_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">institution_config</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">full_load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">inst_meta_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">inst_config</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">full_load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="n">inst_config</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;time&#39;: {&#39;epic_key&#39;: &#39;TIM_601&#39;,
+  &#39;name&#39;: &#39;time&#39;,
+  &#39;generic_name&#39;: &#39;time&#39;,
+  &#39;standard_name&#39;: &#39;time&#39;,
+  &#39;long_name&#39;: &#39;date and time since reference time&#39;},
+ &#39;depth&#39;: {&#39;epic_key&#39;: &#39;D_3&#39;,
+  &#39;generic_name&#39;: &#39;depth&#39;,
+  &#39;units&#39;: &#39;meter&#39;,
+  &#39;long_name&#39;: &#39;depth below surface (meters)&#39;,
+  &#39;standard_name&#39;: &#39;depth&#39;,
+  &#39;positive&#39;: &#39;down&#39;},
+ &#39;latitude&#39;: {&#39;epic_key&#39;: &#39;LON_501&#39;,
+  &#39;name&#39;: &#39;latitude&#39;,
+  &#39;generic_name&#39;: &#39;latitude&#39;,
+  &#39;units&#39;: &#39;degrees_north&#39;,
+  &#39;long_name&#39;: &#39;latitude&#39;,
+  &#39;standard_name&#39;: &#39;latitude&#39;},
+ &#39;longitude&#39;: {&#39;epic_key&#39;: &#39;LAT_500&#39;,
+  &#39;name&#39;: &#39;longitude&#39;,
+  &#39;generic_name&#39;: &#39;longitude&#39;,
+  &#39;units&#39;: &#39;degrees_east&#39;,
+  &#39;long_name&#39;: &#39;longitude&#39;,
+  &#39;standard_name&#39;: &#39;longitude&#39;},
+ &#39;timeseries_id&#39;: {&#39;cf_role&#39;: &#39;timeseries_id&#39;,
+  &#39;long_name&#39;: &#39;timeseries id&#39;,
+  &#39;standard_name&#39;: &#39;&#39;},
+ &#39;fluor_counts&#39;: {&#39;epic_key&#39;: &#39;fluor_3031&#39;,
+  &#39;generic_name&#39;: &#39;fluor_counts&#39;,
+  &#39;long_name&#39;: &#39;Digital Counts from fluorometer&#39;,
+  &#39;standard_name&#39;: &#39;fluorometer_digital_counts&#39;,
+  &#39;units&#39;: &#39;counts&#39;},
+ &#39;chlor_fluorescence&#39;: {&#39;epic_key&#39;: &#39;Fch_906&#39;,
+  &#39;generic_name&#39;: &#39;chlor_fluorescence&#39;,
+  &#39;long_name&#39;: &#39;Mass Concentration of chlorophyll from chlorophyll fluorescence&#39;,
+  &#39;standard_name&#39;: &#39;mass_concentration_of_chlorophyll_in_sea_water&#39;,
+  &#39;units&#39;: &#39;ugrams/l&#39;},
+ &#39;turbidity&#39;: {&#39;epic_key&#39;: &#39;Trb_980&#39;,
+  &#39;fortran&#39;: &#39;f10.2&#39;,
+  &#39;generic_name&#39;: &#39;turbidity&#39;,
+  &#39;longname&#39;: &#39;Turbidity (NTU)&#39;,
+  &#39;long_name&#39;: &#39;turbidity in nephelometric turbidity units&#39;,
+  &#39;standard_name&#39;: &#39;sea_water_turbidity&#39;,
+  &#39;units&#39;: &#39;NTU&#39;},
+ &#39;cdom&#39;: {&#39;epic_key&#39;: &#39;CDOM_2980&#39;,
+  &#39;generic_name&#39;: &#39;cdom&#39;,
+  &#39;long_name&#39;: &#39;concentration of CDOM in ppb&#39;,
+  &#39;standard_name&#39;: &#39;concentration_of_colored_dissolved_organic_matter_in_sea_water&#39;,
+  &#39;units&#39;: &#39;ppb&#39;}}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add meta data and prelim processing based on meta data</span>
+<span class="c1"># Convert to xarray and add meta information - save as CF netcdf file</span>
+<span class="c1"># pass -&gt; data, instmeta, depmeta</span>
+<span class="n">ecoflsb_data_nc</span> <span class="o">=</span> <span class="n">ncCFsave</span><span class="o">.</span><span class="n">EcoFOCI_CFnc</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">ecoflsb_data</span><span class="p">,</span> 
+                                <span class="n">instrument_yaml</span><span class="o">=</span><span class="n">inst_config</span><span class="p">,</span> 
+                                <span class="n">operation_yaml</span><span class="o">=</span><span class="n">mooring_config</span><span class="p">,</span> 
+                                <span class="n">operation_type</span><span class="o">=</span><span class="s1">&#39;mooring&#39;</span><span class="p">,</span>
+                                <span class="n">instrument_id</span><span class="o">=</span><span class="n">instrument</span><span class="p">,</span> 
+                                <span class="n">inst_shortname</span><span class="o">=</span><span class="n">inst_shortname</span><span class="p">)</span>
+<span class="n">ecoflsb_data_nc</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ecofocipy.io.ncCFsave.EcoFOCI_CFnc at 0x7faea1ec48b0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>At this point, you could save your file with the <code class="docutils literal notranslate"><span class="pre">.xarray2netcdf_save()</span></code> method and have a functioning dataset… but it would be very simple with no additional qc, meta-data, or tuned parameters for optimizing software like ferret or erddap.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># expand the dimensions and coordinate variables</span>
+<span class="c1"># renames them appropriatley and prepares them for meta-filled values</span>
+<span class="n">ecoflsb_data_nc</span><span class="o">.</span><span class="n">expand_dimensions</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ecoflsb_data_nc</span><span class="o">.</span><span class="n">variable_meta_data</span><span class="p">(</span><span class="n">variable_keys</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">ecoflsb_data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">),</span><span class="n">drop_missing</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ecoflsb_data_nc</span><span class="o">.</span><span class="n">temporal_geospatioal_meta_data</span><span class="p">()</span>
+<span class="c1">#adding dimension meta needs to come after updating the dimension values... BUG?</span>
+<span class="n">ecoflsb_data_nc</span><span class="o">.</span><span class="n">dimension_meta_data</span><span class="p">(</span><span class="n">variable_keys</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">,</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span><span class="s1">&#39;longitude&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following steps can happen in just about any order and are all meta-data driven.  Therefore, they are not required to have a functioning dataset, but they are required to have a well described dataset</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#add global attributes</span>
+<span class="n">ecoflsb_data_nc</span><span class="o">.</span><span class="n">deployment_meta_add</span><span class="p">()</span>
+<span class="n">ecoflsb_data_nc</span><span class="o">.</span><span class="n">get_xdf</span><span class="p">()</span>
+
+<span class="c1">#add instituitonal global attributes</span>
+<span class="n">ecoflsb_data_nc</span><span class="o">.</span><span class="n">institution_meta_add</span><span class="p">(</span><span class="n">institution_yaml</span><span class="o">=</span><span class="n">institution_config</span><span class="p">)</span>
+
+<span class="c1">#add instrument global attributes</span>
+<span class="n">ecoflsb_data_nc</span><span class="o">.</span><span class="n">instrument_meta_data</span><span class="p">()</span>
+
+<span class="c1">#add creation date/time - provenance data</span>
+<span class="n">ecoflsb_data_nc</span><span class="o">.</span><span class="n">provinance_meta_add</span><span class="p">()</span>
+
+<span class="c1">#provide intial qc status field</span>
+<span class="n">ecoflsb_data_nc</span><span class="o">.</span><span class="n">qc_status</span><span class="p">(</span><span class="n">qc_status</span><span class="o">=</span><span class="s1">&#39;unknown&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="save-cf-netcdf-files">
+<h2>Save CF Netcdf files<a class="headerlink" href="#save-cf-netcdf-files" title="Permalink to this headline">¶</a></h2>
+<p>Currently stick to netcdf3 classic… but migrating to netcdf4 (default) may be no problems for most modern purposes.  Its easy enough to pass the <code class="docutils literal notranslate"><span class="pre">format</span></code> kwargs through to the netcdf api of xarray.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># combine trim (not mandatory) and filename together (saves to test.nc without name)</span>
+
+<span class="n">depth</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">mooring_config</span><span class="p">[</span><span class="s1">&#39;Instrumentation&#39;</span><span class="p">][</span><span class="n">instrument</span><span class="p">][</span><span class="s1">&#39;ActualDepth&#39;</span><span class="p">]))</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="c1"># mooring_yaml[&#39;Instrumentation&#39;][self.instrument_id][&#39;DesignedDepth&#39;])).zfill(4) #&lt;-- alternative</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mooring_config</span><span class="p">[</span><span class="s1">&#39;MooringID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39;_&#39;</span><span class="o">+</span><span class="n">inst_shortname</span><span class="o">+</span><span class="s1">&#39;_&#39;</span><span class="o">+</span><span class="n">depth</span><span class="o">+</span><span class="s1">&#39;m.nc&#39;</span>
+<span class="n">ecoflsb_data_nc</span><span class="o">.</span><span class="n">xarray2netcdf_save</span><span class="p">(</span><span class="n">xdf</span> <span class="o">=</span> <span class="n">ecoflsb_data_nc</span><span class="o">.</span><span class="n">autotrim_time</span><span class="p">(),</span>
+                           <span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;NETCDF3_CLASSIC&quot;</span><span class="p">)</span>
+
+<span class="c1"># don&#39;t trim the data and pass your own filename</span>
+<span class="c1"># ecoflsb_data_nc.xarray2netcdf_save(xdf = ecoflsb_data_nc.get_xdf(),</span>
+<span class="c1">#                            filename=filename,format=&quot;NETCDF4_CLASSIC&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#csvoutput if necessary</span>
+<span class="p">(</span><span class="n">ecoflsb_data_nc</span><span class="o">.</span><span class="n">get_xdf</span><span class="p">()</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">())</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;nc&#39;</span><span class="p">,</span><span class="s1">&#39;csv&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ecoflsb_data_nc</span><span class="o">.</span><span class="n">autotrim_time</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
+Dimensions:             (time: 7700, depth: 1, latitude: 1, longitude: 1)
+Coordinates:
+  * time                (time) datetime64[ns] 2019-08-18T22:00:00 ... 2020-07...
+  * latitude            (latitude) float64 71.22
+  * longitude           (longitude) float64 -164.3
+  * depth               (depth) float64 39.5
+Data variables:
+    chlor_fluorescence  (time, depth, latitude, longitude) float64 1.124 ... ...
+    turbidity           (time, depth, latitude, longitude) float64 1.063 ... ...
+    cdom                (time, depth, latitude, longitude) float64 3.625 ... ...
+Attributes: (12/33)
+    Latitude_DegMMddW:                      71 13.203 N
+    Longitude_DegMMddN:                     164 15.088 W
+    MooringID:                              19CKP-2A
+    platform_deployment_date:               2019-08-18T21:36:53Z
+    platform_deployment_cruise_name:        OS1901
+    platform_recovery_date:                 2020-09-12T23:00:00Z
+    ...                                     ...
+    InstrumentSerialNumber:                 1755
+    InstrumentType:                         Eco-Fluorometer BBFL2WB
+    date_created:                           2022-07-18T15:36:56Z
+    date_modified:                          
+    QC_indicator:                           unknown
+    history:                                Trimmed to deployment.\nTrimmed t...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-167a7e14-d7dd-4e75-a733-525c1d601e68' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-167a7e14-d7dd-4e75-a733-525c1d601e68' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 7700</li><li><span class='xr-has-index'>depth</span>: 1</li><li><span class='xr-has-index'>latitude</span>: 1</li><li><span class='xr-has-index'>longitude</span>: 1</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-75190e9a-961f-437a-8dcd-1bb48767be9e' class='xr-section-summary-in' type='checkbox'  checked><label for='section-75190e9a-961f-437a-8dcd-1bb48767be9e' class='xr-section-summary' >Coordinates: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2019-08-18T22:00:00 ... 2020-07-...</div><input id='attrs-468c3dd7-dd86-4cf6-9a40-bc4b3440ab7f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-468c3dd7-dd86-4cf6-9a40-bc4b3440ab7f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-aa723287-f9f7-4bab-ba22-c5a29f576c40' class='xr-var-data-in' type='checkbox'><label for='data-aa723287-f9f7-4bab-ba22-c5a29f576c40' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>epic_key :</span></dt><dd>TIM_601</dd><dt><span>name :</span></dt><dd>time</dd><dt><span>generic_name :</span></dt><dd>time</dd><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>long_name :</span></dt><dd>date and time since reference time</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2019-08-18T22:00:00.000000000&#x27;, &#x27;2019-08-18T23:00:00.000000000&#x27;,
+       &#x27;2019-08-19T00:00:00.000000000&#x27;, ..., &#x27;2020-07-04T15:00:00.000000000&#x27;,
+       &#x27;2020-07-04T16:00:00.000000000&#x27;, &#x27;2020-07-04T17:00:00.000000000&#x27;],
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>latitude</span></div><div class='xr-var-dims'>(latitude)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>71.22</div><input id='attrs-1438833c-e089-4195-acd9-02ac8c0ac4ba' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1438833c-e089-4195-acd9-02ac8c0ac4ba' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-74d15e32-53a7-4bde-8727-f7c295969e3c' class='xr-var-data-in' type='checkbox'><label for='data-74d15e32-53a7-4bde-8727-f7c295969e3c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>epic_key :</span></dt><dd>LON_501</dd><dt><span>name :</span></dt><dd>latitude</dd><dt><span>generic_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>long_name :</span></dt><dd>latitude</dd><dt><span>standard_name :</span></dt><dd>latitude</dd></dl></div><div class='xr-var-data'><pre>array([71.22005])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>longitude</span></div><div class='xr-var-dims'>(longitude)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-164.3</div><input id='attrs-a2430090-e8d4-44ea-8598-903d38d3731e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a2430090-e8d4-44ea-8598-903d38d3731e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ecacaf42-69ec-45b6-bba0-09e8cf320713' class='xr-var-data-in' type='checkbox'><label for='data-ecacaf42-69ec-45b6-bba0-09e8cf320713' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>epic_key :</span></dt><dd>LAT_500</dd><dt><span>name :</span></dt><dd>longitude</dd><dt><span>generic_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>long_name :</span></dt><dd>longitude</dd><dt><span>standard_name :</span></dt><dd>longitude</dd></dl></div><div class='xr-var-data'><pre>array([-164.251467])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>depth</span></div><div class='xr-var-dims'>(depth)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>39.5</div><input id='attrs-abd49828-f24d-4893-955e-9c8169fd2c50' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-abd49828-f24d-4893-955e-9c8169fd2c50' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-77fc8ae9-81ca-41ac-8635-9405a01fed51' class='xr-var-data-in' type='checkbox'><label for='data-77fc8ae9-81ca-41ac-8635-9405a01fed51' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>epic_key :</span></dt><dd>D_3</dd><dt><span>generic_name :</span></dt><dd>depth</dd><dt><span>units :</span></dt><dd>meter</dd><dt><span>long_name :</span></dt><dd>depth below surface (meters)</dd><dt><span>standard_name :</span></dt><dd>depth</dd><dt><span>positive :</span></dt><dd>down</dd></dl></div><div class='xr-var-data'><pre>array([39.5])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-54d4e70d-e111-4a41-9a21-ced7bedcc0ab' class='xr-section-summary-in' type='checkbox'  checked><label for='section-54d4e70d-e111-4a41-9a21-ced7bedcc0ab' class='xr-section-summary' >Data variables: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>chlor_fluorescence</span></div><div class='xr-var-dims'>(time, depth, latitude, longitude)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.124 1.107 1.091 ... 1.948 2.009</div><input id='attrs-97af87b9-1bb1-4f32-a63c-8dee7c3c1a1c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-97af87b9-1bb1-4f32-a63c-8dee7c3c1a1c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a0d3cf65-59ca-4abc-a07c-2e625aa976f2' class='xr-var-data-in' type='checkbox'><label for='data-a0d3cf65-59ca-4abc-a07c-2e625aa976f2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>epic_key :</span></dt><dd>Fch_906</dd><dt><span>generic_name :</span></dt><dd>chlor_fluorescence</dd><dt><span>long_name :</span></dt><dd>Mass Concentration of chlorophyll from chlorophyll fluorescence</dd><dt><span>standard_name :</span></dt><dd>mass_concentration_of_chlorophyll_in_sea_water</dd><dt><span>units :</span></dt><dd>ugrams/l</dd></dl></div><div class='xr-var-data'><pre>array([[[[1.12412401]]],
+
+
+       [[[1.10747432]]],
+
+
+       [[[1.09082463]]],
+
+
+       ...,
+
+
+       [[[1.94394167]]],
+
+
+       [[[1.948     ]]],
+
+
+       [[[2.008875  ]]]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>turbidity</span></div><div class='xr-var-dims'>(time, depth, latitude, longitude)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.063 1.003 ... 0.7932 0.7841</div><input id='attrs-d58b5e42-af3e-48bc-8b0a-9a6bb2d344fd' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d58b5e42-af3e-48bc-8b0a-9a6bb2d344fd' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3cfda020-297a-49b0-987c-0f16d814d8fe' class='xr-var-data-in' type='checkbox'><label for='data-3cfda020-297a-49b0-987c-0f16d814d8fe' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>epic_key :</span></dt><dd>Trb_980</dd><dt><span>fortran :</span></dt><dd>f10.2</dd><dt><span>generic_name :</span></dt><dd>turbidity</dd><dt><span>longname :</span></dt><dd>Turbidity (NTU)</dd><dt><span>long_name :</span></dt><dd>turbidity in nephelometric turbidity units</dd><dt><span>standard_name :</span></dt><dd>sea_water_turbidity</dd><dt><span>units :</span></dt><dd>NTU</dd></dl></div><div class='xr-var-data'><pre>array([[[[1.06334937]]],
+
+
+       [[[1.00342851]]],
+
+
+       [[[0.94350766]]],
+
+
+       ...,
+
+
+       [[[0.79625   ]]],
+
+
+       [[[0.79321667]]],
+
+
+       [[[0.78411667]]]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>cdom</span></div><div class='xr-var-dims'>(time, depth, latitude, longitude)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>3.625 3.325 3.025 ... 2.902 2.902</div><input id='attrs-c63b6017-7e3d-45db-84da-eb62d77a6923' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c63b6017-7e3d-45db-84da-eb62d77a6923' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a42f8dbf-d368-4266-b553-2c1e9c3869cc' class='xr-var-data-in' type='checkbox'><label for='data-a42f8dbf-d368-4266-b553-2c1e9c3869cc' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>epic_key :</span></dt><dd>CDOM_2980</dd><dt><span>generic_name :</span></dt><dd>cdom</dd><dt><span>long_name :</span></dt><dd>concentration of CDOM in ppb</dd><dt><span>standard_name :</span></dt><dd>concentration_of_colored_dissolved_organic_matter_in_sea_water</dd><dt><span>units :</span></dt><dd>ppb</dd></dl></div><div class='xr-var-data'><pre>array([[[[3.62513595]]],
+
+
+       [[[3.32529828]]],
+
+
+       [[[3.02546061]]],
+
+
+       ...,
+
+
+       [[[2.9024    ]]],
+
+
+       [[[2.9024    ]]],
+
+
+       [[[2.9024    ]]]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-e690bb8e-b2d6-42bb-b6b0-c8a7c7f34359' class='xr-section-summary-in' type='checkbox'  ><label for='section-e690bb8e-b2d6-42bb-b6b0-c8a7c7f34359' class='xr-section-summary' >Attributes: <span>(33)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Latitude_DegMMddW :</span></dt><dd>71 13.203 N</dd><dt><span>Longitude_DegMMddN :</span></dt><dd>164 15.088 W</dd><dt><span>MooringID :</span></dt><dd>19CKP-2A</dd><dt><span>platform_deployment_date :</span></dt><dd>2019-08-18T21:36:53Z</dd><dt><span>platform_deployment_cruise_name :</span></dt><dd>OS1901</dd><dt><span>platform_recovery_date :</span></dt><dd>2020-09-12T23:00:00Z</dd><dt><span>platform_recovery_cruise_name :</span></dt><dd>DY2012</dd><dt><span>platform_deployment_recovery_comments :</span></dt><dd></dd><dt><span>WaterDepth :</span></dt><dd>45.0</dd><dt><span>source_documents :</span></dt><dd>http://www.oceansites.org/docs/oceansites_data_format_reference_manual.pdf</dd><dt><span>institution :</span></dt><dd>Pacific Marine Environmental Lab (PMEL)</dd><dt><span>project :</span></dt><dd>EcoFOCI</dd><dt><span>project_url :</span></dt><dd>https://www.ecofoci.noaa.gov</dd><dt><span>principal_investigator :</span></dt><dd>Phyllis Stabeno</dd><dt><span>principal_investigator_email :</span></dt><dd>phyllis.stabeno (at) noaa.gov</dd><dt><span>creator_name :</span></dt><dd>Shaun Bell</dd><dt><span>creator_email :</span></dt><dd>shaun.bell (at) noaa.gov</dd><dt><span>creator_institution :</span></dt><dd>PMEL</dd><dt><span>keywords :</span></dt><dd>Mooring, Oceanographic</dd><dt><span>comment :</span></dt><dd>Provisional data</dd><dt><span>sea_area :</span></dt><dd>Bering Sea (BS)</dd><dt><span>featureType :</span></dt><dd>timeSeries</dd><dt><span>conventions :</span></dt><dd>”CF-1.6, ~OceanSITES-1.5, ACDD-1.2”</dd><dt><span>license :</span></dt><dd></dd><dt><span>references :</span></dt><dd></dd><dt><span>citation :</span></dt><dd></dd><dt><span>acknowledgement :</span></dt><dd></dd><dt><span>InstrumentSerialNumber :</span></dt><dd>1755</dd><dt><span>InstrumentType :</span></dt><dd>Eco-Fluorometer BBFL2WB</dd><dt><span>date_created :</span></dt><dd>2022-07-18T15:36:56Z</dd><dt><span>date_modified :</span></dt><dd></dd><dt><span>QC_indicator :</span></dt><dd>unknown</dd><dt><span>history :</span></dt><dd>Trimmed to deployment.
+Trimmed to deployment.</dd></dl></div></li></ul></div></div></div></div>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>QC of data (plot parameters with other instruments)</p>
+<ul class="simple">
+<li><p>be sure to updated the qc_status and the history</p></li>
+</ul>
+<div class="section" id="compare-against-ctds">
+<h3>Compare against CTD’s<a class="headerlink" href="#compare-against-ctds" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">ecofocipy.io.erddap</span> <span class="k">as</span> <span class="nn">erddap</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://akutan.pmel.noaa.gov:8080/erddap&quot;</span>
+
+<span class="n">erddap</span><span class="o">.</span><span class="n">test_erddap_connection</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span> <span class="c1">#basic test for connection to internal server, no response is a good thing</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reccast</span> <span class="o">=</span> <span class="n">erddap</span><span class="o">.</span><span class="n">erddapCTDretrieve</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span><span class="n">cruiseid</span><span class="o">=</span><span class="s1">&#39;dy2012&#39;</span><span class="p">,</span><span class="n">qclevel</span><span class="o">=</span><span class="s1">&#39;preliminary&#39;</span><span class="p">,</span><span class="n">concastno</span><span class="o">=</span><span class="s1">&#39;048&#39;</span><span class="p">)</span>
+<span class="n">depcast</span> <span class="o">=</span> <span class="n">erddap</span><span class="o">.</span><span class="n">erddapCTDretrieve</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span><span class="n">cruiseid</span><span class="o">=</span><span class="s1">&#39;os1901l1&#39;</span><span class="p">,</span><span class="n">qclevel</span><span class="o">=</span><span class="s1">&#39;final&#39;</span><span class="p">,</span><span class="n">concastno</span><span class="o">=</span><span class="s1">&#39;032&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>some variable names switch between preliminary and final… this will eventually be resolved</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#drop units from names</span>
+<span class="n">depcast</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">depcast</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+<span class="n">reccast</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">reccast</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plot ctd values with a small circular radius and zoom in on near their equivalent mooring time span, we are looking for visual discrepencies</span>
+<span class="c1">#cycle through each depth and plot respective plot</span>
+<span class="n">depth</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">mooring_config</span><span class="p">[</span><span class="s1">&#39;Instrumentation&#39;</span><span class="p">][</span><span class="n">instrument</span><span class="p">][</span><span class="s1">&#39;ActualDepth&#39;</span><span class="p">])</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">ecoflsb_data_nc</span><span class="o">.</span><span class="n">autotrim_time</span><span class="p">()</span><span class="o">.</span><span class="n">chlor_fluorescence</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s2">&quot;depth&quot;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">add_legend</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">depcast</span><span class="p">[</span><span class="n">depcast</span><span class="p">[</span><span class="s1">&#39;pressure&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">depth</span><span class="p">][</span><span class="s1">&#39;time&#39;</span><span class="p">]),</span>
+        <span class="n">depcast</span><span class="p">[</span><span class="n">depcast</span><span class="p">[</span><span class="s1">&#39;pressure&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">depth</span><span class="p">][</span><span class="s1">&#39;F_903&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span><span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">depcast</span><span class="p">[</span><span class="n">depcast</span><span class="p">[</span><span class="s1">&#39;pressure&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">depth</span><span class="p">][</span><span class="s1">&#39;time&#39;</span><span class="p">]),</span>
+        <span class="n">depcast</span><span class="p">[</span><span class="n">depcast</span><span class="p">[</span><span class="s1">&#39;pressure&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">depth</span><span class="p">][</span><span class="s1">&#39;F_903&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;+&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span><span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">reccast</span><span class="p">[</span><span class="n">reccast</span><span class="p">[</span><span class="s1">&#39;pressure&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">depth</span><span class="p">][</span><span class="s1">&#39;time&#39;</span><span class="p">]),</span>
+        <span class="n">reccast</span><span class="p">[</span><span class="n">reccast</span><span class="p">[</span><span class="s1">&#39;pressure&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">depth</span><span class="p">][</span><span class="s1">&#39;Fch_906&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span><span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">reccast</span><span class="p">[</span><span class="n">reccast</span><span class="p">[</span><span class="s1">&#39;pressure&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">depth</span><span class="p">][</span><span class="s1">&#39;time&#39;</span><span class="p">]),</span>
+        <span class="n">reccast</span><span class="p">[</span><span class="n">reccast</span><span class="p">[</span><span class="s1">&#39;pressure&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">depth</span><span class="p">][</span><span class="s1">&#39;Fch_906&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;+&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span><span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7faeaa96cd60&gt;]
+</pre></div>
+</div>
+<img alt="../../../../../_images/EcoFOCIpy_19ckp2a_BBFL2WB_1755_38_1.png" src="../../../../../_images/EcoFOCIpy_19ckp2a_BBFL2WB_1755_38_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="qc-notes-from-plots">
+<h3>QC Notes from plots<a class="headerlink" href="#qc-notes-from-plots" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>sensors dont make it to recovery so final check isn’t relevant</p></li>
+<li><p>rough field check points look good</p></li>
+<li><p>some smoothing/filtering could be ok?</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-py38-py"
+        },
+        kernelOptions: {
+            kernelName: "conda-env-py38-py",
+            path: "./content/code_gallery/ecofoci_fielddata_history/2019/19ckp2a"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-py38-py'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="19ckp2a_Compare_ADCPandRCM.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">EcoFOCIpy RCM vs ADCP</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="EcoFOCIpy_19ckp2a_adcp.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Using EcoFOCIpy to process raw field data</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By EcoFOCI<br/>
+        
+          <div class="extra_footer">
+            <a href=https://www.ecofoci.noaa.gov> ecofoci.noaa.gov </a> &nbsp <a href="mailto:pmel.ecofoci@noaa.gov">Contact Us</a> <br> Ecosystems-Fisheries/Oceanography Coordinated Investigations <br> 7200 Sandpoint Way NE <br>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
