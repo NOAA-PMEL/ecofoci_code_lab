@@ -1,0 +1,1061 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using EcoFOCIpy to apply Data Filters to 1D data &#8212; EcoSystems Fisheries-Oceanograpy Coordinated Investigations (EcoFOCI)</title>
+    
+  <link href="../../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/togglebutton.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../../../_static/FOCI_logo.png"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../../_static/FOCI_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">EcoSystems Fisheries-Oceanograpy Coordinated Investigations (EcoFOCI)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Code Gallery
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../data_access.html">
+   Data Access
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../data_access_notebooks/2022-01-06-CrossSound_RetrieveAndProcess.html">
+     Cross Sound ADCP Data Retrieval (a convenient tutorial)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../data_analysis_and_visualization.html">
+   Data Analysis And Visualization
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../data_analysis_and_visualization_notebooks/FindNearestGriddedData.html">
+     Gridded Data Station Subsetting on closest model point
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../data_analysis_and_visualization_notebooks/Map_contours_examples.html">
+     Two ways to use bathymetric datasets to generate bathymetry contours in a plot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../data_management.html">
+   Data Management
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../ecofocipy.html">
+   EcoFOCIpy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ecofocipy_notebooks/EcoFOCIpy_20bsp14a_adcp.html">
+     Using EcoFOCIpy to process raw field data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ecofocipy_notebooks/EcoFOCIpy_2D_20bsp14a_QC.html">
+     EcoFOCIpy ADCP QC - 20BSP-14A
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../ecofoci_fielddata_history.html">
+   EcoFOCI FieldData Processing
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../oculus_glider.html">
+   Oculus Glider Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../oculus_glider_notebooks/EcoFOCI_GliderTools_Readme.html">
+     EcoFOCI evaluation/application of Glider Tools for post processing
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Other Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../MetaData_Rediscovery.html">
+   MetaData Rediscovery
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/1_Table_Of_Contents.html">
+     Table of Contents
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/2_Summary.html">
+     Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/3a_Deck195_FOSDIC_Decoding.html">
+     FOSDIC Deck 195 Decoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_Explore.html">
+     Plot all identified Ship Class ID’s and color code by SST
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre01.html">
+     Exploring Deck 195 Prefix’s Vessel ID:01
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre02.html">
+     Exploring Deck 195 Prefix’s Vessel ID:02
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre03.html">
+     Exploring Deck 195 Prefix’s Vessel ID:03
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre06.html">
+     Exploring Deck 195 Prefix’s Vessel ID:06
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre07.html">
+     Exploring Deck 195 Prefix’s Vessel ID:07
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre08.html">
+     Exploring Deck 195 Prefix’s Vessel ID:08
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre09.html">
+     Exploring Deck 195 Prefix’s Vessel ID:09
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre10.html">
+     Exploring Deck 195 Prefix’s Vessel ID:10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre12.html">
+     Exploring Deck 195 Prefix’s Vessel ID:12
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre13.html">
+     Exploring Deck 195 Prefix’s Vessel ID:13
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre14.html">
+     Exploring Deck 195 Prefix’s Vessel ID:14
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre15.html">
+     Exploring Deck 195 Prefix’s Vessel ID:15
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre16.html">
+     Exploring Deck 195 Prefix’s Vessel ID:16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre17.html">
+     Exploring Deck 195 Prefix’s Vessel ID:17
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre18.html">
+     Exploring Deck 195 Prefix’s Vessel ID:18
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre19.html">
+     Exploring Deck 195 Prefix’s Vessel ID:19
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre20.html">
+     Exploring Deck 195 Prefix’s Vessel ID:20
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre21.html">
+     Exploring Deck 195 Prefix’s Vessel ID:21
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre22.html">
+     Exploring Deck 195 Prefix’s Vessel ID:22
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre23.html">
+     Exploring Deck 195 Prefix’s Vessel ID:23
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre25.html">
+     Exploring Deck 195 Prefix’s Vessel ID:25
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre26.html">
+     Exploring Deck 195 Prefix’s Vessel ID:26
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre27.html">
+     Exploring Deck 195 Prefix’s Vessel ID:27
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre28.html">
+     Exploring Deck 195 Prefix’s Vessel ID:28
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre29.html">
+     Exploring Deck 195 Prefix’s Vessel ID:29
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre30.html">
+     Exploring Deck 195 Prefix’s Vessel ID:30
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre31.html">
+     Exploring Deck 195 Prefix’s Vessel ID:31
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre32.html">
+     Exploring Deck 195 Prefix’s Vessel ID:32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre33.html">
+     Exploring Deck 195 Prefix’s Vessel ID:33
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre34.html">
+     Exploring Deck 195 Prefix’s Vessel ID:34
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre35.html">
+     Exploring Deck 195 Prefix’s Vessel ID:35
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre37.html">
+     Exploring Deck 195 Prefix’s Vessel ID:37
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre38.html">
+     Exploring Deck 195 Prefix’s Vessel ID:38
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre39.html">
+     Exploring Deck 195 Prefix’s Vessel ID:39
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre40.html">
+     Exploring Deck 195 Prefix’s Vessel ID:40
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre41.html">
+     Exploring Deck 195 Prefix’s Vessel ID:41
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre42.html">
+     Exploring Deck 195 Prefix’s Vessel ID:42
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre43.html">
+     Exploring Deck 195 Prefix’s Vessel ID:43
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre44.html">
+     Exploring Deck 195 Prefix’s Vessel ID:44
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre45.html">
+     Exploring Deck 195 Prefix’s Vessel ID:45
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre46.html">
+     Exploring Deck 195 Prefix’s Vessel ID:46
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre47.html">
+     Exploring Deck 195 Prefix’s Vessel ID:47
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre48.html">
+     Exploring Deck 195 Prefix’s Vessel ID:48
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre49.html">
+     Exploring Deck 195 Prefix’s Vessel ID:49
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre50.html">
+     Exploring Deck 195 Prefix’s Vessel ID:50
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre51.html">
+     Exploring Deck 195 Prefix’s Vessel ID:51
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre52.html">
+     Exploring Deck 195 Prefix’s Vessel ID:52
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre54.html">
+     Exploring Deck 195 Prefix’s Vessel ID:54
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre55.html">
+     Exploring Deck 195 Prefix’s Vessel ID:55
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre56.html">
+     Exploring Deck 195 Prefix’s Vessel ID:56
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre58.html">
+     Exploring Deck 195 Prefix’s Vessel ID:58
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre59.html">
+     Exploring Deck 195 Prefix’s Vessel ID:59
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre60.html">
+     Exploring Deck 195 Prefix’s Vessel ID:60
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre61.html">
+     Exploring Deck 195 Prefix’s Vessel ID:61
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre62.html">
+     Exploring Deck 195 Prefix’s Vessel ID:62
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre65.html">
+     Exploring Deck 195 Prefix’s Vessel ID:71
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre68.html">
+     Exploring Deck 195 Prefix’s Vessel ID:68
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre71.html">
+     Exploring Deck 195 Prefix’s Vessel ID:71
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre76.html">
+     Exploring Deck 195 Prefix’s Vessel ID:82
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre77.html">
+     Exploring Deck 195 Prefix’s Vessel ID:77
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre78.html">
+     Exploring Deck 195 Prefix’s Vessel ID:78
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre81.html">
+     Exploring Deck 195 Prefix’s Vessel ID:81
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre82.html">
+     Exploring Deck 195 Prefix’s Vessel ID:82
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre84.html">
+     Exploring Deck 195 Prefix’s Vessel ID:84
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre85.html">
+     Exploring Deck 195 Prefix’s Vessel ID:85
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre86.html">
+     Exploring Deck 195 Prefix’s Vessel ID:86
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre88.html">
+     Exploring Deck 195 Prefix’s Vessel ID:88
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre89.html">
+     Exploring Deck 195 Prefix’s Vessel ID:89
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre90.html">
+     Exploring Deck 195 Prefix’s Vessel ID:90
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre91.html">
+     Exploring Deck 195 Prefix’s Vessel ID:91
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre94.html">
+     Exploring Deck 195 Prefix’s Vessel ID:94
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre95.html">
+     Exploring Deck 195 Prefix’s Vessel ID:95
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre96.html">
+     Exploring Deck 195 Prefix’s Vessel ID:96
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre97.html">
+     Exploring Deck 195 Prefix’s Vessel ID:97
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MetaData_Rediscovery_notebooks/ICOADS_GeoViews_pre98.html">
+     Exploring Deck 195 Prefix’s Vessel ID:98
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Other Resources - Outside of EcoFOCI
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://ioos.github.io/ioos_code_lab">
+   IOOS Examples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://help.aodn.org.au/aodn-data-tools/user-code-library/">
+   Opening netCDF files - hints from AODN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="http://unidata.github.io/notebook-gallery/">
+   Unidata Jupyter Notebook Gallery
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="http://iobis.org/tutorial/">
+   Extracting and Enriching OBIS data with R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/USGS-R">
+   USGS-R Examples
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contact Us
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../contact_us.html">
+   Contact Us
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a href="https://www.ecofoci.noaa.gov">EcoFOCI</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../../_sources/content/code_gallery/ecofoci_fielddata_history/2014/EcoFOCIpy_1d_filter_14bs5a.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/shaunwbell/ecofoci_code_lab"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/shaunwbell/ecofoci_code_lab/issues/new?title=Issue%20on%20page%20%2Fcontent/code_gallery/ecofoci_fielddata_history/2014/EcoFOCIpy_1d_filter_14bs5a.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://binder.pangeo.io/v2/gh/shaunwbell/ecofoci_code_lab/main?urlpath=lab/tree/jupyterbook/content/code_gallery/ecofoci_fielddata_history/2014/EcoFOCIpy_1d_filter_14bs5a.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/shaunwbell/ecofoci_code_lab/blob/main/jupyterbook/content/code_gallery/ecofoci_fielddata_history/2014/EcoFOCIpy_1d_filter_14bs5a.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="using-ecofocipy-to-apply-data-filters-to-1d-data">
+<h1>Using EcoFOCIpy to apply Data Filters to 1D data<a class="headerlink" href="#using-ecofocipy-to-apply-data-filters-to-1d-data" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>filter examples:</p>
+<ul>
+<li><p>35hr Lanzcos Filter <strong>good for data with tides like ADCP</strong></p></li>
+<li><p>IQR (inter-quartile range) filter</p></li>
+<li><p>STD (standard deviation) filter</p></li>
+<li><p>7pt rolling mean-value exceeds 5std of timeseries demeaned data <strong>good for spiky data like chlor, sal in interface</strong> and should be applied when there is a seasonal baseline shift (duration of rolling mean?) <em>TODO: make subroutine and output flag to variables</em></p></li>
+</ul>
+</li>
+<li><p>input:</p>
+<ul>
+<li><p>timeseries data</p></li>
+</ul>
+</li>
+<li><p>output:</p>
+<ul>
+<li><p>timeseries data, flags</p></li>
+</ul>
+</li>
+</ul>
+<p>TODO:</p>
+<ul class="simple">
+<li><p>linearly fill (foward or back?) no more than x number of points (likely 1) -&gt; interp_na(limit=1)</p></li>
+<li><p>output to xarray modified netcdf file</p></li>
+</ul>
+<p>List of instruments filtered here:</p>
+<ul class="simple">
+<li><p>14bs5a_s37_0017m</p></li>
+<li><p>14bs5a_s37_0055m</p></li>
+<li><p>14bs5a_s37_0032m</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xa</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="kn">import</span> <span class="nn">EcoFOCIpy.math.cleaning</span> <span class="k">as</span> <span class="nn">cleaning</span> <span class="c1">#&lt;- instrument specific</span>
+<span class="kn">import</span> <span class="nn">EcoFOCIpy.math.lanzcos</span> <span class="k">as</span> <span class="nn">lanzcos</span> <span class="c1">#&lt;- instrument specific</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># testfile = &#39;../staticdata/example_data/nc_data/16bsm2a_eco_0000m.nc&#39;</span>
+<span class="n">testfile</span> <span class="o">=</span> <span class="s1">&#39;/Users/bell/ecoraid/2014/Moorings/14bs5a/working/14bs5a_s37_0032m.unqcd.trimmed_missing.cf.nc&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>So lets load a timeseries and apply filters to the entire period</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var_choice</span> <span class="o">=</span> <span class="s1">&#39;S_41&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xdf</span> <span class="o">=</span> <span class="n">xa</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="n">testfile</span><span class="p">)</span>
+
+
+<span class="c1">#data without flags or set to large numbers... especially if not nan or EPIC, don&#39;t change flag as it may already be set</span>
+<span class="n">xdf</span> <span class="o">=</span> <span class="n">xdf</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">xdf</span><span class="o">&lt;</span><span class="mf">1e20</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+
+
+<span class="c1">#these pre filter QC flags should all be set to QC #4</span>
+<span class="n">xdf</span><span class="p">[</span><span class="s1">&#39;S_41&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">xdf</span><span class="o">.</span><span class="n">S_41</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">xdf</span><span class="o">.</span><span class="n">S_41</span><span class="o">&gt;</span><span class="mi">30</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">xdf</span><span class="o">.</span><span class="n">S_41</span><span class="o">&lt;</span><span class="mi">35</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">xdf</span><span class="p">[</span><span class="s1">&#39;S_41&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">xdf</span><span class="o">.</span><span class="n">S_41</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">xdf</span><span class="o">.</span><span class="n">T_20</span><span class="o">&gt;-</span><span class="mi">2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">xdf</span><span class="o">.</span><span class="n">T_20</span><span class="o">&lt;</span><span class="mi">30</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">xdf</span><span class="p">[</span><span class="s1">&#39;T_20&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">xdf</span><span class="o">.</span><span class="n">T_20</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">xdf</span><span class="o">.</span><span class="n">T_20</span><span class="o">&gt;-</span><span class="mi">2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">xdf</span><span class="o">.</span><span class="n">T_20</span><span class="o">&lt;</span><span class="mi">30</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xdf</span><span class="p">[</span><span class="n">var_choice</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9a811c8f40&gt;]
+</pre></div>
+</div>
+<img alt="../../../../_images/EcoFOCIpy_1d_filter_14bs5a_7_1.png" src="../../../../_images/EcoFOCIpy_1d_filter_14bs5a_7_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">xdf</span><span class="p">[</span><span class="n">var_choice</span><span class="p">][:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span><span class="s1">&#39;lon&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># dft = df.dropna()</span>
+<span class="n">dft</span><span class="o">=</span><span class="n">df</span>
+<span class="c1">#</span>
+<span class="c1">## missing data fill limited by number of hours to linearly interpolate</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="n">dft</span><span class="p">[</span><span class="n">var_choice</span><span class="p">]</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span><span class="n">limit</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="c1"># get index of missing data that wasn&#39;t filled</span>
+<span class="c1"># the remaining missing data will continue to be missing after analysis</span>
+<span class="c1"># this data and the edges of the timeseries need to have the effects of the filter window accounted for</span>
+
+<span class="n">missing_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="n">dft</span><span class="p">[</span><span class="n">var_choice</span><span class="p">]</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+
+<span class="c1">#address gaps at beginning and end... back fill... and forward fill at end... </span>
+<span class="c1"># the filter window will correct small gaps at the tails but will become worse as the leading gaps get bigger</span>
+<span class="n">temp</span><span class="o">.</span><span class="n">bfill</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">temp</span><span class="o">.</span><span class="n">ffill</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1">#filter data with lanzcos filter</span>
+<span class="n">lanzcosfiltered</span> <span class="o">=</span> <span class="n">lanzcos</span><span class="o">.</span><span class="n">lanzcos</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">35</span><span class="p">)</span> <span class="o">+</span> <span class="n">dft</span><span class="p">[</span><span class="n">var_choice</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IQRcleaned</span> <span class="o">=</span> <span class="n">cleaning</span><span class="o">.</span><span class="n">outlier_bounds_iqr</span><span class="p">(</span><span class="n">xdf</span><span class="p">[</span><span class="n">var_choice</span><span class="p">])</span>
+<span class="n">STDcleaned</span> <span class="o">=</span> <span class="n">cleaning</span><span class="o">.</span><span class="n">outlier_bounds_std</span><span class="p">(</span><span class="n">xdf</span><span class="p">[</span><span class="n">var_choice</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="n">xdf</span><span class="p">[</span><span class="n">var_choice</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="p">((</span><span class="n">xdf</span><span class="p">[</span><span class="n">var_choice</span><span class="p">]</span> <span class="o">*</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">IQRcleaned</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;IQR&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="p">((</span><span class="n">xdf</span><span class="p">[</span><span class="n">var_choice</span><span class="p">]</span> <span class="o">*</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">STDcleaned</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;STD&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="p">((</span><span class="n">xdf</span><span class="p">[</span><span class="n">var_choice</span><span class="p">][:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">lanzcosfiltered</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;f35&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">xdf</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">median</span><span class="p">()[</span><span class="n">var_choice</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;3hr rolling&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f9a8085bbe0&gt;
+</pre></div>
+</div>
+<img alt="../../../../_images/EcoFOCIpy_1d_filter_14bs5a_10_1.png" src="../../../../_images/EcoFOCIpy_1d_filter_14bs5a_10_1.png" />
+</div>
+</div>
+<p>But perhaps a form of rolling std/iqr filter is more appropriate as it wont tend to mask relevant peaks by being a median filter</p>
+<p><em>Finally</em> try to refill as many points back to the start and finish of the</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span><span class="o">=</span><span class="mi">3</span>
+<span class="n">clean</span> <span class="o">=</span> <span class="n">cleaning</span><span class="o">.</span><span class="n">rolling_outlier_std</span><span class="p">(</span><span class="n">xdf</span><span class="p">,</span><span class="n">var_choice</span><span class="p">,</span><span class="n">timebase</span><span class="o">=</span><span class="n">N</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">stddev</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">interp_fill_timebase</span><span class="o">=</span><span class="s1">&#39;2H&#39;</span><span class="p">)</span> 
+<span class="c1">#TODO? timebase is not endpoint inclusive... if you want to fill 1hour then choose a value bigger like 2hours which wont fill 2hour gaps</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="n">xdf</span><span class="p">[</span><span class="n">var_choice</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="p">((</span><span class="n">xdf</span><span class="p">[</span><span class="n">var_choice</span><span class="p">]</span> <span class="o">*</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">IQRcleaned</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;IQR&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="p">((</span><span class="n">xdf</span><span class="p">[</span><span class="n">var_choice</span><span class="p">]</span> <span class="o">*</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">STDcleaned</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;STD&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="p">((</span><span class="n">xdf</span><span class="p">[</span><span class="n">var_choice</span><span class="p">][:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">lanzcosfiltered</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;f35&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">xdf</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">median</span><span class="p">()[</span><span class="n">var_choice</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;3hr rolling&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">clean</span><span class="p">[</span><span class="n">var_choice</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;deviation from rolling median&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f9a805bf0d0&gt;
+</pre></div>
+</div>
+<img alt="../../../../_images/EcoFOCIpy_1d_filter_14bs5a_14_1.png" src="../../../../_images/EcoFOCIpy_1d_filter_14bs5a_14_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="n">clean</span><span class="p">[</span><span class="n">var_choice</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;deviation from rolling median&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="p">((</span><span class="n">xdf</span><span class="p">[</span><span class="n">var_choice</span><span class="p">]</span> <span class="o">*</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">IQRcleaned</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;IQR&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="p">((</span><span class="n">xdf</span><span class="p">[</span><span class="n">var_choice</span><span class="p">]</span> <span class="o">*</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">STDcleaned</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;STD&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="p">((</span><span class="n">xdf</span><span class="p">[</span><span class="n">var_choice</span><span class="p">][:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">lanzcosfiltered</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;f35&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f9a80634b80&gt;
+</pre></div>
+</div>
+<img alt="../../../../_images/EcoFOCIpy_1d_filter_14bs5a_15_1.png" src="../../../../_images/EcoFOCIpy_1d_filter_14bs5a_15_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">xdf</span><span class="p">[</span><span class="n">var_choice</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">clean</span><span class="p">[</span><span class="n">var_choice</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;deviation from rolling median&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9a82110220&gt;]
+</pre></div>
+</div>
+<img alt="../../../../_images/EcoFOCIpy_1d_filter_14bs5a_16_1.png" src="../../../../_images/EcoFOCIpy_1d_filter_14bs5a_16_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clean</span><span class="p">[</span><span class="n">var_choice</span><span class="o">+</span><span class="s1">&#39;_QC&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([7731.,    9.,    0.,    0.,    0.,   35.,    0.,    0.,    0.,
+          46.]),
+ array([0. , 0.8, 1.6, 2.4, 3.2, 4. , 4.8, 5.6, 6.4, 7.2, 8. ],
+       dtype=float32),
+ &lt;BarContainer object of 10 artists&gt;)
+</pre></div>
+</div>
+<img alt="../../../../_images/EcoFOCIpy_1d_filter_14bs5a_17_1.png" src="../../../../_images/EcoFOCIpy_1d_filter_14bs5a_17_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clean</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">testfile</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.nc&#39;</span><span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="o">+</span><span class="n">var_choice</span><span class="o">+</span><span class="s1">&#39;.despiked.csv&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-py38-py"
+        },
+        kernelOptions: {
+            kernelName: "conda-env-py38-py",
+            path: "./content/code_gallery/ecofoci_fielddata_history/2014"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-py38-py'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By EcoFOCI<br/>
+        
+          <div class="extra_footer">
+            <a href=https://www.ecofoci.noaa.gov> ecofoci.noaa.gov </a> &nbsp <a href="mailto:pmel.ecofoci@noaa.gov">Contact Us</a> <br> Ecosystems-Fisheries/Oceanography Coordinated Investigations <br> 7200 Sandpoint Way NE <br>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
